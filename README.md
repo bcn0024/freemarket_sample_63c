@@ -34,10 +34,7 @@ Things you may want to cover:
 |kana_surname|string|null: false|
 |kana_given_name|string|null: false|
 |phone_number|string|null: false|
-|card_year|string|
-|card_month|string|
-|card_code|string|
-|card_number|string|
+
 ### Association
 - has_many :products, dependent: :destroy
 - has_many :favorites ,dependent: :destroy
