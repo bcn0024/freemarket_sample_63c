@@ -31,6 +31,15 @@
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+# server "db.example.com", user: "deploy", roles: %w{db}
+server "18.177.47.30", user: "ec2-user", roles: %w{app db web}
+
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
+
+# role-based syntax
+# ==================
+
 
 
 # Custom SSH Options
