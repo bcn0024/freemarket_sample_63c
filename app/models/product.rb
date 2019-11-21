@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  enum status[:new,:great,:good,:bad,:worse,:worst]
+  # enum status[:new,:great,:good,:bad,:worse,:worst]
   validates :text, :name, :description, :postage, :status, :region, :arrival_date, :price, :size, presence: true
 
   has_many :categorys,dependent: :destroy
