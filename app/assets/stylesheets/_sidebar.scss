@@ -13,6 +13,9 @@
   background-color: #ffffff;
   &__list {
     border-bottom: 1px solid #eee;
+    &--current {
+      background-color: #EEEEEE;
+    }
   }
 
   &__anchor {
@@ -21,6 +24,13 @@
     text-decoration: none;
     font-size: 14px;
     color: #333;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 35%;
+    right: 16px;
   }
 
   &__anchor:hover {
