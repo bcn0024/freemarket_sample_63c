@@ -1,3 +1,23 @@
+.body
+  .contents
+    .contents__header
+      %h1
+        =link_to "https://www.mercari.com/jp/", id:"" do
+          %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229"}/
+    .contents__main
+      .container
+        %h2.registration
+          新規会員登録
+        .registration-form
+          .form-contents
+            =link_to "https://www.mercari.com/jp/signup/registration/", id:"" do
+              = icon('fab', 'envelope')
+              メールアドレスで登録する
+            %button
+              %i
+                Facebookで登録する
+            %button
+              Googleで登録する
+    .contents__footer
 
-.test
-  テストですよん
+
