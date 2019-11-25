@@ -1,15 +1,16 @@
 .user_main
   .user_top
     = link_to "#", class: "top_link" do
-      .top_link__image
-        = image_tag("/assets/667391445.jpg?1532014695", size: "60x60", alt: "")
-      .top_link__name  
-        Kazu.s
-      .top_link__record
-        .top_link__review
-          評価 25 
-        .top_link__number
-          出品数 6
+      .top_content
+        .top_content__image
+          = image_tag("/assets/667391445.jpg?1532014695", size: "60x60", alt: "")
+        .top_content__name  
+          Kazu.s
+        .top_content__record
+          .top_content__review
+            評価 25 
+          .top_content__number
+            出品数 6
 
   .user_news
     %ul.user_news_head
