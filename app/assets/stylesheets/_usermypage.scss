@@ -9,3 +9,19 @@
 .user_good {
   background-color: #fff;
 }
+
+.user_list {
+  padding: 16px;
+  &__move:hover {
+    opacity: 0.9;
+  }
+  &__move {
+    background-color: #EEEEEE;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+  }
+}
