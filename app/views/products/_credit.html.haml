@@ -11,8 +11,10 @@
         .box_content__add
           .add-content
             =link_to "#", class: "add-content__link" do
+              = icon('fas', 'credit-card', class: 'add-content__icon')
               クレジットカードを追加する
 
-      .box_main__footer
-        支払い方法について
-
+      .box_footer
+        =link_to "#", class: "box_footer__link" do
+          %span 支払い方法について 
+          = icon('fas', 'chevron-right')
