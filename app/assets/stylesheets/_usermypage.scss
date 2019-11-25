@@ -31,13 +31,20 @@
   }
 }
 
-.user_news_head {
+.user_news_head_link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  line-height: 72px;
   display: flex;
   .user_tabs.current {
     background-color: #fff;
+    border-top: 2px solid #ea352d;
   }
   .user_tabs {
     background-color: #EEEEEE;
+    width: 50%;
+    text-align: center;;
   }
 }
 

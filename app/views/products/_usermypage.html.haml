@@ -5,10 +5,11 @@
 
   .user_news
     %ul.user_news_head
-      %li.user_tabs.current
-        お知らせ 
-      %li.user_tabs
-        やることリスト
+      = link_to "#", class: "user_news_head_link" do
+        %li.user_tabs.current
+          お知らせ 
+        %li.user_tabs
+          やることリスト
 
     %ul.user_content
       %li.user_contact
@@ -80,32 +81,37 @@
     .good_top
       購入した商品
 
-    .good_tabs
-      取引中 過去の取引
+    .user_news
+    %ul.user_news_head
+      = link_to "#", class: "user_news_head_link" do
+        %li.user_tabs.current
+          取引中
+        %li.user_tabs
+          やることリスト
 
-    %ul.good_content
-      %li.good_item
-        「Kazuさん専用」を購入しました。取引が完了しました。
-        取引完了
+      %ul.good_content
+        %li.good_item
+          「Kazuさん専用」を購入しました。取引が完了しました。
+          取引完了
 
-      %li.good_item
-        「Kazuさん専用」を購入しました。取引が完了しました。
-        取引完了
+        %li.good_item
+          「Kazuさん専用」を購入しました。取引が完了しました。
+          取引完了
 
-      %li.good_item
-        「Kazuさん専用」を購入しました。取引が完了しました。
-        取引完了
+        %li.good_item
+          「Kazuさん専用」を購入しました。取引が完了しました。
+          取引完了
 
-      %li.good_item
-        「Kazuさん専用」を購入しました。取引が完了しました。
-        取引完了
+        %li.good_item
+          「Kazuさん専用」を購入しました。取引が完了しました。
+          取引完了
 
-      %li.good_item
-        「Kazuさん専用」を購入しました。取引が完了しました。
-        取引完了
-      %li.user_list
-        = link_to "#", class: "user_list__move" do
-          一覧を見る
+        %li.good_item
+          「Kazuさん専用」を購入しました。取引が完了しました。
+          取引完了
+        %li.user_list
+          = link_to "#", class: "user_list__move" do
+            一覧を見る
 
       
 
