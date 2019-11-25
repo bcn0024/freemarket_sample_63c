@@ -25,3 +25,24 @@
     line-height: 56px;
   }
 }
+
+
+
+
+.user_contact {
+  overflow: hidden;
+  padding: 16px;
+  border-bottom: 1px solid #EEEEEE;
+  &__right {
+    float: right;
+  }
+  &__image {
+    float: left
+  }
+}
+
+.user_contact:hover {
+  background-color: #EEEEEE;
+  cursor: pointer;
+}
+
