@@ -1,0 +1,170 @@
+.body{
+    min-height: 100%;
+    background: #F5F5F5;
+    font-family: ‘Source Sans Pro’, Helvetica , Arial, ‘游ゴシック体’, ‘YuGothic’, ‘メイリオ’,’Meiryo’, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+    .contents{
+      &__header{
+        height: 128px;
+        text-align: center;
+        h1{
+          margin: 40px 0 0;
+          display: inline-block;
+          a{
+            width: 185px;
+            height: 49px;
+            line-height: 49px;
+            display: inline-block;
+            margin: 0 8px 0 0;
+            color: #0099E8;
+            text-decoration: none;
+            img{
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      &__main{
+        display: block;
+        .container{
+          width: 700px;
+          margin: 0 auto;
+          background: #fff;
+          .registration{
+            font-size: 22px;
+            padding: 32px;
+            line-height: 1.5;
+            text-align: center;
+            display: block;
+            font-weight: bold;
+          }
+          .registration-form{
+            padding: 40px 40px 64px;
+            // 以下l-single-innerに記載あり
+            border-top: 1px solid #F5F5F5;
+            .form-contents{
+              max-width: 343px;
+              margin: 0 auto;
+              a{
+                color: #fff;
+                background-color: #EA352D;
+                border-radius: 4px;
+                position: relative;
+                display: block;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                border: 1px solid transparent;
+                -webkit-transition: all ease-out .3s;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                touch-action: manipulation;
+                .mail-icon{
+                  position: absolute;
+                  top: 50%;
+                  left: 16px;
+                  transform: translate(0, -50%);
+                  font-size: 20px;
+                  font-weight: 400;
+                }
+              }
+              .facebook{
+                border-radius: 4px;
+                margin: 16px 0 0;
+                background: #385185;
+                color: #fff;
+                position: relative;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                cursor: pointer;
+                font-family: inherit;
+                font-style: inherit;
+                font-weight: inherit;
+                .facebook-icon{
+                  position: absolute;
+                  font-size: 30px;
+                  top: 50%;
+                  left: 16px;
+                  transform: translate(0, -50%);
+                  font-weight: 400;
+                }
+              }
+              .google{
+                border-radius: 4px;
+                margin: 16px 0 0;
+                background: #fff url(https://www.mercari.com/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+                border: #979797 solid 1px;
+                color: #333;
+                position: relative;
+                display: block;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                border: 1px solid transparent;
+                -webkit-transition: all ease-out .3s;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+                font-family: inherit;
+                font-style: inherit;
+                font-weight: inherit;
+                min-height: 1.5em;
+                touch-action: manipulation;
+                outline: 0;
+                border: 1px solid #333;
+              }
+            }
+          }
+        }
+      }
+      &__footer{
+        width: 456px;
+        height: 140px;
+        margin: 0 auto;
+        padding: 90px 0px 40px 0px;
+        text-align: center;
+        nav{
+          ul{
+            font-size: 0;
+            list-style-type: disc;
+            li:first-child{
+              margin: 0;
+            }
+            li{
+              display: inline-block;
+              font-size: 12px;
+              margin: 0 0 0 16px;
+              a{
+                height: 12px;
+                color: #333;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        .mercari-icon{
+          display: block;
+          color: #333;
+          width: 80px;
+          height: 65px;
+          margin: 40px auto 0;
+          text-decoration: none;
+          touch-action: manipulation;
+        }
+        p{
+          margin: 8px 0 0;
+          display: block;
+          small{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+}
+
+
