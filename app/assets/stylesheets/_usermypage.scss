@@ -31,6 +31,16 @@
   }
 }
 
+.user_news_head {
+  display: flex;
+  .user_tabs.current {
+    background-color: #fff;
+  }
+  .user_tabs {
+    background-color: #EEEEEE;
+  }
+}
+
 .user_contact {
   position: relative;
   &__right {
@@ -39,7 +49,7 @@
   }
   &__icon {
     position: absolute;
-    top: 50%;
+    top: 33%;
     right: 16px;
   }
   &__link {
