@@ -20,14 +20,30 @@
     display: block;
     text-decoration: none;
     color: inherit;
+    height: 160px;
+    padding: 20px;
+    background: url(/assets/shutterstock_197738150-w960.jpg);
     &__image {
       text-align: center;
+      img {
+        border-radius: 30px;
+      }
     }
     &__name {
       text-align: center;
+      margin-top: 8px;
     }
     &__record {
       text-align: center;
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+    }
+    &__review {
+      
+    }
+    &__number {
+      margin-left: 16px;
     }
   }
 }
