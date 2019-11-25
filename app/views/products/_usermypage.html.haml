@@ -1,7 +1,12 @@
 .user_main
   .user_top
-    Kazu.s
-    評価 25 出品数 6
+    = link_to "#", class: "top_link" do
+      .top_link__image
+        = image_tag("/assets/667391445.jpg?1532014695", size: "60x60", alt: "")
+      .top_link__name  
+        Kazu.s
+      .top_link__record
+        評価 25 出品数 6
 
   .user_news
     %ul.user_news_head
