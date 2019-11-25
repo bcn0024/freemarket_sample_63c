@@ -2,6 +2,11 @@
   background-color: #F5F5F5;
 }
 
+.user_main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .user_top,.user_news {
   background-color: #fff;
 }
@@ -26,18 +31,33 @@
   }
 }
 
-
-
-
 .user_contact {
-  overflow: hidden;
-  padding: 16px;
-  border-bottom: 1px solid #EEEEEE;
+  position: relative;
   &__right {
-    float: right;
+    font-size: 14px;
+    
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+  }
+  &__link {
+    display: block;
+    padding: 16px;
+    border-bottom: 1px solid #EEEEEE;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
   }
   &__image {
-    float: left
+    margin-right: 20px;
+  }
+  &__time {
+    color: #B1B1B1;
+    i {
+      margin-right: 4px;
+    }
   }
 }
 

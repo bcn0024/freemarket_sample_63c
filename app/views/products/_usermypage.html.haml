@@ -7,56 +7,71 @@
     .user_tabs
       お知らせ やることリスト
 
-    .user_content
-      .user_contact
-        .user_contact__image
-          = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
-        .user_contact__right
-          .user_contact__message
-            事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
-          .user_contact__time
-            19時間前
+    %ul.user_content
+      %li.user_contact
+        = link_to "#", class: "user_contact__link clearfix" do
+          = icon('fas', 'chevron-right', class: 'user_contact__icon')
+          .user_contact__image
+            = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
+          .user_contact__right
+            .user_contact__message
+              事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
+            .user_contact__time
+              = icon('fas', 'clock')
+              19時間前
 
-    .user_contact
-      .user_contact__image
-        = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
-      .user_contact__right
-        .user_contact__message
-          事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
-        .user_contact__time
-          = icon('fas', 'clock')
-          19時間前
+    
+      %li.user_contact
+        = link_to "#", class: "user_contact__link clearfix" do
+          = icon('fas', 'chevron-right', class: 'user_contact__icon')
+          .user_contact__image
+            = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
+          .user_contact__right
+            .user_contact__message
+              事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
+            .user_contact__time
+              = icon('fas', 'clock')
+              19時間前
 
-    .user_contact
-      .user_contact__image
-        = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
-      .user_contact__right
-        .user_contact__message
-          事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
-        .user_contact__time
-          19時間前
+      %li.user_contact
+        = link_to "#", class: "user_contact__link clearfix" do
+          = icon('fas', 'chevron-right', class: 'user_contact__icon')
+          .user_contact__image
+            = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
+          .user_contact__right
+            .user_contact__message
+              事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
+            .user_contact__time
+              = icon('fas', 'clock')
+              19時間前
 
-    .user_contact
-      .user_contact__image
-        = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
-      .user_contact__right
-        .user_contact__message
-          事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
-        .user_contact__time
-          19時間前
+      %li.user_contact
+        = link_to "#", class: "user_contact__link clearfix" do
+          = icon('fas', 'chevron-right', class: 'user_contact__icon')
+          .user_contact__image
+            = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
+          .user_contact__right
+            .user_contact__message
+              事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
+            .user_contact__time
+              = icon('fas', 'clock')
+              19時間前
 
-    .user_contact
-      .user_contact__image
-        = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
-      .user_contact__right
-        .user_contact__message
-          事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
-        .user_contact__time
-          19時間前
+      %li.user_contact
+        = link_to "#", class: "user_contact__link clearfix" do
+          = icon('fas', 'chevron-right', class: 'user_contact__icon')
+          .user_contact__image
+            = image_tag("/assets/E38395E383AAE3839EE382A2E38397E383AA20E383A1E383ABE382ABE383AA20.png", size: "46x46", alt: "")
+          .user_contact__right
+            .user_contact__message
+              事務局から個別メッセージ「お問い合わせ受付完了のお知らせ」
+            .user_contact__time
+              = icon('fas', 'clock')
+              19時間前
 
-    .user_list
-      = link_to "#", class: "user_list__move" do
-        一覧を見る
+      %li.user_list
+        = link_to "#", class: "user_list__move" do
+          一覧を見る
 
   .user_good
     .good_top
@@ -65,27 +80,27 @@
     .good_tabs
       取引中 過去の取引
 
-    .good_content
-      .good_item
+    %ul.good_content
+      %li.good_item
         「Kazuさん専用」を購入しました。取引が完了しました。
         取引完了
 
-      .good_item
+      %li.good_item
         「Kazuさん専用」を購入しました。取引が完了しました。
         取引完了
 
-      .good_item
+      %li.good_item
         「Kazuさん専用」を購入しました。取引が完了しました。
         取引完了
 
-      .good_item
+      %li.good_item
         「Kazuさん専用」を購入しました。取引が完了しました。
         取引完了
 
-      .good_item
+      %li.good_item
         「Kazuさん専用」を購入しました。取引が完了しました。
         取引完了
-      .user_list
+      %li.user_list
         = link_to "#", class: "user_list__move" do
           一覧を見る
 
