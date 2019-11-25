@@ -5,10 +5,11 @@
 
   .user_news
     %ul.user_news_head
-      = link_to "#", class: "user_news_head_link" do
-        %li.user_tabs.current
+      %li.user_tabs.current
+        = link_to "#", class: "user_news_head_link" do
           お知らせ 
-        %li.user_tabs
+      %li.user_tabs
+        = link_to "#", class: "user_news_head_link" do
           やることリスト
 
     %ul.user_content
@@ -82,33 +83,70 @@
       購入した商品
 
     .user_news
-    %ul.user_news_head
-      = link_to "#", class: "user_news_head_link" do
+      %ul.user_news_head
         %li.user_tabs.current
-          取引中
+          = link_to "#", class: "user_news_head_link" do
+            お知らせ 
         %li.user_tabs
-          やることリスト
+          = link_to "#", class: "user_news_head_link" do
+            やることリスト
 
-      %ul.good_content
-        %li.good_item
-          「Kazuさん専用」を購入しました。取引が完了しました。
-          取引完了
+      %ul.user_content
+        %li.user_contact
+          = link_to "#", class: "user_contact__link clearfix" do
+            = icon('fas', 'chevron-right', class: 'user_contact__icon')
+            .user_contact__image
+              = image_tag("/assets/m10601918349_1.jpg?1550140915", size: "46x46", alt: "")
+            .user_contact__right
+              .user_contact__message
+                「Kazuさん専用を」を購入しました。取引が完了しました。
+              .user_contact__finish
+                取引完了
 
-        %li.good_item
-          「Kazuさん専用」を購入しました。取引が完了しました。
-          取引完了
+      
+        %li.user_contact
+          = link_to "#", class: "user_contact__link clearfix" do
+            = icon('fas', 'chevron-right', class: 'user_contact__icon')
+            .user_contact__image
+              = image_tag("/assets/m10601918349_1.jpg?1550140915", size: "46x46", alt: "")
+            .user_contact__right
+              .user_contact__message
+                「Kazuさん専用を」を購入しました。取引が完了しました。
+              .user_contact__finish
+                取引完了
 
-        %li.good_item
-          「Kazuさん専用」を購入しました。取引が完了しました。
-          取引完了
+        %li.user_contact
+          = link_to "#", class: "user_contact__link clearfix" do
+            = icon('fas', 'chevron-right', class: 'user_contact__icon')
+            .user_contact__image
+              = image_tag("/assets/m10601918349_1.jpg?1550140915", size: "46x46", alt: "")
+            .user_contact__right
+              .user_contact__message
+                「Kazuさん専用を」を購入しました。取引が完了しました。
+              .user_contact__finish
+                取引完了
 
-        %li.good_item
-          「Kazuさん専用」を購入しました。取引が完了しました。
-          取引完了
+        %li.user_contact
+          = link_to "#", class: "user_contact__link clearfix" do
+            = icon('fas', 'chevron-right', class: 'user_contact__icon')
+            .user_contact__image
+              = image_tag("/assets/m10601918349_1.jpg?1550140915", size: "46x46", alt: "")
+            .user_contact__right
+              .user_contact__message
+                「Kazuさん専用を」を購入しました。取引が完了しました。
+              .user_contact__finish
+                取引完了
 
-        %li.good_item
-          「Kazuさん専用」を購入しました。取引が完了しました。
-          取引完了
+        %li.user_contact
+          = link_to "#", class: "user_contact__link clearfix" do
+            = icon('fas', 'chevron-right', class: 'user_contact__icon')
+            .user_contact__image
+              = image_tag("/assets/m10601918349_1.jpg?1550140915", size: "46x46", alt: "")
+            .user_contact__right
+              .user_contact__message
+                「Kazuさん専用を」を購入しました。取引が完了しました。
+              .user_contact__finish
+                取引完了
         %li.user_list
           = link_to "#", class: "user_list__move" do
             一覧を見る
