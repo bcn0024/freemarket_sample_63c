@@ -13,12 +13,17 @@
             %p
               新規会員登録
         .login-bottom
-          .login-facebook
-            %p
-              Facebookでログイン
-          .login-google
-            %p
-              googleでログイン
+          .login-bottom__bars
+            .login-facebook
+              %p
+                Facebookでログイン
+            .login-google
+              %p
+                googleでログイン
+          .login-bottom__add
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .field-label
+                = f.label :email
               
 
     .contents__footer
