@@ -14,12 +14,14 @@
  *= require_self
  */
 
+
  @import "credit2";
+ @import "header"; 
  @import "kaiinzyouhou";
  @import "firstchoice";
  @import "reset";
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "login";
-
-
+ @import "new-products";
+ @import "tel";
