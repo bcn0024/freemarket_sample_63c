@@ -5,14 +5,21 @@
 
     .box_main
       .box_content
-        .box_content__show
+        %h3 
           クレジットカード一覧
-        
-        .box_content__add
-          .add-content
-            =link_to "#", class: "add-content__link" do
-              = icon('fas', 'credit-card', class: 'add-content__icon')
-              クレジットカードを追加する
+        .box_show
+          .box_show__icon
+            = icon('fab', 'cc-jcb')
+          .box_show__info
+            ✖︎✖︎✖︎✖︎✖︎✖︎✖︎✖︎1039
+          .box_show__expire
+            07/23
+          .box_show__delete
+            =link_to "#" do
+              削除する
+
+
+          
 
       .box_footer
         =link_to "#", class: "box_footer__link" do

@@ -36,33 +36,15 @@
   
   .box_content {
     border-bottom: 1px solid #F5F5F5;
-    &__show {
+    h3 {
       font-size: 16px;
       font-weight: bold;
       max-width: 320px;
       margin: 0 auto;
     }
-  &__add {
-    padding: 24px 0;
-    .add-content:hover {
-      opacity: 0.7;
-  }
-  .add-content {
-    margin: 0 auto;
-    background-color: red;
-    max-width: 320px;
-    font-size: 14px;
-    transition: all ease-out .3s;
-    &__link {
-      color: #ffffff;
-      text-align: center;
-      text-decoration: none;
-      line-height: 48px;
-      display: block;
-      .add-content__icon {
-        margin-right: 16px;
-        }
-      }
+    .box_show {
+      &__icon {
+        
       }
     }
   }
