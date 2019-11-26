@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # 
 
 
+
   root to:  'users#kaiinzyouhou'
   resources :users, only: :index
 
