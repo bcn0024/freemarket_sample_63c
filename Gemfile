@@ -75,5 +75,11 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
+gem 'font-awesome-sass'
+
+gem 'recaptcha', require: "recaptcha/rails"
+
+
+
 
 
