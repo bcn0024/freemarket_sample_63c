@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def index
   end
 
-  def firstchoice
+  def top
   end
 
   def new
