@@ -78,3 +78,10 @@ end
 
 
 
+gem 'recaptcha', require: "recaptcha/rails"
+
+
+
+
+
+
