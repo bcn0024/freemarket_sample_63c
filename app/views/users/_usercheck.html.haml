@@ -6,10 +6,11 @@
     = form_for [@user] do |f|
       .form_head
         %p.form_head__message 
-          お客様の本人情報をご登録ください<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          お客様の本人情報をご登録ください。<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
         %p.form_head__upload
           =link_to "#", class: "form_head__link" do
             本人確認書類のアップロードについて
+            = icon('fas', 'chevron-right')
 
       .form_box
         = f.label "お名前"
@@ -59,8 +60,11 @@
       = f.submit "登録する", class: "form_submit"
         
       .form_box
-        =link_to "#", class: "form_head__link" do
-          本人情報の登録について
+        .form_head
+          %p.form_head__upload
+            =link_to "#", class: "form_head__link" do
+              本人情報の登録について
+              = icon('fas', 'chevron-right')
 
         
         
