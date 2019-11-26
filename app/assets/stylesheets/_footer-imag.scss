@@ -2,6 +2,7 @@
   color: white;
   background: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg);
   background-position: center center;
+  background-size: cover;
   &__se{
     display: flex;
     width: 750px;
@@ -43,7 +44,7 @@
     .main-3{
       img {
         margin-left: 50px;
-        height: 260px;
+        height: 100%;
         width: 300px;
       }
     }
