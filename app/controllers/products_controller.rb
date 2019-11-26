@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  def index
+  def firstchoice
     
   end
 end
