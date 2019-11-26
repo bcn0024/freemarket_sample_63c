@@ -76,8 +76,6 @@ group :production do
 end
 
 gem "font-awesome-sass"
-
-
 gem 'ancestry'
 
 
@@ -85,9 +83,6 @@ gem 'ancestry'
 
 
 gem 'recaptcha', require: "recaptcha/rails"
-
-
-
 
 
 
