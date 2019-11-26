@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # 
 
 
-  root to:  'products#index'
+
+  root to:  'users#kaiinzyouhou'
   resources :users, only: :index
 
 end
