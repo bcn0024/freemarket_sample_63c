@@ -1,0 +1,105 @@
+.single-header{
+    text-align: center;
+    & h1{
+        display:inline-block;
+        margin: 11px 0 12px;
+        & a{
+            display:inline-block;
+            width: 120px;
+            height: 33px;
+            margin: 0 8px 0 0;
+            line-height: 33px;
+        }
+    }
+    & nav{
+        padding: 16px 0;
+        border-top:1px solid #eee;
+        font-size: 0;
+        text-align: center;
+        & ol{
+            margin: 0;
+            & li{
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                min-width: 40px;
+                margin: 0 5% 0 0;
+                font-size: 12px;
+            }
+            .through{
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                min-width: 40px;
+                margin: 0 5% 0 0;
+                font-size: 12px;
+                color: #888;
+            }
+            .active{
+                font-weight: 600;
+                color: #ea352d;
+            }
+        }
+    }
+ }
+
+.tel-contents{
+    width: 700px;
+    margin: 0 auto;
+    background:#fff;
+    .tel-head{
+       & h2{
+        font-size: 22px;
+        padding: 32px;
+        border-bottom:1px solid #f5f5f5;
+        font-weight: bold;
+        text-align: center;
+       }
+    }
+    .tel-bottom{
+        max-width: 343px;
+        margin: 0 auto;
+        .tel-input{
+          margin: 0;
+          & label{
+            font-weight: 600;
+            display: inline-block;
+          }
+          & input{
+            width: 90%;
+            margin: 8px 0 0;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        & p{
+          font-size: 14px;
+          margin: 8px 0 0;
+         line-height: 1.5;
+         color: #333333;
+         font-weight: 100;
+        }
+        & button{
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            margin-top: 32px;
+        }
+        .tel-reson{
+            margin-top: 32px;
+            text-align: right;
+            & a{
+                color: #0099e9;
+                text-decoration: none;
+            }
+        }
+    }
+}
