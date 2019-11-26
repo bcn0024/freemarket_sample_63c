@@ -5,9 +5,43 @@
     height: 160px;
     right: 32px;
     width: 160px;
+    background-color: rgb(234, 53, 45);
+    border-radius: 50%;
+    color: inherit;
+    text-decoration: none;
+    position: fixed;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 2;
+    &__wide{
+      &__content{
+        width: 160px;
+        height: 160px;
+        padding-top: 32px;
+        text-align: center;
+        &__text{
+          font-size: 22px;
+          color:#ffffff;
+          width: 60px;
+          height: 33px;
+          margin: 0 auto;
+        }
+        &__icon{
+          width: 60px;
+          height: 54px;
+          margin: 0 auto;
+          i{
+            color: #ffffff;
+            box-sizing: border-box;
+            font-size: 60px;
+          }
+        }
+      }
+    }
   }
   .main{
     margin: 0 auto;
+    background-color: #ffffff;
     .main-header{
       width: 600px;
       height: 100px;
@@ -21,6 +55,8 @@
       }
       .category{
         display: flex;
+        margin: 0 auto;
+        justify-content: center;
         .ladies{
           margin: 10px 0px 0px 10px;
         }
