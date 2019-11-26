@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "credit"
  @import "fotter";
  @import "credit2";
  @import "header"; 
@@ -24,3 +26,4 @@
  @import "login";
  @import "new-products";
  @import "tel";
+
