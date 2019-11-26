@@ -43,8 +43,27 @@
       margin: 0 auto;
     }
     .box_show {
-      &__icon {
-        
+      display: flex;
+      max-width: 320px;
+      margin: 0 auto;
+      padding: 24px 0;
+      .show_left {
+        &__icon {
+
+        }
+        &__info{
+          margin-top: 8px;
+        }
+        &__expire {
+          margin-top: 8px;
+        }
+      }
+      .show_right {
+        &__delete{
+          display: block;
+          text-decoration: none;
+          color: inherit;
+        }
       }
     }
   }

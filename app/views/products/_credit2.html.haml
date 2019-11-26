@@ -8,14 +8,15 @@
         %h3 
           クレジットカード一覧
         .box_show
-          .box_show__icon
-            = icon('fab', 'cc-jcb')
-          .box_show__info
-            ✖︎✖︎✖︎✖︎✖︎✖︎✖︎✖︎1039
-          .box_show__expire
-            07/23
-          .box_show__delete
-            =link_to "#" do
+          .show_left
+            .show_left__icon
+              = icon('fab', 'cc-jcb')
+            .show_left__info
+              ✖︎✖︎✖︎✖︎✖︎✖︎✖︎✖︎1039
+            .show_left__expire
+              07/23
+          .show_right
+            =link_to "#", class: "show_right__delete" do
               削除する
 
 
