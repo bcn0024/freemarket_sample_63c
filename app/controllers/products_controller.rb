@@ -1,11 +1,10 @@
 class ProductsController < ApplicationController
 
-  # def index
+  def index
+  end
 
   def firstchoice
-
-    
-  # end
+  end
 
   def new
     @product = Product.new
