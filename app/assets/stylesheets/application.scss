@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "header"; 
+ @import "kaiinzyouhou";
+ @import "firstchoice";
  @import "reset";
  @import "font-awesome-sprockets";
- @import "./font-awesome";
- @import "header";
- 
+ @import "font-awesome";
+ @import "login";
+ @import "new-products";
+ @import "tel";
