@@ -1,0 +1,444 @@
+.content-sell{
+     text-align: center;
+}
+
+
+
+    .new-product{
+        padding: 0;
+        width: 700px;
+        position: relative;
+        background-color: #fff;
+        margin: auto;
+        
+        
+        h2{
+            font: 66.66667% sans-serif;
+            cursor: auto;
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+            color: rgb(51, 51, 51);
+            box-sizing: inherit;
+            border-style: solid;
+            border-width: 0;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 24px 8px;
+            font-size: 22px;
+            line-height: 1.5;
+            text-align: center;
+            font-weight:bold;
+            text-align: center;
+           
+        }
+        .new-form{
+            & form{
+                .product-firld{
+                    //padding: 40px;
+                    border-top: 1px solid #eee;
+                    width: 88%;
+                    & h3{
+                        font-weight:bold;
+                        font-size: 16px;
+                    }
+                    .product-name{
+                        margin: 0;
+                        & label{
+                            display: inline-block;
+                            font-weight: 600;
+                            & span{
+                                background: #ea352d;
+                                color: #fff;
+                                margin: 0 0 0 8px;
+                                padding: 2px;
+                                border-radius: 2px;
+                                font-size: 12px;
+                                vertical-align: top;
+                            }
+                        }
+                    }
+                    .product-description{
+                        background-repeat: no-repeat;
+                    }
+                }
+                .product-firld{
+                    font-size: 16px;
+                    display: inline-table;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    font-weight:bold;
+                    padding: 40px;
+                    & h3{
+                        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                        color: rgb(51, 51, 51);
+                        font-size: 16px;
+                        & span{
+                            background: #ea352d;
+                            margin: 0 0 0 8px;
+                            padding: 2px 4px;
+                            border-radius: 2px;
+                            color: #fff;
+                            font-size: 12px;
+                            vertical-align: top;
+                        }
+                    }
+                    .sell-dropbox-container{
+                        display: flec
+                    }
+                    & p{
+                        margin:8px 0 0;
+                        line-height: 1.5;
+                        font-size: 14px;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+  
+
+
+.sell-content{
+    padding: 40px;
+    border-top:1px solid #eee;
+    display:block;
+    clear:both;
+
+}
+
+.form-group{
+    margin: 0;
+    margin-top: 40px;
+    & label{
+        font-weight: 600;
+        display: inline-block;
+        text-align: unset;
+        & span{
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top
+        }
+    }
+    
+
+
+}
+
+.textarea-default{
+    width: 97%;
+    height: 120px;
+    margin: 8px 0 0;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 42px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.sell-images{
+    .sell-image{
+        display: block;
+        width: 620px;
+        min-height: 162px;
+        position: relative;
+        background: #f5f5f5;
+        border: 1px dashed #ccc;
+        font-size: 0;
+        text-align: center;
+        transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+        cursor: pointer;
+        float: right;
+        & input{
+            display: none;
+        }
+        & pre{
+            position: absolute;;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+            text-align: center;
+            font-size:14px;
+            line-height: 1.5;
+            transform: translate(0, -50%);
+            pointer-events: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+    }
+
+}
+
+
+.form-product-name{
+    margin: 0;
+    & label{
+    font-weight: 600;
+    display: inline-block;
+    text-align: unset;
+        & span{
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top
+       }
+    }
+}
+
+.form-product-ex{
+    margin-top: 40px;
+    & label{
+    font-weight: 600;
+    display: inline-block;
+    text-align: unset;
+        & span{
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top
+        }
+    }
+}
+
+.sell-sub-head{
+    color: #888;
+    font-size: 14px;
+    float: left;
+    font-weight: bold;
+}
+.sell-form-box{
+    float: right;
+    width: 400px;
+    margin: 0;
+    margin-top: 40px;
+    display: contents;
+    & label{
+        font-weight: 600;
+        display: inline-block;
+        text-align: unset;
+            & span{
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top
+            }
+     }
+}
+.select-wrap{
+    margin: 8px 0 0;
+    position: relative;
+    background: #fff;
+    & i{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    color: #888;
+    font-size: 8px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    }
+    & select{
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border:1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+.name-space{
+    input{
+        width: 95%;
+        margin: 8px 0 0;
+        // height: px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+    }
+}
+
+.sell-form-right{
+    float: right;
+    width: 400px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.sell-content-question{
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0099e8;
+        display: inline-block;
+        text-align: center;
+    & a{
+        text-decoration: underline;
+        // opacity: .7;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+    
+    }
+}
+
+.sell-content-tax{
+    padding:40px;
+    border-top:1px solid #eee;
+    display:block;
+    clear:both;
+    display: flow-root;
+    h3{
+    color: #888;
+    font-size: 14px;
+    float: left;
+    }
+    a{
+
+    }
+}
+
+.content-bb{
+    list-style:none;
+    width: 400px;
+    float: right;
+    & li{
+        padding: 0 0 24px;
+        // border: 0;
+        text-align: -webkit-match-parent;
+        border-bottom:1px solid #eee;
+    }
+}
+
+.clearfix-bb{
+    display: flex;
+    justify-content: space-between;
+    & label{
+        margin-top: 16px;
+    }
+    
+ 
+    .sell-price-input{
+        display: flex;
+        width: 50%;
+        float: right;
+        & p{
+            margin-top: 16px;
+        }
+        .input-price{
+            width: 80%;
+            margin: 0 0 0 5%;
+            & input{
+                 height: 28px;
+                 padding: 10px 16px 8px ;
+                 border-radius: 4px;
+                 border: 1px solid #ccc;
+                 background: #fff;
+                 line-height: 1.5;
+                 font-size: 16px;
+                 text-align:right;
+                 margin: 0;
+            }
+        }
+    }
+}
+
+.product-tax{
+    margin:24px 0;
+    display: flex;
+    justify-content: space-between;
+    .l-right{
+        float: right;
+    }
+}
+
+.product-tax-bold{
+    margin:24px 0;
+     display: flex;
+     justify-content: space-between;
+     font-weight: 600;
+     .l-right{
+        float: right;
+     }
+}
+
+.sell-btn-box{
+    padding: 40px;
+    border-top: 1px solid #eee;
+    & input{
+        margin: 40px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+    }
+    .sell-return{
+        font: 66.66667% sans-serif;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        box-sizing: inherit;
+        padding: 0;
+        touch-action: manipulation;
+        text-decoration: none;
+        display: block;
+        line-height: 48px;
+        font-size: 14px;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+        width: 45%;
+        margin: 24px auto 0;
+    }
+}
+
+.ex{
+    & p{
+        line-height: 1.5;
+        & a{
+            color: #0099e8;
+            text-decoration: none;
+        }
+    }
+   
+}
+
+
+
+
+
