@@ -1,0 +1,166 @@
+.body  
+  .contents
+    .contents__header
+      %h1
+        =link_to "https://www.mercari.com/jp/", id:"" do
+          %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229"}/
+    .contents__main
+      .new-product
+        %h2
+          商品の情報を入力
+        .new-form
+          = form_for [@product] do |f|
+            .product-firld
+              %h3.classsell-upload-head
+                出品画像
+                %span.form-require
+                  必須
+              %p
+                最大10枚までアップロードできます。
+              .sell-images
+                .sell-image
+                  %pre
+                    ドラッグアンドドロップ
+                    /react-text: 125
+                    を必ずご確認ください。またはクリックしてファイルをアップロード
+            .sell-dropbox-container
+              .sell-content
+                .form-product-name
+                  %label
+                    商品名
+                    %span.form-require
+                      必須
+                  .name-space
+                    = f.text_field :name, class: 'form__message', placeholder: '商品名（必須40字まで）'
+                .form-product-ex
+                  %label
+                    商品の説明
+                    %span.form-require
+                      必須
+                  = f.text_field :description, class: 'textarea-default', rows: '5' ,placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+              .sell-content
+                %h3.sell-sub-head
+                  商品の詳細
+                .sell-form-right
+                  .sell-form-box
+                    %label
+                      カテゴリー 
+                      %span.form-require
+                        必須
+                    .select-wrap
+                      =icon('fas', 'chevron-down')
+                      = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"] ],class:"form-control"
+                    .form-group
+                      %label
+                        商品の状態
+                        %span.form-require
+                          必須
+                      .select-wrap
+                        =icon('fas', 'chevron-down')
+                        = f.select :status, [["---", "---"],["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]],class:"form-control"
+              .sell-content
+                %h3.sell-sub-head
+                  配送料について
+                .sell-content-question
+                  =link_to "https://www.mercari.com/jp/help_center/article/68/", id:"" do
+                    ?
+                .sell-form-box
+                  .form-group
+                    %label
+                      配送料の負担
+                      %span
+                        必須
+                    .select-wrap
+                      =icon('fas', 'chevron-down')
+                      = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+                  .form-group
+                    %label
+                      配送元の地域
+                      %span
+                        必須
+                    .select-wrap
+                      =icon('fas', 'chevron-down')
+                      = f.select :region, [["---", "---"], ["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"],["未定", "未定"]],class:"form-control"
+                  .form-group
+                    %label
+                      発送までの日数
+                      %span
+                        必須
+                    .select-wrap
+                      =icon('fas', 'chevron-down')
+                      = f.select :arrival_date, [["---", "---"], ["2~3日で発送", "2~3日で発送 "], ["3~4日で発送", "3~4日で発送 "], ["4~7日で発送", "4~7日で発送 "]],class:"form-control"
+              .sell-content-tax
+                %h3.exam-tax
+                  販売価格(300〜9,999,999)
+                  .sell-content-question  
+                    =link_to "https://www.mercari.com/jp/privacy/", id:"" do
+                      ?
+                .sell-form-box
+                  %ul.content-bb
+                    %li
+                      .clearfix-bb
+                        %label
+                          価格
+                          %span
+                            必須
+                        .sell-price-input
+                          %p
+                            ¥
+                          .input-price
+                            = f.text_field :price, class: 'form__message', placeholder: '例）３００'
+                    %li.product-tax
+                      .l-left
+                        販売手数料（１０％）
+                      .l-right
+                        ー
+                    %li.product-tax-bold
+                      .l-left
+                        販売利益
+                      .l-right
+                        ー
+              .sell-btn-box
+                .ex
+                  %p
+                    %a{href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", target: "_blank"} 禁止されている出品
+                    //react-text
+                    %a{href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", target: "_blank"} 行為
+                    /react-text: 125
+                    を必ずご確認ください。
+                    / /react-text
+                  %p
+                    / react-text: 127
+                    またブランド品でシリアルナンバー等がある場合はご記載ください。
+                    / /react-text
+                    %a{href: "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", target: "_blank"} 偽ブランドの販売
+                    / react-text: 129
+                    は犯罪であり処罰される可能性があります。
+                    / /react-text
+                  %p
+                    / react-text: 131
+                    また、出品をもちまして
+                    / /react-text
+                    %a{href: "https://www.mercari.com/jp/seller_terms/"} 加盟店規約
+                    / react-text: 133
+                    に同意したことになります。
+                    / /react-text
+                = f.submit '出品する', class: 'submit-product'
+                %a.sell-return
+                  もどる
+    .contents__footer
+      %nav
+        %ul
+          %li
+            =link_to "https://www.mercari.com/jp/privacy/", id:"" do
+              プライバシーポリシー
+          %li
+            =link_to "https://www.mercari.com/jp/tos/", id:"" do
+              メルカリ利用規約
+          %li
+            =link_to "", id:"https://www.mercari.com/jp/tokutei/" do
+              特定商取引に関する表記
+      =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
+        %img(src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229" alt="mercari")/
+      %p
+        %small
+          ©︎2019 Mercari （編集済み） 
+   
