@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def index
   end
 
-  def top
+  def coach
   end
 
   def new

@@ -1,0 +1,30 @@
+.header_nav {
+  border-top: solid 1px #F5F5F5;
+  .nav_box {
+    width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    padding: 16px 0;
+    .nav_list {
+      font-size: 14px;
+      font-weight: 400;
+      &__anchor {
+        color: #333333;
+        text-decoration: none;
+      }
+      &__anchor:hover {
+        border-bottom: 1px solid #333333;
+        opacity: 0.7;
+      }
+      &__icon {
+        margin: 0 8px;
+        color: #D5D5D5;
+
+      }
+    }
+    .nav_list--current {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}

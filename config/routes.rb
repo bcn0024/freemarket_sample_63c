@@ -4,9 +4,25 @@ Rails.application.routes.draw do
   # 
 
 
+  root to:  'users#new2'
+  
+  root to:  'users#new3'
 
-  root to:  'products#purchase'
-  resources :products, only: [:index, :create,:new]
+  
+
+  root to: 'users#new'
+
+  root to:  'products#profile'
+
+  root to:  'users#index1'
+
+
+
+
+  
+ 
+  root to:  'products#top'
+　resources :products, only: [:index, :create,:new]
   resources :users, only: :index
 
 end
