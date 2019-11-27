@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   end
 
+  def new4
+    @user = User.new
+
+  end
+
   def kaiinzyouhou
 
 
