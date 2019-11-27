@@ -3,7 +3,12 @@ class UsersController < ApplicationController
     
   end
 
+
+  def new
+    @user = User.new
+
   def kaiinzyouhou
+
 
   end
 end
