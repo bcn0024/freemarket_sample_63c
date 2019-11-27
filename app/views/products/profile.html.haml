@@ -1,0 +1,16 @@
+.profile-body
+  .profile-head
+    %h2 プロフィール
+  
+  .image-tag
+    .image-second
+      .image-cat
+        =image_tag("/assets/667391445.jpg", height: "50px", width: "50px")
+      %input.input-image{name: "phone_number", placeholder: "takanari", type: "text", value: ""}
+  
+  .image-text    
+    %input.text{name: "phone_number", placeholder: "takanari", type: "text", value: "", cols: "50", rows: "10"}
+
+  .image-change
+    .image-change-btn
+      変更する  
