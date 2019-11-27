@@ -25,16 +25,13 @@
       .contents-add-input
         .add-head
           %h2
-            支払い方法
+            会員登録が完了しました。
         .add-bottom
-          .add-bottom__name
-            %label
-              カード番号
-            %span
-              必須
-            .name-first
-              %input.input-default{:name => "phone_number", :placeholder => "半角英数字のみ ", :type => "tel", :value => ""}/
-            .card-image
-              
+          .add-bottom__message
+            %p
+              ありがとうございます。
+            %p
+              会員登録が完了いたしました。
+        .add-last-btn
+          %button.login-submit.btn-default.btn-red{:type => "submit"} メルカリを始める 
     = render partial: "users/footer"
-          

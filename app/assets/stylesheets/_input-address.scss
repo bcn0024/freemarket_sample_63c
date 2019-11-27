@@ -243,3 +243,29 @@
        }
     }
 }
+
+.add-bottom__message{
+    margin-top: 50px;
+    text-align: center;
+   & p{
+       font-weight: 500;
+       font-size: 20px;
+   }
+}
+
+.add-last-btn{
+    // display: grid;
+    text-align: center;
+    // width: 100%;
+    & button{
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: initial;
+        width:50%;
+        line-height: 48px;
+        font-size: 16px;
+        margin-top: 32px;
+        margin-bottom:50px;
+    }
+}
