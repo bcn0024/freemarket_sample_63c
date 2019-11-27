@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to:  'products#profile'
 
-  root to:  'users#new'
+  root to:  'users#index1'
 
 
   root to:  'products#top'

@@ -2,6 +2,7 @@
   background-color: white;
   position: relative;
   z-index: 3;
+  padding-bottom: 20px;
   .header-top{
     width: 1020px;
     margin: 0 auto;
@@ -31,6 +32,9 @@
         border-color: gray;
         border-image: initial;
         position: relative;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         &__icon{
           position: absolute;
           top:0px;
@@ -42,23 +46,54 @@
     }
   }
   .header-bottom{
-    margin-top: 8px;
+    margin: 8px auto 0;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
     width: 1020px;
     .bottom-header1{
       display: flex;
       &__category{
         margin: 0px;
         padding: 0 0 0 15px;
+        i {
+          color: red;
+        }
+        a {
+          color: inherit;
+          font-size: 14px;
+          font-weight: 700;
+        }
+        a:hover {
+          color: #0099e8;
+        }
+      }
+      &__category:first-child{
+        padding-left: 0;
       }
     }
     .bottom-header2{
       display: flex;
+      justify-content: space-between;
+      &__category:hover{
+        i,a {
+          color: #0099e8!important;
+        }
+      }
       &__category{
         padding-right: 20px;
         font-weight: normal;
+        i {
+          color: #CCCCCC;
+        }
+        a {
+          color: inherit;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      
+      &__category:last-child{
+        padding-right: 0;
       }
     }
   }

@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
-  def index
+  def index1
     
   end
 
 
   def new
     @user = User.new
+
+  end
 
   def kaiinzyouhou
 
