@@ -1,0 +1,138 @@
+.main-right {
+  width: 700px;
+  background-color: #fff;
+}
+
+.check {
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 34px;
+  color: #333333;
+  font-weight: 700;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.main_form {
+  padding: 64px;
+}
+
+.form_head {
+  &__message {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333333;
+    font-weight: 400;
+  }
+  &__upload {
+    text-align: right;
+    margin: 8px 0 0;
+  }
+  &__link:hover {
+    border-bottom: 1px solid #0099e8;
+    opacity: 0.6;
+  }
+  &__link {
+    color: #0099e8;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 200;
+  }
+}
+
+.form_bottom {
+  &__upload {
+    text-align: right;
+    margin: 8px 0 0;
+  }
+  &__link:hover {
+    border-bottom: 1px solid #0099e8;
+    opacity: 0.6;
+  }
+  &__link {
+    color: #0099e8;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 200;
+  }
+}
+
+.form_box {
+  margin-top: 40px;
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+  }
+  p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #333333;
+  }
+  span {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+    background-color: #CCCCCC;
+    padding: 2px 4px;
+    border-radius: 2px;;
+  }
+  &__input{
+    width: 100%;
+    height: 48px;
+    padding: 10px 16px 8px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  &__input:focus {
+    outline: 0px;
+    border-color: #1D9EE9;
+  }
+  &__select {
+    position: relative;
+    i {
+      position: absolute;
+      right: 16px;
+      top: 33%;
+      color: #888888;
+    }
+    select {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1.5;
+      cursor: pointer;
+      background-color: #fff;
+      -webkit-appearance: none;
+      border: 1px solid #ccc;
+    }
+    select:focus {
+      outline: 0px;
+      border-color: #1D9EE9;
+    }
+  }
+}
+
+.form_submit {
+  background-color: red;
+  border: solid 1px red;
+  margin: 40px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #ffffff;
+  width: 100%;
+}

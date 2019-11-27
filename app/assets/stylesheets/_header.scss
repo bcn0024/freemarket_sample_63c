@@ -1,65 +1,89 @@
 .header{
   background-color: white;
-  position: relative;
-  z-index: 3;
+  padding-bottom: 15px;
   .header-top{
     width: 1020px;
     margin: 0 auto;
     padding: 8px 0 0;
     display: flex;
-    &__image{
-      width: 200px;
-      // height: 200px;
-    }
-    &__form{
-      position: relative;
-      // height: 300px;
+  }
+  .header_form {
+    position: relative;
+    margin-left: 45px;
+    width: 100%;
+    &__input{
       width: 100%;
-      margin-left: 45px;
-      &__input{
-        background-color: #f5f5f5;
-        width: 100%;
-        height: 40px;
-        border-radius: 4px;
-        padding: 0 50px 0 10px;
-        font-size: 16px;
-        font-family: serif,sans-serif;
-        line-height: 2.5;
-        transition: all ease-out .3s;
-        border-width: 1px;
-        border-style: solid;
-        border-color: gray;
-        border-image: initial;
-        position: relative;
-        &__icon{
-          position: absolute;
-          top:0px;
-          right:10px;
-        }
+      height: 40px;
+      padding: 0 42px 0 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background-color: #F5F5F5;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    &__input:focus {
+      outline: 0px;
+      border-color: #1D9EE9;
+    }
+    &__icon{
+        position: absolute;
+        top: 20%;
+        right: 1.5%;
       }
-        
-      
     }
   }
   .header-bottom{
-    margin-top: 8px;
+    margin: 8px auto 0;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
     width: 1020px;
     .bottom-header1{
       display: flex;
       &__category{
         margin: 0px;
-        padding: 0 0 0 15px;
+        padding: 0 0 0 22px;
+        i {
+          color: red;
+          margin-right: 4px;
+        }
+        a {
+          color: inherit;
+          font-size: 14px;
+          font-weight: 700;
+        }
+        a:hover {
+          color: #0099e8;
+        }
+      }
+      &__category:first-child{
+        padding-left: 0;
       }
     }
     .bottom-header2{
       display: flex;
+      justify-content: space-between;
+      &__category:hover{
+        i,a {
+          color: #0099e8!important;
+        }
+      }
       &__category{
-        padding-right: 20px;
+        padding-right: 28px;
         font-weight: normal;
+        i {
+          color: #CCCCCC;
+          margin-right: 10px;
+        }
+        a {
+          color: inherit;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      
+      &__category:last-child{
+        padding-right: 0;
       }
     }
   }
-}
