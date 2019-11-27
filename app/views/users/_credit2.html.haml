@@ -16,8 +16,8 @@
             .show_left__expire
               07/23
           .show_right
-            =link_to "#", class: "show_right__delete" do
-              削除する
+            = form_for [@user] do |f|
+              =f.submit "削除する", class: "show_right__delete" 
 
 
           

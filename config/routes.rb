@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   # 
 
 
+  root to:  'users#new2'
+  
+  root to:  'users#new3'
+
+  
+
   root to: 'users#new'
 
   root to:  'products#profile'
