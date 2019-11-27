@@ -74,7 +74,55 @@
     color: #333333;
   }
   span {
-    
+    margin-left: 8px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+    background-color: #CCCCCC;
+    padding: 2px 4px;
+    border-radius: 2px;;
+  }
+  &__input{
+    width: 100%;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  &__input:focus {
+    outline: 0px;
+    border-color: #1D9EE9;
+  }
+  &__select {
+    position: relative;
+    i {
+      position: absolute;
+      right: 16px;
+      top: 33%;
+      color: #888888;
+    }
+    select {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1.5;
+      cursor: pointer;
+      background-color: #fff;
+      -webkit-appearance: none;
+      border: 1px solid #ccc;
+    }
+    select:focus {
+      outline: 0px;
+      border-color: #1D9EE9;
+    }
   }
 }
 
