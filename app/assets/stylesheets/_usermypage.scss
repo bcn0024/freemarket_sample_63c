@@ -1,10 +1,17 @@
-.content {
+.main {
+  max-width: 1440px;
   background-color: #F5F5F5;
 }
 
-.user_main {
-  max-width: 700px;
+.main_body {
+  max-width: 1020px;
   margin: 0 auto;
+  padding: 40px 0 10px;
+  overflow: hidden;
+}
+
+.user_main {
+  float: right;
 }
 
 .user_top,.user_news {
