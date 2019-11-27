@@ -1,0 +1,52 @@
+.pic{
+  color: white;
+  background: url(https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg);
+  background-position: center center;
+  background-size: cover;
+  &__se{
+    display: flex;
+    width: 750px;
+    margin: 0 auto;
+    .main{
+      // display: flex;
+      &__one{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      &__two{
+        font-size: 35px;
+        margin-bottom: 20px;
+      }      
+    }
+    .main-2{
+      display: flex;
+      &__three{
+        
+        img{
+          height: 68px;
+          width: 68px;
+          margin-right: 20px;
+        }
+      }
+      &__for{
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 144px;
+      }
+      &__five{
+        margin-top: 10px;
+        height: 40px;
+        width: 144px;
+      }
+    }
+    .main-3{
+      img {
+        margin-left: 50px;
+        height: 100%;
+        width: 300px;
+      }
+    }
+  }
+}

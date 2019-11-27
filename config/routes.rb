@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # 
 
 
-  root to:  'products#index'
+
+  root to:  'products#top'
+
   resources :users, only: :index
 
 end
