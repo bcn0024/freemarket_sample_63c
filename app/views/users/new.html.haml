@@ -1,2 +1,11 @@
-.content
-  = render partial: "usercheck"
+.wrapper
+  =render partial: "header"
+  =render partial: "header-nav2"
+
+  .main
+    .main_body
+      =render partial: "sidebar"
+      =render partial: "usercheck"
+
+  =render partial:"footer-imag"
+  =render partial:"footer"
