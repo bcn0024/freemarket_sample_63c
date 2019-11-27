@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
 
 
+  root to:  'users#new'
+
+
   root to:  'products#top'
+
 
   resources :users, only: :index
 
