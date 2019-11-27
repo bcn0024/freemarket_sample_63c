@@ -7,11 +7,7 @@
   max-width: 1020px;
   margin: 0 auto;
   padding: 40px 0 10px;
-  overflow: hidden;
-}
-
-.user_main {
-  float: right;
+  display: flex;
 }
 
 .user_top,.user_news {
@@ -20,6 +16,10 @@
 
 .user_good {
   background-color: #fff;
+}
+
+.user_main {
+  width: 700px;
 }
 
 .user_top {
