@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
 
-  root to:  'products#top'
+  root to:  'products#coach'
   resources :users, only: :index
 
 end
