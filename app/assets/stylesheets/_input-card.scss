@@ -1,0 +1,91 @@
+.add-bottom__remit{
+    margin-top: 40px;
+        & label{
+            font-weight: 600;
+            display: inline-block;
+        }
+        .remit-card{
+            position: relative;
+            width: 50%;
+            display: flex;
+            & i{
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                z-index: 2;
+                color: #888;
+                font-size: 16px;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                margin-right: 15px;
+            }
+            & select{
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                padding-right: 30px;
+                cursor: pointer;
+                width: 93%;
+                margin: 8px 0 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+              }
+            & p{
+                padding-top:22px;
+                padding-left:10px;
+            }
+        }
+       
+    
+       
+}
+
+.card-content-question  {
+    text-align: right;
+    .question-card  {
+        
+            text-decoration: none;
+            // opacity: .7;
+            color: #fff;
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0099e8;
+            display: inline-block;
+            text-align: center;
+    }
+    .question-message{
+        text-decoration: none;
+        color: #0099e8;
+
+    }
+}         
+    
+
+//    .card-content-question{
+//     width: 14px;
+//     height: 14px;
+//     border-radius: 50%;
+//     background: #0099e8;
+//     display: inline-block;
+//     text-align: center;
+//     & a{
+//     text-decoration: underline;
+//     // opacity: .7;
+//     color: #fff;
+//     line-height: 14px;
+//     font-size: 12px;
+//     text-align: center;
+
+//   }
+// }

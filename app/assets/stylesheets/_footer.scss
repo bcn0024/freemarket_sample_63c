@@ -4,8 +4,9 @@
   font-size: 12px;
   padding: 0px 20px 10px;
   &__main{
-    width: 1020px;
+    max-width: 1050px;
     display: flex;
+    margin: 0 auto;
     &__list1{
       padding-left: 0px;
     }
@@ -38,6 +39,7 @@
 
 .main__list1{
   margin-top: 20px;
+  width: 168px;
 }
 
 .main__list2 {
@@ -61,17 +63,18 @@
 }
 
 .bottom{
-  width: 1020px;
+  width: 948px;
   margin: 30px;
+  text-align: right;
 }
 
-img{
+.byu{
   height: 33px;
   width: 124px;
   margin-right: 40px;
 }
 
-span {
+.scj {
   margin-left: 300px;
   line-height: 45px;
   text-align: center;
