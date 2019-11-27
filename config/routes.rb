@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
  
   root to:  'products#top'
-　resources :products, only: [:index, :create,:new]
+  resources :products, only: [:index, :create,:new]
   resources :users, only: :index
 
 end
