@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-  end
-
-  def coach
+    @user = User.new
   end
 
   def new
