@@ -6,26 +6,6 @@
   color: #333;
   line-height: 1;
   .contents{
-    &__header{
-      height: 128px;
-      text-align: center;
-      h1{
-        margin: 40px 0 0;
-        display: inline-block;
-        a{
-          width: 185px;
-          height: 49px;
-          line-height: 49px;
-          display: inline-block;
-          margin: 0 8px 0 0;
-          color: #0099E8;
-          text-decoration: none;
-          img{
-            vertical-align: middle;
-          }
-        }
-      }
-    }
     &__main{
       display: block;
       .main-head{
