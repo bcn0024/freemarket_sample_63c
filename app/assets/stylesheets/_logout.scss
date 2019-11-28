@@ -1,25 +1,28 @@
 .logout{
-  background-color: rgb(204, 199, 199);
-  &__main{
-    border-top: 1px solid #fefefe;
-    padding: 64px;
-    &__action{
-      background-color: white;
-      border-top: 1px solid #fefefe;
-      max-width: 320px;
-      margin: 0 auto;
-      &__single{
-        
-        &__btn{
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
-          display: block;
-          font-size: 14px;
-          text-align: center;
-          line-height: 48px;
-          width: 100%;
-        }
+  float: right;
+  width: 700px;
+  .logout-chapter{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    .single {
+      padding: 64px;
+      .logout-content {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .single-btn {
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+      }
+      .input {
+        border: 0;
+        outline: 0;
       }
     }
   }
