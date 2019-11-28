@@ -1,13 +1,13 @@
 .body
   .contents
-    = render partial: "users/header"
+    = render partial: "layouts/header"
     .contents__main
       .container
         %h2.registration
           新規会員登録
         .registration-form
           .form-contents
-            =link_to "https://www.mercari.com/jp/signup/registration/", class: "mail", id:"" do
+            =link_to new_user_registration_path, class: "mail", id:"" do
               = icon('fas', 'envelope', class: "mail-icon")
               メールアドレスで登録する
             %button.facebook
@@ -15,4 +15,4 @@
               Facebookで登録する
             %button.google
               Googleで登録する
-    = render partial: "users/footer"
+    = render partial: "layouts/footer"

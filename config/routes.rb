@@ -3,25 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # 
 
-  root to:  'products#coach'
-  root to:  'users#new2'
+  root to:  'products#index'
   
-  root to:  'users#new3'
-  
-
-  root to: 'users#new'
-
-  root to:  'products#profile'
-
-  root to:  'users#index1'
-
-
-
-
-  
- 
-  root to:  'products#top'
   resources :products, only: [:index, :create,:new]
-  resources :users, only: :index
+  resources :users, only: [:index, :create, :new]
 
 end
