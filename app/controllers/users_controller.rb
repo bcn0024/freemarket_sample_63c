@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def new6
+    @user = User.new
+  end
+
   def kaiinzyouhou
 
 

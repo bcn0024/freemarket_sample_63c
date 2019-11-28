@@ -143,6 +143,7 @@
       }
     }
   }
+}
       
               
 body{
@@ -503,7 +504,7 @@ body{
         }
       }
     }
-  
+}
 .item-detail-message{
   width: 700px;
   background-color: lightsteelblue;
@@ -776,16 +777,12 @@ body{
       }
     }
   }
-
-        }
-      }
-    }
-  } 
 }
+
 .top-nav{
   background: #f5f5f5;
   &__content{
-    widzth: 1020px;
+    width: 1020px;
     margin: 0 auto;
     padding: 16px 0;
     display: flex;
