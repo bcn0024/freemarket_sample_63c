@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   root to:  'products#index'
   
-  resources :products, only: [:index, :create,:new]
+  resources :products, only: [:index, :create,:new] do
+    resources :images, only: [:index]
+  end
   resources :users, only: [:index, :create, :new]
+  
 
 end

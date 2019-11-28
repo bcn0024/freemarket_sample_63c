@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
 
   def index
     @user = User.new
+    @products = Product.all
+    @image = Image.first
   end
 
   def new
@@ -10,4 +12,5 @@ class ProductsController < ApplicationController
 
   def create
   end
+
 end
