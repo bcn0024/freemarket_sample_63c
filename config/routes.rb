@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # 
 
 
-  root to:  'users#new2'
+  root to:  'users#new5'
   
   root to:  'users#new3'
   
