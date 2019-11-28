@@ -32,7 +32,7 @@
         margin: 0 auto;
         background-color: #fff;
         width: 700px;
-        &__confirmation{
+        .single-head__confirmation{
           padding: 20px;
           text-align: center;
           display: block;
@@ -49,6 +49,11 @@
           border-top: 1px solid #f5f5f5;
           .content{
             max-width: 320px;
+            background-color: #fff;
+            & li{
+              text-decoration: none;
+              list-style: none;
+            }
             .return-top{
               max-width: 320px;
               display: block;
@@ -56,10 +61,9 @@
               text-decoration: none;
               .return{
                 text-decoration: none;
+                
               }
-              li{
-                text-decoration: none;
-              }
+              
             }
           }
         }

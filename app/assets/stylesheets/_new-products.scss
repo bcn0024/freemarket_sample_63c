@@ -222,7 +222,7 @@
     float: left;
     font-weight: bold;
 }
-.sell-form-box{
+.sell-form-select{
     float: right;
     width: 400px;
     margin: 0;
@@ -273,6 +273,9 @@
         -moz-appearance: none;
         appearance: none;
     }
+    &__bottom{
+        margin-top:20px;
+    }
 }
 
 .name-space{
@@ -289,7 +292,7 @@
     }
 }
 
-.sell-form-right{
+.sell-form-kateg{
     float: right;
     width: 400px;
     margin: 0;
@@ -436,6 +439,10 @@
         }
     }
    
+}
+
+.purchase-pref{
+    background: #fff;
 }
 
 
