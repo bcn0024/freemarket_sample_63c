@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   end
 
+
+  def new4
+    @user = User.new
+
   def new2
     @user = User.new
   end
