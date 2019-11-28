@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # 
 
 
+  root to:  'users#index1'
   root to:  'products#coach'
   root to:  'users#new2'
   
@@ -11,10 +12,8 @@ Rails.application.routes.draw do
   
 
   root to: 'users#new'
-
   root to:  'products#profile'
 
-  root to:  'users#index1'
 
 
 
