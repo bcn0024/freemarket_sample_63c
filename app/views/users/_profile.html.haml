@@ -6,11 +6,11 @@
     .image-second
       .image-cat
         =image_tag("/assets/667391445.jpg", height: "50px", width: "50px")
-      %input.input-image{name: "phone_number", placeholder: "takanari", type: "text", value: ""}
+      %input{name: "phone_number", placeholder: "例)AYA⭐️セール中", type: "text", value: "", class: "image-second__input"}
   
   .image-text    
-    %input.text{name: "phone_number", placeholder: "takanari", type: "text", value: "", cols: "50", rows: "10"}
-
-  .image-change
-    .image-change-btn
-      変更する  
+    %textarea{name: "phone_number", placeholder: "takanari", type: "text", value: "", cols: "50", rows: "10",  class: "image-text__input"}
+    .image-change
+      = form_for [@user] do |f|
+        =f.submit "変更する", class: "image-change-btn" 
+      
