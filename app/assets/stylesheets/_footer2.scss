@@ -1,0 +1,42 @@
+.contents__footer{
+  width: 456px;
+  height: 140px;
+  margin: 0 auto;
+  padding: 90px 0px 40px 0px;
+  text-align: center;
+  nav{
+    ul{
+      font-size: 0;
+      list-style-type: disc;
+      li:first-child{
+        margin: 0;
+      }
+      li{
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 0 0 16px;
+        a{
+          height: 12px;
+          color: #333;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .mercari-icon{
+    display: block;
+    color: #333;
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    text-decoration: none;
+    touch-action: manipulation;
+  }
+  p{
+    margin: 8px 0 0;
+    display: block;
+    small{
+      font-size: 12px;
+    }
+  }
+}
