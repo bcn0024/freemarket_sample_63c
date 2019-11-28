@@ -7,12 +7,12 @@
           発送元・お届け先住所入力
         .buy-contents
           .content
-            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-              .purchase-pref
+            .purchase-pref
+              = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
                 .form-group-first
                   %label{for: "name"} お名前
                   %span.require 必須
-                  = f.text_field :kanji_surname, placeholder: "例) 山田", type:"text", class:'default' value:""
+                  = f.text_field :kanji_surname, placeholder: "例) 山田", type:"text", class:'default' value:''
                   -# %input.default{name: "family_name", placeholder: "例) 山田", type: "text", value: ""}/
                   = f.text_field :kanji_given_name,placeholder: "例) 彩", type: "text", value: "",class:'default'
                   -# %input.default{name: "first_name", placeholder: "例) 彩", type: "text", value: ""}/
@@ -39,7 +39,7 @@
               .form-group
                 %label{for: "address1_label"} 番地
                 %span.require 必須
-                 = f.text_field :municipalities, placeholder: "例) 青山1−1−1", type:"text", class:'default' value:""
+                = f.text_field :municipalities, placeholder: "例) 青山1−1−1", type:"text", class:'default' value:""
                 -# %input.default{name: "address1", placeholder: "例) 青山1−1−1", type: "text", value: ""}/
               .form-group
                 %label{for: "address2_label"} 建物名

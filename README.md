@@ -48,6 +48,7 @@ Things you may want to cover:
 ### Addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|

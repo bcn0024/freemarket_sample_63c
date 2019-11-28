@@ -10,4 +10,7 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def create
+  end
+
 end
