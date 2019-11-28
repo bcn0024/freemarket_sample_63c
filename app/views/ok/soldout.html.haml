@@ -1,0 +1,14 @@
+.body
+  .contents
+    = render partial: "users/header"
+    .contents__main
+      .main-head
+        .single-head__confirmation
+          商品は既に売り切れています
+        .buy-contents
+          .content
+            .return-top
+            %li
+              =link_to "", id:"",class: "return" do
+                商品画面へ戻る
+    = render partial: "users/footer"

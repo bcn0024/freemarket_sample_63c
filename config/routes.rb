@@ -4,14 +4,24 @@ Rails.application.routes.draw do
   # 
 
 
-  
   root to:  'users#index1'
+  root to:  'products#coach'
+  root to:  'users#new2'
+  
+  root to:  'users#new3'
+  
+
+  root to: 'users#new'
   root to:  'products#profile'
 
 
 
-  root to:  'products#top'
 
+
+  
+ 
+  root to:  'products#top'
+  resources :products, only: [:index, :create,:new]
   resources :users, only: :index
 
 end
