@@ -33,6 +33,9 @@ Things you may want to cover:
 |kanji_given_name|string|null: false|
 |kana_surname|string|null: false|
 |kana_given_name|string|null: false|
+|year|string|null: false|
+|month|string|null: false|
+|day|string|null: false|
 |phone_number|string|null: false|
 
 ### Association
