@@ -21,25 +21,27 @@
           完了
           .progress-status
   .contents-main
-    .tel-contents
-      .tel-head
-        %h2
-          電話番号の確認
-      .tel-bottom
-        .tel-input
-          %label
-            携帯電話の番号
-          %input.input-default{:name => "phone_number", :placeholder => "携帯電話の番号を入力", :type => "tel", :value => ""}/
-        %p
-          本人確認のため、携帯電話のSMS(ショートメッセージサービス）を利用して認証を行います。
-        %button
-          SMSを送信する
-        %p
-          *電話番号は本人確認や不正防止のために利用します。
-          他のユーザーに後悔されることはありません。
-        .tel-reson
-          =link_to "https://www.mercari.com/jp/signup/registration/", id:"" do
-            電話番号の確認が必要な理由
-    
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .tel-contents
+        .tel-head
+          %h2
+            電話番号の確認
+        .tel-bottom
+          .tel-input
+            %label
+              携帯電話の番号
+            = f.text_field :phone_number, placeholder:  "例）08008080808", type: "tel", value:  ""
+            -# %input.input-default{:name => "phone_number", :placeholder => "携帯電話の番号を入力", :type => "tel", :value => ""}/
+          %p
+            本人確認のため、携帯電話のSMS(ショートメッセージサービス）を利用して認証を行います。
+          %button
+            SMSを送信する
+          %p
+            *電話番号は本人確認や不正防止のために利用します。
+            他のユーザーに後悔されることはありません。
+          .tel-reson
+            =link_to "https://www.mercari.com/jp/signup/registration/", id:"" do
+              電話番号の確認が必要な理由
+      
 
 
