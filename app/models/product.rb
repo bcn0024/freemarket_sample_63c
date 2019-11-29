@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images
 
+
   # 単体テストの際、エラーが出るためコメントアウト
   # 下記モデル作成後、その都度コメントアウト外す。
 
