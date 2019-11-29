@@ -36,107 +36,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
       .items
         .item-review
           .ladies-new
@@ -147,107 +59,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
       .items
         .item-review
           .ladies-new
@@ -258,107 +82,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服    
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}    
       .items
         .item-review
           .ladies-new
@@ -369,107 +105,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服  
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}  
     .main
       .main-header
         .famous-categories
@@ -497,107 +145,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
       .items
         .item-review
           .ladies-new
@@ -608,107 +168,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
       .items
         .item-review
           .ladies-new
@@ -719,107 +191,19 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服         
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}         
       .items
         .item-review
           .ladies-new
@@ -830,106 +214,18 @@
                   もっと見る >
           .item-images
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
             .item-images__review
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服 
-              .back-image
-                .image-block  
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服
-              .back-image
-                .image-block
-                  .image
-                    =image_tag("/assets/karioki.jpg",size: "188x188",alt:"",class:"item-image")
-                    %h1 ¥5,000
-                    .price
-                      .price-content
-                  .image-content
-                    .item-name
-                      メンズ服      
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}      
   =render partial:"footer-imag"
   =render partial:"layouts/mainfooter"

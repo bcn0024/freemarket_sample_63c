@@ -33,6 +33,9 @@ Things you may want to cover:
 |kanji_given_name|string|null: false|
 |kana_surname|string|null: false|
 |kana_given_name|string|null: false|
+|year|string|null: false|
+|month|string|null: false|
+|day|string|null: false|
 |phone_number|string|null: false|
 
 ### Association
@@ -45,6 +48,7 @@ Things you may want to cover:
 ### Addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|
@@ -73,7 +77,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |description|string|null: false|
-|enum status [:new,:great,:good,:bad,:worse,:worst]|integer|null: false|
+|status|integer|null: false|
 |postage|string|null: false|
 |region|string|null: false|
 |arrival_date|string|null: false|
