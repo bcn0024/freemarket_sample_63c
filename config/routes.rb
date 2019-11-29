@@ -8,7 +8,16 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :create,:new] do
     resources :images, only: [:index]
   end
-  resources :users, only: [:index, :create, :new]
+  resources :users, only: [:index, :create, :new] 
   
-
+  resources :signup do
+    resources :addresses, only: [:index, :create, :new]
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'done'
+      get 'step3'
+      get 'step4'
+    end
+  end
 end
