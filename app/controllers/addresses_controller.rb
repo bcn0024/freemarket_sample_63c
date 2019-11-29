@@ -1,8 +1,10 @@
 class AddressesController < ApplicationController
-  before_action :signup
+  
   
   def new
     @address = Address.new
+    @user = User.first(params[:id])
+    # @user = User.find(params[:id])
   end
 
   def create
@@ -11,11 +13,9 @@ class AddressesController < ApplicationController
   end
 
 
-  private
 
-  def signup
-    @signup = Signup.find(params[:id])
-  end
+
+ 
 
 
 end
