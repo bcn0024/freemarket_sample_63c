@@ -77,7 +77,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |description|string|null: false|
-|enum status|integer|null: false|
+|status|integer|null: false|
 |postage|string|null: false|
 |region|string|null: false|
 |arrival_date|string|null: false|
