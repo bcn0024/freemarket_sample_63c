@@ -21,7 +21,7 @@
           完了
           .progress-status
   .contents-main
-    = form_for @user,method: :post,url: signup_index_path do |f|
+    = form_for @user,method: :get,url: step3_signup_index_path do |f|
       .tel-contents
         .tel-head
           %h2
