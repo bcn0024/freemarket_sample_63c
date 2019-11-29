@@ -21,7 +21,7 @@
           完了
           .progress-status
   .contents-main
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for @user,method: :post,url: signup_index_path do |f|
       .tel-contents
         .tel-head
           %h2
@@ -35,7 +35,7 @@
           %p
             本人確認のため、携帯電話のSMS(ショートメッセージサービス）を利用して認証を行います。
           %button
-            SMSを送信する
+            = f.submit "SMSを送信する"
           %p
             *電話番号は本人確認や不正防止のために利用します。
             他のユーザーに後悔されることはありません。
