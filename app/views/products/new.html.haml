@@ -1,6 +1,6 @@
 .body  
   .contents
-    = render partial: "users/header"
+    = render partial: "layouts/header"
     .contents__main
       .new-product
         %h2
@@ -47,7 +47,7 @@
                         必須
                     .select-wrap
                       =icon('fas', 'chevron-down')
-                      = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"] ],class:"form-control"
+                      = f.select :status, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"] ],class:"form-control"
                     .select-wrap__bottom
                       %label
                         商品の状態
@@ -146,6 +146,6 @@
                     に同意したことになります。
                     / /react-text
                 = f.submit '出品する', class: 'submit-product'
-                %a.sell-return
+                =link_to root_path, class: "sell-return" do
                   もどる
-    = render partial: "users/footer"
+    = render partial: "layouts/footer"

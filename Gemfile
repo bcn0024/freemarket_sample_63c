@@ -77,6 +77,7 @@ end
 
 gem "font-awesome-sass"
 gem 'ancestry'
+gem 'pry-rails'
 
 
 

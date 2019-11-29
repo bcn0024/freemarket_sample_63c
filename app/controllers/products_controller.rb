@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @user = User.new
+    
   end
 
   def new
@@ -9,6 +9,13 @@ class ProductsController < ApplicationController
   end
 
   def create 
+    # binding.pry
+    Product.create(product_params)
+    redirect_to root_path
+  end
 
+  private
+  def product_params
+    params.require(:product).permit(:name, :description, :status, :postage, :region, :arrival_date, :price)
   end
 end
