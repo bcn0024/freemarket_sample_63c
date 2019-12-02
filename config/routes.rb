@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   resources :signup do
     resources :addresses, only: [:index, :create, :new]
+    resources :cards, only: [:index, :create, :new]
     collection do
       get 'step1'
       get 'step2'

@@ -19,7 +19,36 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
-  def create
+  def step3
+    session[:phone_number] = user_params[:phone_number]
+    # User.create(
+    #   nickname: session[:nickname],
+    #   email: session[:email],
+    #   password: session[:password],
+    #   password_confirmation: session[:password_confirmation],
+    #   kanji_surname: session[:kanji_surname], 
+    #   kanji_given_name: session[:kanji_given_name], 
+    #   kana_surname: session[:kana_surname],
+    #   kana_given_name: session[:kana_given_name],
+    #   birth_year: session[:birth_year], 
+    #   birth_month: session[:birth_month], 
+    #   birth_day: session[:birth_day],
+    #   phone_number: session[:phone_number],
+    # )
+    @address = Address.new
+  end
+
+  def step4
+    session[:postal_code] = address_params[:postal_code]
+    session[:prefectures] = address_params[:prefectures]
+    session[:address] = address_params[:address]
+    session[:municipalities] = address_params[:municipalities]
+    session[:building] = address_params[:building]
+    @card = Card.new
+  end
+
+
+  def done
       @user=User.create(
       nickname: session[:nickname],
       email: session[:email],
@@ -32,20 +61,32 @@ class SignupController < ApplicationController
       birth_year: session[:birth_year], 
       birth_month: session[:birth_month], 
       birth_day: session[:birth_day],
-      phone_number: user_params[:phone_number]
+      phone_number: session[:phone_number],
     )
-    if @user.save
-      redirect_to  new_signup_address_path(:signup_id)
+    @user.save
+    @address=Address.create(
+      postal_code: session[:postal_code],
+      prefectures: session[:prefectures],
+      address: session[:address],
+      municipalities: session[:municipalities],
+      building: session[:building],
+      user_id: @user.id
+     )
+    @address.save
+    @card = Card.create(
+      card_number: session[:postal_code],
+      month: session[:postal_code],
+      year: session[:postal_code],
+      safity_number: session[:postal_code],
+      user_id: @user.id
+    )
+    if @card.save
     else
       render '/signup/step1'
     end
   end
 
-  def step3
-    @user = User.find(1)
-    @address = Address.new
-    # @address = @user.address
-  end
+  
 
 
 
@@ -66,7 +107,27 @@ class SignupController < ApplicationController
       :birth_year,
       :birth_month,
       :birth_day,
-      :phone_number
+      :phone_number,
   )
   end
+
+  def address_params
+    params.require(:address).permit(
+      :postal_code,
+      :prefectures,
+      :address,
+      :municipalities,
+      :building,
+  )
+  end
+
+  def card_params
+    params.require(:card).permit(
+      :card_number,
+      :month,
+      :day,
+      :safity_number
+  )
+  end
+
 end
