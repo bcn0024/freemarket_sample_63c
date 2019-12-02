@@ -7,8 +7,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def kaiinzyouhou
-
+  def exhibit
 
   end
 end
