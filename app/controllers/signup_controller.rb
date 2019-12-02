@@ -20,48 +20,35 @@ class SignupController < ApplicationController
   end
 
   def step3
-    # binding.pry
-    session[:nickname] = user_params[:nickname]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:password_confirmation] = user_params[:password_confirmation]
-    session[:kanji_surname] = user_params[:kanji_surname]
-    session[:kanji_given_name] = user_params[:kanji_given_name]
-    session[:kana_surname] = user_params[:kana_surname]
-    session[:kana_given_name] = user_params[:kana_given_name]
-    session[:birth_year] = user_params[:birth_year]
-    session[:birth_month] = user_params[:birth_month]
-    session[:birth_day] = user_params[:birth_day]
     session[:phone_number] = user_params[:phone_number]
-    @user = User.new
+    # User.create(
+    #   nickname: session[:nickname],
+    #   email: session[:email],
+    #   password: session[:password],
+    #   password_confirmation: session[:password_confirmation],
+    #   kanji_surname: session[:kanji_surname], 
+    #   kanji_given_name: session[:kanji_given_name], 
+    #   kana_surname: session[:kana_surname],
+    #   kana_given_name: session[:kana_given_name],
+    #   birth_year: session[:birth_year], 
+    #   birth_month: session[:birth_month], 
+    #   birth_day: session[:birth_day],
+    #   phone_number: session[:phone_number],
+    # )
     @address = Address.new
   end
 
   def step4
-    session[:nickname] = user_params[:nickname]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:password_confirmation] = user_params[:password_confirmation]
-    session[:kanji_surname] = user_params[:kanji_surname]
-    session[:kanji_given_name] = user_params[:kanji_given_name]
-    session[:kana_surname] = user_params[:kana_surname]
-    session[:kana_given_name] = user_params[:kana_given_name]
-    session[:birth_year] = user_params[:birth_year]
-    session[:birth_month] = user_params[:birth_month]
-    session[:birth_day] = user_params[:birth_day]
-    session[:phone_number] = user_params[:phone_number]
     session[:postal_code] = address_params[:postal_code]
     session[:prefectures] = address_params[:prefectures]
     session[:address] = address_params[:address]
     session[:municipalities] = address_params[:municipalities]
     session[:building] = address_params[:building]
-    session[:user_id] = user_params[:id]
-    @user = User.new
-    @address = Address.new
+    @card = Card.new
   end
 
 
-  def create
+  def done
       @user=User.create(
       nickname: session[:nickname],
       email: session[:email],
@@ -76,20 +63,27 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       phone_number: session[:phone_number],
     )
-     @address=Address.create(
+    @user.save
+    @address=Address.create(
       postal_code: session[:postal_code],
       prefectures: session[:prefectures],
       address: session[:address],
       municipalities: session[:municipalities],
       building: session[:building],
-      user_id: session[:user_id],
+      user_id: @user.id
      )
-    @user.save
     @address.save
-    redirect_to  new_signup_address_path(:signup_id)
-    # else
-    #   render '/signup/step1'
-    # end
+    @card = Card.create(
+      card_number: session[:postal_code],
+      month: session[:postal_code],
+      year: session[:postal_code],
+      safity_number: session[:postal_code],
+      user_id: @user.id
+    )
+    if @card.save
+    else
+      render '/signup/step1'
+    end
   end
 
   
@@ -113,18 +107,27 @@ class SignupController < ApplicationController
       :birth_year,
       :birth_month,
       :birth_day,
-      :phone_number
+      :phone_number,
   )
   end
+
   def address_params
     params.require(:address).permit(
-      :nickname, 
       :postal_code,
       :prefectures,
       :address,
       :municipalities,
       :building,
-      :user_id
   )
   end
+
+  def card_params
+    params.require(:card).permit(
+      :card_number,
+      :month,
+      :day,
+      :safity_number
+  )
+  end
+
 end
