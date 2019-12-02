@@ -79,8 +79,8 @@ gem "font-awesome-sass"
 gem 'ancestry'
 gem 'pry-rails'
 
-
-
+gem 'carrierwave'
+gem 'fog-aws'
 
 gem 'recaptcha', require: "recaptcha/rails"
 
