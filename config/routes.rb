@@ -5,14 +5,14 @@ Rails.application.routes.draw do
 
   root to:  'products#index'
   
-  resources :products, only: [:index, :create,:new] do
-    resources :images, only: [:index]
+  resources :products, only: [:index, :create,:new,:destroy] do
+    resources :images, only: [:index,:destroy]
   end
-  resources :users, only: [:index, :create, :new] 
+  resources :users, only: [:index, :create,:new,:destroy] 
   
   resources :signup do
-    resources :addresses, only: [:index, :create, :new]
-    resources :cards, only: [:index, :create, :new]
+    resources :addresses, only: [:index, :create,:new,:destroy]
+    resources :cards, only: [:index, :create,:new,:destroy]
     collection do
       get 'step1'
       get 'step2'
