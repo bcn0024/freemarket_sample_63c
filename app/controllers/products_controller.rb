@@ -15,13 +15,13 @@ class ProductsController < ApplicationController
   def create 
     # binding.pry
     Product.create(product_params)
-    redirect_to root_path
+    redirect_to :back
   end
 
   def destroy
-    product = Product.find(params[:id])
-    product.destroy
-    redirect_to root_path
+    binding.pry
+    @product = Product.find(params[:id])
+    @product.destroy
   end
 
 
