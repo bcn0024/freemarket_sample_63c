@@ -2,7 +2,7 @@
   =render partial: "users/mainheader"
   .top-main
     =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/top-banner-camp-4f3fd88c685e8932d7dde2ad3a8336ba.jpg",height: "390",width: "100%",class:"header-image",alt: "")
-    .exhibit-button
+    =link_to new_product_path, class: "exhibit-button" do
       .exhibit-button__wide
         .exhibit-button__wide__content
           .exhibit-button__wide__content__text
