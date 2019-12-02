@@ -35,7 +35,7 @@ class SignupController < ApplicationController
       phone_number: user_params[:phone_number]
     )
     if @user.save
-      redirect_to  new_signup_address_path(:signup_id)
+      redirect_to  new_signup_address_path
     else
       render '/signup/step1'
     end
