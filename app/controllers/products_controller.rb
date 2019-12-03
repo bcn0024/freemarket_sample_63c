@@ -27,7 +27,11 @@ class ProductsController < ApplicationController
     redirect_to  root_path
   end
 
-
+  def purchase
+    Payjp.api_key = PAYJP_SECRET_KEY
+    Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
+    redirect_to root_path, notice: "支払いが完了しました"
+  end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
