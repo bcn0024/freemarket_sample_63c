@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one :address
   has_many :cards
 
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
@@ -27,4 +28,7 @@ class User < ApplicationRecord
   end
 
   
+
+  has_many :products
+
 end

@@ -1,0 +1,39 @@
+.l-content
+  %section.mypage-tab
+    %h2.mypage-tab-head 出品した商品
+    %ul.listing-tabs
+      %li.active
+        %h3
+          %a{href: "#mypage-tab-transaction-now"}
+            出品中
+      %li
+        %h3
+          %a{href:"/jp/mypage/listings/in_progress/"}
+            取引中
+      %li
+        %h3
+          %a{href: "#mypage-tab-transaction-old"}
+            売却済み
+    .tab-content
+      %ul
+        %li
+          - @products.each do |product|
+            =link_to myproduct_product_path(product.id), class:"mypage-item" do
+              %figure
+                %image
+              .mypage-item-body
+                .mypage-item-text
+                  チョコレート
+                %div
+                  %span.listing-item-count
+                    %i.icon-like-border
+                  %span.listing-item-count
+                    %i.icon-message
+                  .maypage-item-status
+                    出品中
+              %i.icon-arrow-right    
+  %ul.history-pager
+    %li
+      %a
+    %li
+      %a   
