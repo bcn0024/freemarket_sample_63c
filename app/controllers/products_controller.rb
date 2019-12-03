@@ -1,19 +1,21 @@
 class ProductsController < ApplicationController
 
   def index
-    @user = User.new
-    @products = Product.all
-    @image = Image.first
-
+    @products = Product.limit(10).order('name DESC')
   end
 
   def new
     @product = Product.new
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @user = @product.user
+    @products = @product.user.products.limit(6)
+  end
 
   def create 
-    # binding.pry
     Product.create(product_params)
     redirect_to root_path
   end
