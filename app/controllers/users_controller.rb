@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def exhibit
-
+  def exhibitedit
+    @product = Product.new
   end
+
 end
