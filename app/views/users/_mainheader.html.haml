@@ -24,14 +24,23 @@
       -#   = link_to "ブランド一覧"
     %ul.bottom-header2
       %li.bottom-header2__category
-        = icon("fas", "heart")
-        = link_to "新規登録", users_path
+        - if user_signed_in?
+          = icon("fas", "heart")
+          = link_to "いいね一覧"
+        - else
+          = icon("fas", "heart")
+          = link_to "新規登録", users_path
       %li.bottom-header2__category
         = icon("fas", "bell")
         = link_to "お知らせ"
       %li.bottom-header2__category 
         = icon("fas", "check")
         = link_to "やることリスト"
-      %li.bottom-header2__category 
-        = icon("fas", "smile")
-        = link_to "ログイン", new_user_session_path
+      %li.bottom-header2__category
+        - if user_signed_in?
+          = icon("fas", "smile")
+          = link_to "マイページ", "/users/#{current_user.id}"
+        - else
+          = icon("fas", "smile")
+          = link_to "ログイン", new_user_session_path
+          

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @user = User.new
@@ -16,6 +17,11 @@ class ProductsController < ApplicationController
     # binding.pry
     Product.create(product_params)
     redirect_to root_path
+  end
+
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
   private

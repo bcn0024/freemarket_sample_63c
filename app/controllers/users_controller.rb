@@ -11,4 +11,15 @@ class UsersController < ApplicationController
 
 
   end
+
+
+  def show
+
+  end
+
+  def destoroy
+    user = User.find(params[:id])
+    user.destoroy
+    redirect_to root_path
+  end
 end
