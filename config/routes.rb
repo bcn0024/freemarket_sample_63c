@@ -5,15 +5,15 @@ Rails.application.routes.draw do
 
   root to:  'products#index'
 
-  resources :products, only: [:index, :create,:new,:destroy] do
-    resources :images, only: [:index,:destroy]
+  resources :products, only: [:index, :show,:create,:new,:destroy] do
+    resources :images, only: [:index,:destroy,:show]
     member do
       get 'myproduct'
     end
   end
 
 
-  resources :users, only: [:index, :create, :new, :show ,:destoroy] 
+  resources :users, only: [:index,:create,:new,:show,:destoroy] 
 
 
   resources :signup do
