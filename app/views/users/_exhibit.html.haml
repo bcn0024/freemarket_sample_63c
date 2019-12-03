@@ -17,20 +17,21 @@
     .tab-content
       %ul
         %li
-          %a.mypage-item-link{href: "https://www.mercari.com/jp/items/m57826134920/"}
-            %figure
-              %image
-            .mypage-item-body
-              .mypage-item-text
-                チョコレート
-              %div
-                %span.listing-item-count
-                  %i.icon-like-border
-                %span.listing-item-count
-                  %i.icon-message
-                .maypage-item-status
-                  出品中
-            %i.icon-arrow-right    
+          - @products.each do |product|
+            =link_to myproduct_product_path(product.id), class:"mypage-item" do
+              %figure
+                %image
+              .mypage-item-body
+                .mypage-item-text
+                  チョコレート
+                %div
+                  %span.listing-item-count
+                    %i.icon-like-border
+                  %span.listing-item-count
+                    %i.icon-message
+                  .maypage-item-status
+                    出品中
+              %i.icon-arrow-right    
   %ul.history-pager
     %li
       %a

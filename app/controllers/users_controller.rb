@@ -7,8 +7,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def exhibitedit
-    @product = Product.new
+  
+  def exhibit
+
+  end
+
+  def show
+  @user = User.find(params[:id])
+  @products = @user.products
   end
 
 end

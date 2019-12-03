@@ -11,16 +11,19 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def myproduct
+    @product = Product.find(params[:id])
+  end
 
   def create 
     Product.create(product_params)
-    redirect_to root_path
+    redirect_to :back
   end
 
   def destroy
-    product = Product.find(params[:id])
-    product.destroy
-    redirect_to root_path
+    # binding.pry
+    @product = Product.find(params[:id])
+    @product.destroy
   end
 
 
