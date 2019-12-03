@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   
   resources :products, only: [:index, :create,:new,:destroy] do
     resources :images, only: [:index,:destroy]
+    member do
+      get 'myproduct'
+    end
   end
-  resources :users, only: [:index, :create,:new,:destroy] 
-  
+  resources :users, only: [:index, :create,:new,:destroy,:show] 
+  resources :mypage,only:[:index,:show,:destroy]
   resources :signup do
     resources :addresses, only: [:index, :create,:new,]
     resources :cards, only: [:index, :create,:new,]

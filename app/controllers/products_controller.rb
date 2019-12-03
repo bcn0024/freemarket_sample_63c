@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def myproduct
+    @product = Product.find(params[:id])
+  end
 
   def create 
     # binding.pry
@@ -19,7 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    # binding.pry
     @product = Product.find(params[:id])
     @product.destroy
   end
