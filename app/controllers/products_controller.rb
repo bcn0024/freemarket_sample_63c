@@ -12,12 +12,21 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def myproduct
+    @product = Product.find(params[:id])
+  end
 
   def create 
-    # binding.pry
     Product.create(product_params)
-    redirect_to root_path
+    redirect_to :back
   end
+
+  def destroy
+    # binding.pry
+    @product = Product.find(params[:id])
+    @product.destroy
+  end
+
 
 
   def move_to_index
