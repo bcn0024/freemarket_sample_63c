@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  root to:  'users#exhibit'
+  root to:  'products#index'
   
   resources :products, only: [:index, :create,:new,:destroy] do
     resources :images, only: [:index,:destroy]
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:index, :create,:new,:destroy,:show] 
-  resources :mypage,only:[:index,:show,:destroy]
   resources :signup do
     resources :addresses, only: [:index, :create,:new,]
     resources :cards, only: [:index, :create,:new,]
