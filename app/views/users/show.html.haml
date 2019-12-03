@@ -1,11 +1,13 @@
 .wrapper
-  =render partial: "mainheader"
+
+  =render partial: "users/mainheader"
+
   =render partial: "header-nav1"
 
   .main
     .main_body
       =render partial: "sidebar"
-      =render partial: "exhibit"
+      =render partial: "usermypage"
 
-  =render partial:"products/footer-imag"
-  =render partial:"layouts/mainfooter"
+   =render partial:"products/footer-imag"
+  =render partial:"layouts/footer"

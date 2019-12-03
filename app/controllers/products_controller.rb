@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @user = User.new
@@ -26,6 +27,11 @@ class ProductsController < ApplicationController
     @product.destroy
   end
 
+
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 
   private
   def product_params

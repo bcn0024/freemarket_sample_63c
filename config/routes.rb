@@ -11,8 +11,13 @@ Rails.application.routes.draw do
       get 'myproduct'
     end
   end
-  resources :users, only: [:index, :create,:new,:destroy,:show] 
+
+  resources :users, only: [:index, :create, :new, :show ,:destoroy] 
+  
+
+ 
   resources :mypage,only:[:index,:show,:destroy]
+
   resources :signup do
     resources :addresses, only: [:index, :create,:new,]
     resources :cards, only: [:index, :create,:new,]
