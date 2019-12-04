@@ -1,7 +1,20 @@
 class SignupController < ApplicationController
   
   def step1
-    @user = User.new
+      @user = User.new
+  end
+
+  def step1sns
+    if session[:password_confirmation]
+      @user = User.new(
+        #omniauth_callbacks_controllerで定義したsession
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password_confirmation]
+      )
+    else
+      @user = User.new
+    end
   end
 
   def step2
