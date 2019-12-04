@@ -7,19 +7,25 @@ Rails.application.routes.draw do
 
 
   root to:  'products#index'
+
   
-  resources :products, only: [:index, :create,:new,:destroy] do
+
+
+
+  resources :products, only: [:index, :create,:new,:destroy, :edit, :update] do
+
     resources :images, only: [:index,:destroy]
     member do
       get 'myproduct'
     end
   end
 
-  resources :users, only: [:index, :create, :new, :show ,:destoroy] 
-  
 
- 
-  resources :mypage,only:[:index,:show,:destroy]
+  resources :users, only: [:index, :create, :new, :show ,:destoroy] do
+    member do
+      get 'mypagemore'
+    end
+  end
 
   resources :signup do
     resources :addresses, only: [:index, :create,:new,]
