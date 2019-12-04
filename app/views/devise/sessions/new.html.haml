@@ -33,10 +33,9 @@
             .login-bottom__bars
               .login-facebook
                 %p
-                  =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
-                  -# = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "merukari-icon" do
-                  -#   = icon('fab', 'facebook-square')
-                  -#   Facebookでログイン
+                  = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "merukari-icon" do
+                    = icon('fab', 'facebook-square')
+                    Facebookでログイン
                     
               .login-google
                 %p

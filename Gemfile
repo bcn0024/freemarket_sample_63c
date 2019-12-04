@@ -84,10 +84,14 @@ gem 'fog-aws'
 
 gem 'recaptcha', require: "recaptcha/rails"
 
-gem 'omniauth'
+# gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'dotenv-rails'
+
+gem 'omniauth-google-oauth2'
+
+# gem 'dotenv-rails'
 
 
 

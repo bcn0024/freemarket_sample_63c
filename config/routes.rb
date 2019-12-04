@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users,
-  controllers: {
-    omniauth_callbacks: 'users/omniauth_callbacks'
-  
+  # devise_for :users,
+  # controllers: {
+  #   omniauth_callbacks: 'users/omniauth_callbacks'}
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  root to:  'users#exhibitedit'
+  root to:  'products#index'
   
   resources :products, only: [:index, :create,:new,:destroy] do
     resources :images, only: [:index,:destroy]
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :create,:new,]
     collection do
       get 'step1'
+      get 'step1sns'
       get 'step2'
       get 'done'
       get 'step3'
