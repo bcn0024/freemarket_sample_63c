@@ -6,6 +6,7 @@ class SignupController < ApplicationController
 
   def step1sns
     if session[:password_confirmation]
+    
       @user = User.new(
         #omniauth_callbacks_controllerで定義したsession
         nickname: session[:nickname],

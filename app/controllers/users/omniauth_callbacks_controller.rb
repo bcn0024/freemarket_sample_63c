@@ -1,7 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # callback for facebook
   def facebook
-    binding.pry
     callback_for(:facebook)
   end
 
