@@ -1,7 +1,20 @@
 class SignupController < ApplicationController
   
+  # def step1
+  #     @user = User.new
+  # end
+
   def step1
-    @user = User.new
+    if session[:password_confirmation]
+      @user = User.new(
+        #omniauth_callbacks_controllerで定義したsession
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password_confirmation]
+      )
+    else
+      @user = User.new
+    end
   end
 
   def step2
@@ -35,7 +48,7 @@ class SignupController < ApplicationController
 
 
   def done
-      @user=User.create(
+      @user = User.create(
       nickname: session[:nickname],
       email: session[:email],
       password: session[:password],
@@ -50,8 +63,8 @@ class SignupController < ApplicationController
       phone_number: session[:phone_number],
 
     )
-    @user.save
-    @address=Address.create(
+    
+    @address= Address.create(
       postal_code: session[:postal_code],
       prefectures: session[:prefectures],
       address: session[:address],
@@ -59,7 +72,7 @@ class SignupController < ApplicationController
       building: session[:building],
       user_id: @user.id
      )
-    @address.save
+  
     @card = Card.create(
       card_number: session[:postal_code],
       month: session[:postal_code],
@@ -67,7 +80,10 @@ class SignupController < ApplicationController
       safity_number: session[:postal_code],
       user_id: @user.id
     )
+    sign_in(@user) unless user_signed_in?
+    # sign_in User.find(session[:id]) unless user_signed_in?
     if @card.save
+     
     else
       render '/signup/step1'
     end

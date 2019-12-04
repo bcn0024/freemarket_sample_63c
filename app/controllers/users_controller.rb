@@ -7,8 +7,30 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def kaiinzyouhou
-
+  
+  def exhibit
 
   end
+
+  def show
+     @user = User.find(params[:id])
+     @products = @user.products
+  end
+
+  def mypagemore
+    @user = User.find(params[:id])
+    @products = @user.products
+  end
+
+  def show
+
+  end
+
+  def destoroy
+    user = User.find(params[:id])
+    user.destoroy
+    redirect_to root_path
+  end
+
 end
+

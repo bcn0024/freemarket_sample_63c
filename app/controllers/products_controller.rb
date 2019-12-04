@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @products = Product.limit(10).order('name DESC')
@@ -17,7 +18,28 @@ class ProductsController < ApplicationController
 
   def create 
     Product.create(product_params)
-    redirect_to root_path
+    redirect_to :back
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to  root_path
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params)
+    redirect_to myproduct_product_path(product.id)
+  end
+
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
   private
