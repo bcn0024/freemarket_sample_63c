@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one :address
   has_many :cards
   has_many :products
+
   has_many :sns_credentials, dependent: :destroy
 
 
@@ -65,3 +66,4 @@ class User < ApplicationRecord
     end
   end
 end
+

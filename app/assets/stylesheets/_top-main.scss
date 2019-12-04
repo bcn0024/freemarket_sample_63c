@@ -115,8 +115,10 @@
           max-width:1020px;
           height: 100%;
           &__review{
+
             display: flex;
-            width: 100%;
+            width: 110%;
+            flex-wrap: wrap;
             .back-image{
               padding: 10px;
               background-image: rgb(239, 239, 239) ;

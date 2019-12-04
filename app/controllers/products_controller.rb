@@ -2,18 +2,18 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @user = User.new
-    @products = Product.all
-    @image = Image.first
-
+    @products = Product.limit(10).order('name DESC')
   end
 
   def new
     @product = Product.new
   end
 
-  def myproduct
+  def show
     @product = Product.find(params[:id])
+    @images = @product.images
+    @user = @product.user
+    @products = @product.user.products.limit(6)
   end
 
   def create 
