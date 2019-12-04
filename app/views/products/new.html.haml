@@ -15,7 +15,8 @@
               %p
                 最大10枚までアップロードできます。
               .sell-images
-                .sell-image
+                = f.label :image, class: 'sell-image' do
+                  = f.file_field :image, class: 'hidden'
                   %pre
                     ドラッグアンドドロップ
                     /react-text: 125
@@ -146,6 +147,6 @@
                     に同意したことになります。
                     / /react-text
                 = f.submit '出品する', class: 'submit-product'
-                =link_to root_path, class: "sell-return" do
+                =link_to , class: "sell-return" do
                   もどる
     = render partial: "layouts/footer"
