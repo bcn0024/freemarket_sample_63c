@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root to:  'products#index'
 
   resources :products, only: [:index, :create,:new,:destroy] do
+    member do
+      get 'purchase'
+    end
     resources :images, only: [:index,:destroy]
     member do
       get 'myproduct'
@@ -21,9 +24,7 @@ Rails.application.routes.draw do
   resources :signup do
     resources :addresses, only: [:index, :create,:new,]
     resources :cards, only: [:index, :create,:new,:update]
-    collection do
-      post 'purchase'
-    end
+    
     collection do
       get 'step1'
       get 'step2'

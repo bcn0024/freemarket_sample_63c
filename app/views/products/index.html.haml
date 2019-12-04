@@ -1,62 +1,231 @@
-.body
-  .contents
-    .contents__main
-      .main-head
-        .main-head__confirmation
-          購入内容の確認
-        .buy-content 
-          .buy-content-inner
-            %img.inner-image{alt: "karioki", src: "assets/nikorun.jpeg",height: "148",width: "148"}/
-            .item-name
-              にこるん
-            .form
-              .price
-                .price-bold
-                  ¥5,000 
-                .price-font
-                  送料込み
-              .point
-                ポイントはありません
-              .price-total
-                .price-total__siharai
-                  支払い金額
-                .price-total__bold
-                  ¥5,000
-              .purchase
-              %h1
-              -# =link_to "", id:"",class:"purchase" do
-              -#   %button.btn-red{type: "submit"} 購入する
-              = form_tag(action: :purchase, method: :post) do
-                %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript"}
-        .buy-user-info1
-          .buy-content-inner
-            .inner
-              配送先
-            .address
-              .number
-                〒552-0002
-              .address-info
-                大阪府大阪市港区市岡元町3-3-21-402
-              .user-name
-                蔵田 亮人
-            .fix
-            %li
-              =link_to "", id:"",class: "change" do
-                変更する >
-        .buy-user-info2
-          .buy-content-inner
-            .inner
-              支払い方法
-            .number
-              .secret-number
-                *********1049
-              .year-month
-                10/24
-              .figure
-              %img{alt: "jcb", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2177740229", width: "26"}/
-
-            .fix
-            %li
-              =link_to "", id:"",class: "change" do
-                変更する >
-    
+.wrapper
+  =render partial: "users/mainheader"
+  .top-main
+    =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/top-banner-camp-4f3fd88c685e8932d7dde2ad3a8336ba.jpg",height: "390",width: "100%",class:"header-image",alt: "")
+    =link_to new_product_path, class: "exhibit-button" do
+      .exhibit-button__wide
+        .exhibit-button__wide__content
+          .exhibit-button__wide__content__text
+            出品
+          .exhibit-button__wide__content__icon
+            %i.fa.fa-camera
+    .main
+      .main-header
+        .famous-categories
+          人気のカテゴリー
+        .category
+          .ladies
+            .font
+              レディース
+          .mens
+            .font
+              メンズ
+          .av
+            .font
+              家電・スマホ・カメラ
+          .hoby
+            .font
+              おもちゃ・ホビー・グッズ
+      .items
+        .item-review
+          .ladies-new
+            .content
+              レディース新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+      .items
+        .item-review
+          .ladies-new
+            .content
+              メンズ新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+      .items
+        .item-review
+          .ladies-new
+            .content
+              家電・スマホ・カメラ新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}    
+      .items
+        .item-review
+          .ladies-new
+            .content
+              おもちゃ・ホビー・グッズ新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}  
+    .main
+      .main-header
+        .famous-categories
+          人気のブランド
+        .category
+          .ladies
+            .font
+              シャネル
+          .mens
+            .font
+              ルイヴィトン
+          .av
+            .font
+              シュプリーム
+          .hoby
+            .font
+              ナイキ
+      .items
+        .item-review
+          .ladies-new
+            .content
+              シャネル新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+      .items
+        .item-review
+          .ladies-new
+            .content
+              ルイヴィトン新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+      .items
+        .item-review
+          .ladies-new
+            .content
+              シュプリーム新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}         
+      .items
+        .item-review
+          .ladies-new
+            .content
+              ナイキ新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+            .item-images__review
+              - @products.each do |product|
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image} 
+                = render partial: "productimage", locals: { product: product, image: @image}      
+  =render partial:"footer-imag"
+  =render partial:"layouts/mainfooter"
