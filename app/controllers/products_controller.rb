@@ -37,6 +37,8 @@ class ProductsController < ApplicationController
     redirect_to myproduct_product_path(product.id)
   end
 
+  def purchase
+  end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?

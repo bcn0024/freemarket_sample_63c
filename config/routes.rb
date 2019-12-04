@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :create, :new, :destroy, :edit, :update, :show] do
     member do
+      get 'purchase'
       get 'myproduct'
   end
     resources :images, only: [:index,:destroy]
