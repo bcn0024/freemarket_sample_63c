@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :name, :description, :region, :arrival_date, :price, presence: true
   has_many :images
   accepts_nested_attributes_for :images
-  belongs_to :user
+  # belongs_to :user
 
   # 単体テストの際、エラーが出るためコメントアウト
   # 下記モデル作成後、その都度コメントアウト外す。

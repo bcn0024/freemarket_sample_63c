@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.images.build
+    10.times { @product.images.build }
   end
 
   def myproduct
