@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :new]
+  before_action :move_to_index, except: [:index, :show, :new, :create]
 
   def index
     @user = User.new
@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.images.build
   end
 
   def myproduct
@@ -17,8 +18,10 @@ class ProductsController < ApplicationController
   end
 
   def create 
-    Product.create(product_params)
-    redirect_to :back
+    # binding.pry
+    @product = Product.new(product_params)
+    @product.save
+    redirect_to root_path
   end
 
   def destroy
@@ -44,6 +47,13 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :postage, :region, :arrival_date, :price)
+    params.require(:product).permit(
+      :name, 
+      :description, 
+      :region, 
+      :arrival_date, 
+      :price, 
+      images_attributes:[:id, :image]
+      )
   end
 end

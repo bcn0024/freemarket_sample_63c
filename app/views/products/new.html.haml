@@ -6,7 +6,7 @@
         %h2
           商品の情報を入力
         .new-form
-          = form_for [@product] do |f|
+          = form_for @product  do |f|
             .product-firld
               %h3.classsell-upload-head
                 出品画像
@@ -15,8 +15,10 @@
               %p
                 最大10枚までアップロードできます。
               .sell-images
-                = f.label :image, class: 'sell-image' do
-                  = f.file_field :image, class: 'hidden'
+              = f.fields_for :images do |i|
+                -# = image_tag(image.object.image)
+                = i.label :image, class: 'sell-image' do
+                  = i.file_field :image, class: 'hidden'
                   %pre
                     ドラッグアンドドロップ
                     /react-text: 125
@@ -71,7 +73,7 @@
                         必須
                     .select-wrap
                       =icon('fas', 'chevron-down')
-                      = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+                      -# = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
                     .select-wrap__bottom
                       %label
                         配送元の地域
@@ -147,6 +149,6 @@
                     に同意したことになります。
                     / /react-text
                 = f.submit '出品する', class: 'submit-product'
-                =link_to , class: "sell-return" do
+                =link_to root_path, class: "sell-return" do
                   もどる
     = render partial: "layouts/footer"
