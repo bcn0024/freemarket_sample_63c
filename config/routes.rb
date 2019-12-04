@@ -13,11 +13,11 @@ Rails.application.routes.draw do
 
 
   resources :products, only: [:index, :create,:new,:destroy, :edit, :update] do
-
-    resources :images, only: [:index,:destroy]
     member do
       get 'myproduct'
-    end
+  end
+    resources :images, only: [:index,:destroy]
+    
   end
 
 
