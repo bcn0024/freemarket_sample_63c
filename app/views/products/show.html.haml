@@ -5,14 +5,14 @@
         = @product.name
       %p.item-wording
         = @product.name + "は、236回の取引実績を持つ"
-        =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-          = @user.nickname
-        から出品されました。
-        =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-          コーチ
-        =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-          (ショルダーバッグ/レディース）
-        の商品で、千葉県から2~3日で発送されます。
+        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
+        -#   = @user.nickname
+        -# から出品されました。
+        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
+        -#   コーチ
+        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
+        -#   (ショルダーバッグ/レディース）
+        -# の商品で、千葉県から2~3日で発送されます。
       .item-main-content.clearfix
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
@@ -50,7 +50,7 @@
           %span.item-shipping-fee 送料込み
         %section.visible-sp
           .item-btn-float-area
-            =link_to "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm77329607705%2F",id:"",class:"item-buy-btn" do
+            =link_to purchase_product_path,class:"item-buy-btn" do
               購入画面に進む
         %table.item-detail-table
           %tbody
@@ -111,7 +111,7 @@
           = @product.price
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
-      %a.item-buy-btn{href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm77329607705%2F"}
+      =link_to purchase_product_path, class:"item-buy-btn" do
         購入画面に進む
       %p.shipping-not-allowed-message.has-error-text.text-center
         この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。

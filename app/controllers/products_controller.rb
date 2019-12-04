@@ -38,6 +38,16 @@ class ProductsController < ApplicationController
   end
 
   def purchase
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @user = @product.user
+    @products = @product.user.products.limit(6)
+  end
+
+  def payjp
+    Payjp.api_key = PAYJP_SECRET_KEY
+    Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
+    redirect_to root_path, notice: "支払いが完了しました"
   end
 
   def move_to_index
@@ -49,3 +59,4 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :postage, :region, :arrival_date, :price)
   end
 end
+
