@@ -37,11 +37,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         session[:provider] = info[:sns][:provider]
       end
       #登録フォームのviewにリダイレクトさせる
-      redirect_to step1_signup_index_path
+      redirect_to step1sns_signup_index_path
     end
   end
 
   def failure
-    redirect_to step1_signup_index_path
+    redirect_to step1sns_signup_index_path
   end
 end
