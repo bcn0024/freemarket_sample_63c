@@ -4,6 +4,7 @@ end
 
 crumb :user do
   link "マイページ", user_path
+  parent :products
 end
 
 crumb :exhibit do

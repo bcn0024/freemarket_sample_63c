@@ -7,10 +7,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  
-  def exhibit
-
-  end
 
   def show
      @user = User.find(params[:id])
@@ -22,8 +18,19 @@ class UsersController < ApplicationController
     @products = @user.products
   end
 
-  def show
+  def logout
+    @user = User.find(params[:id])
+    @products = @user.products
+  end
 
+  def profile
+    @user = User.find(params[:id])
+    @products = @user.products
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    @address = @user.address
   end
 
   def destoroy
@@ -31,6 +38,7 @@ class UsersController < ApplicationController
     user.destoroy
     redirect_to root_path
   end
-
+  
+  
 end
 

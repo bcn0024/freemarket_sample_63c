@@ -1,19 +1,23 @@
 .profile-body {
-  width: 700px;
-  max-height: 670px;
+  margin: 40px auto 0;
+  width: 1020px;
   background-color: #fff;
+  display: flex;
 }
-.profile-head{
-  height: 50px;
-  width: 100%;
-  text-align:center;
-  h2{
-    font-size: 24px;
-    font-weight: 700;
-    padding: 8px 24px;
+.profile-right{
+  margin: 20px 40px 0px 40px;
+  width: 90%;
+  .profile-head{
+    height: 50px;
+    width: 100%;
+    text-align:center;
+    h2{
+      font-size: 24px;
+      font-weight: 700;
+      padding: 8px 24px;
+    }
   }
 }
-
 .image-tag{
  background-image: url(10169001846.jpg);
  background-size: contain;

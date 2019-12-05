@@ -13,14 +13,17 @@ Rails.application.routes.draw do
   end
 
 
-  resources :users, only: [:index, :create, :new, :show ,:destoroy] do
+  resources :users, only: [:index, :create, :new, :show, :destoroy, :edit, :update] do
     member do
       get 'mypagemore'
+      get 'logout'
+      get 'profile'
     end
   end
 
+  resources :addresses, only: [:index, :create,:new, :edit, :update]
+  
   resources :signup do
-    resources :addresses, only: [:index, :create,:new,]
     resources :cards, only: [:index, :create,:new,]
     collection do
       get 'step1'
@@ -31,3 +34,4 @@ Rails.application.routes.draw do
     end
   end
 end
+
