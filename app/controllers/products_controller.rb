@@ -11,13 +11,15 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     10.times { @product.images.build }
+
+    @parents = Category.where(ancestry: nil).order("id ASC").limit(13)
   end
 
   def myproduct
     @product = Product.find(params[:id])
   end
 
-  def create 
+  def create
     @product = Product.new(product_params)
     @product.save
     redirect_to root_path
@@ -47,11 +49,11 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(
-      :name, 
-      :description, 
-      :region, 
-      :arrival_date, 
-      :price, 
+      :name,
+      :description,
+      :region,
+      :arrival_date,
+      :price,
       images_attributes:[:id, :image]
       )
   end
