@@ -216,3 +216,77 @@ toys_miritary.children.create([{name: "トイガン"},  {name: "個人装備"}, 
 toys_art.children.create([{name: "陶芸"},  {name: "ガラス"},  {name: "漆芸"},  {name: "金属工芸"},  {name: "絵画/タペストリ"},  {name: "版画"},  {name: "彫刻/オブジェクト"}, {name: "書"},  {name: "写真"},  {name: "その他"}])
 toys_art_goods.children.create([{name: "画材"},  {name: "額縁"},  {name: "その他"}])
 toys_etc.children.create([{name: "トランプ/UNO"},  {name: "カルタ/百人一首"},  {name: "ダーツ"},  {name: "ビリヤード"},  {name: "麻雀"},  {name: "パズル/ジグソーパズル"},  {name: "囲碁/将棋"},  {name: "オセロ/チェス"},  {name: "人生ゲーム"},  {name: "野球/サッカーゲーム"},  {name: "スポーツ"},  {name: "三輪車/乗り物"},  {name: "ヨーヨー"},  {name: "模型製作用品"},  {name: "鉄道"},  {name: "航空機"},  {name: "アマチュア無線"},  {name: "パチンコ/パチスロ"},  {name: "その他"}])
+
+
+
+
+# コスメ・香水・美容
+
+cosmetic = Category.create(name: "コスメ・香水・美容")
+
+cosmetic_basemake = cosmetic.children.create(name: "ベースメイク")
+cosmetic_makeup = cosmetic.children.create(name: "メイクアップ")
+cosmetic_nail = cosmetic.children.create(name: "ネイルケア")
+cosmetic_smell = cosmetic.children.create(name: "香水")
+cosmetic_skin = cosmetic.children.create(name: "スキンケア/基礎化粧水")
+cosmetic_haircare = cosmetic.children.create(name: "ヘアケア")
+cosmetic_body = cosmetic.children.create(name: "ボディけケア")
+cosmetic_oral = cosmetic.children.create(name: "オーラルケア")
+cosmetic_relax = cosmetic.children.create(name: "リラクゼーション")
+cosmetic_diet = cosmetic.children.create(name: "ダイエット")
+cosmetic_etc = toys.children.create(name: "その他")
+
+cosmetic_basemake.children.create([{name: "ファンデーション"}, {name: "化粧下地"}, {name: "コントロールカラー"}, {name: "BBクリーム"}, {name: "CCクリーム"}, {name: "コンシーラー"}, {name: "フェイスパウダー"}, {name: "トライアルセット/サンプル"}, {name: "その他"}])
+cosmetic_makeup.children.create([{name: "アイシャドウ"}, {name: "口紅"}, {name: "リップグロス"}, {name: "リップライナー"}, {name: "チーク"}, {name: "フェイスカラー"}, {name: "マスカラ"}, {name: "アイライナー"}, {name: "つけまつげ"}, {name: "アイブロウペンシル"}, {name: "パウダーアイブロウ"}, {name: "眉マスカラ"}, {name: "トライアルセット/サンプル"}, {name: "メイク道具/化粧小物"}, {name: "美顔用品/美顔ローラー"}, {name: "その他"}])
+cosmetic_nail.children.create([{name: "ネイルカラー"}, {name: "カラージェル"}, {name: "ネイルベースコート/トップコート"}, {name: "ネイルアート用品"}, {name: "ネイルパーツ"}, {name: "ネイルチップ/付け爪"}, {name: "手入れ用具"}, {name: "除光液"}, {name: "その他"}])
+cosmetic_smell.children.create([{name: "香水(女性用)"}, {name: "香水(男性用)"}, {name: "ユニセックス"}, {name: "ボディミスト"}, {name: "その他"}])
+cosmetic_skin.children.create([{name: "化粧水/ローション"}, {name: "乳液/ミルク"}, {name: "美容液"}, {name: "フェイスクリーム"}, {name: "洗顔料"}, {name: "クレンジング/メイク落とし"}, {name: "パック/フェイスマスク"}, {name: "ジェル/ゲル"}, {name: "ブースター/導入液"}, {name: "アイケア"}, {name: "リップケア"}, {name: "トライアルセット/サンプル"}, {name: "洗顔グッズ"}, {name: "その他"}])
+cosmetic_haircare.children.create([{name: "シャンプー"}, {name: "トリートメント"}, {name: "コンディショナー"}, {name: "リンス"}, {name: "スタイリング剤"}, {name: "カラーリング剤"}, {name: "ブラシ"}, {name: "その他"}])
+cosmetic_body.children.create([{name: "オイル/クリーム"}, {name: "ハンドクリーム"}, {name: "ローション"}, {name: "日焼け止め/サンオイル"}, {name: "ボディソープ"}, {name: "入浴剤"}, {name: "制汗/デオドラント"}, {name: "フットケア"}, {name: "その他"}])
+cosmetic_oral.children.create([{name: "口臭防止/エチケット用品"}, {name: "歯ブラシ"}, {name: "その他"}])
+cosmetic_relax.children.create([{name: "エッセンシャルオイル"}, {name: "芳香器"}, {name: "お香/香炉"}, {name: "キャンドル"}, {name: "リラクゼーショングッズ"}, {name: "その他"}])
+cosmetic_diet.children.create([{name: "ダイエット食品"}, {name: "エクササイズ用品"}, {name: "体重計"}, {name: "体脂肪計"}, {name: "その他"}])
+cosmetic_etc.children.create([{name: "健康用品"}, {name: "看護/介護用品"}, {name: "救急/衛生用品"}, {name: "その他"}])
+
+
+# 家電・スマホ・カメラ
+
+devise = Category.create(name: "家電・スマホ・カメラ")
+
+devise_smartphone = devise.children.create(name: "家電・スマホ・カメラ")
+devise_smartaccesary = devise.children.create(name: "スマホアクセサリー")
+devise_pc = devise.children.create(name: "PC/タブレット")
+devise_camera = devise.children.create(name: "カメラ")
+devise_tv = devise.children.create(name: "テレビ/映像機器")
+devise_ordio = devise.children.create(name: "オーディオ機器")
+devise_health = devise.children.create(name: "美容/健康")
+devise_aircondition = devise.children.create(name: "冷暖房/空調")
+devise_life = devise.children.create(name: "生活家電")
+devise_etc = toys.children.create(name: "その他")
+
+
+devise_.children.create([{name: "スマートフォン本体"}, {name: "バッテリー/充電器"}, {name: "携帯電話本体"}, {name: "PHS本体"}, {name: "その他"}])
+devise_.children.create([{name: "Android用ケース"}, {name: "iPhone用ケース"}, {name: "カバー"}, {name: "イヤホンジャック"}, {name: "ストラップ"}, {name: "フィルム"}, {name: "自撮り棒"}, {name: "その他"}])
+devise_.children.create([{name: "タブレット"}, {name: "ノートPC"}, {name: "デスクトップ型PC"}, {name: "ディスプレイ"}, {name: "電子ブックリーダー"}, {name: "PC周辺機器"}, {name: "PCパーツ"}, {name: "その他"}])
+devise_.children.create([{name: "デジタルカメラ"}, {name: "ビデオカメラ"}, {name: "レンズ(単焦点)"}, {name: "レンズ(ズーム)"}, {name: "フィルムカメラ"}, {name: "防犯カメラ"}, {name: "その他"}])
+devise_.children.create([{name: "テレビ"}, {name: "プロジェクター"}, {name: "ブルーレイレコーダー"}, {name: "DVDレコーダー"}{name: "ブルーレイプレーヤー"}, {name: "DVDプレーヤー"}, {name: "映像用ケーブル"}, {name: "その他"}])
+devise_.children.create([{name: "ポータブルプレーヤー"}, {name: "イヤフォン"}, {name: "ヘッドフォン"}, {name: "アンプ"}, {name: "スピーカー"}, {name: "ケーブル/シールド"}, {name: "ラジオ"}, {name: "その他"}])
+devise_.children.create([{name: "ヘアドライヤー"}, {name: "ヘアアイロン"}, {name: "美容機器"}, {name: "電気シェーバー"}, {name: "電動歯ブラシ"}, {name: "その他"}])
+devise_.children.create([{name: "エアコン"}, {name: "空気清浄器"}, {name: "加湿器"}, {name: "扇風機"}, {name: "除湿機"}, {name: "ファンヒーター"}, {name: "電気ヒーター"}, {name: "オイルヒーター"}, {name: "ストーブ"}, {name: "ホットカーペット"}, {name: "こたつ"}, {name: "電気毛布"}, {name: "その他"}])
+devise_.children.create([{name: "冷蔵庫"}, {name: "洗濯機"}, {name: "炊飯器"}, {name: "電子レンジ/オーブン"}, {name: "調理機器"}, {name: "アイロン"}, {name: "掃除機"}, {name: "エスプレッソマシン"}, {name: "コーヒーメーカー"}, {name: "衣類乾燥機"}, {name: "その他"}])
+
+
+# 家電・スマホ・カメラ
+
+devise = Category.create(name: "家電・スマホ・カメラ")
+
+devise_smartphone = devise.children.create(name: "家電・スマホ・カメラ")
+devise_smartaccesary = devise.children.create(name: "スマホアクセサリー")
+devise_pc = devise.children.create(name: "PC/タブレット")
+devise_camera = devise.children.create(name: "カメラ")
+devise_tv = devise.children.create(name: "テレビ/映像機器")
+devise_ordio = devise.children.create(name: "オーディオ機器")
+devise_health = devise.children.create(name: "美容/健康")
+devise_aircondition = devise.children.create(name: "冷暖房/空調")
+devise_life = devise.children.create(name: "生活家電")
+devise_etc = toys.children.create(name: "その他")
