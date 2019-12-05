@@ -15,5 +15,5 @@ class Product < ApplicationRecord
   # has_many :chats,dependent: :destroy
   # has_many :favorites,dependent: :destroy
   # belongs_to :brand
-  # belongs_to :category
+  belongs_to :category
 end
