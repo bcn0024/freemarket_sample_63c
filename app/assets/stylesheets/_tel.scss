@@ -59,6 +59,7 @@
     .tel-bottom{
         max-width: 343px;
         margin: 0 auto;
+        padding: 40px 0px;
         .tel-input{
           margin: 0;
           & label{
@@ -89,9 +90,17 @@
             color: #fff;
             display: block;
             width: 100%;
-            line-height: 48px;
-            font-size: 14px;
             margin-top: 32px;
+            .send-btn{
+              -webkit-appearance: none;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+            }
         }
         .tel-reson{
             margin-top: 32px;

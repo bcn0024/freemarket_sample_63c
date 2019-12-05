@@ -55,7 +55,7 @@
               text-align: start;
               float: left;
             }
-            input{
+            .input-form{
               height: 30px;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -86,37 +86,18 @@
               vertical-align: top;
               float: left;
             }
-            .form-group-prefecture{
-              .select-wrap{
-                margin-top: 32px;
-                .select-default{
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  padding: 0 16px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                  width: 111%;
-                  margin: 8px 0 0;
-                }
-              }
-            }
             .form-group{
               margin-top: 32px;
             }
             .btn-red{
+              -webkit-appearance: none;
               width: 100%;
               display: block;
               background: #ea352d;
-              border: 1px solid #ea352d;
               color: #fff;
-              padding: 15px 0;
               font-size:14px;
               margin-top: 32px;
+              
             }
           }
         }
