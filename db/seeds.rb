@@ -306,3 +306,28 @@ sport_ski.children.create([{name: "板"}, {name: "ブーツ(男性用)"}, {name:
 sport_othersports.children.create([{name: "ダンス/バレエ"}, {name: "サーフィン"}, {name: "バスケットボール"}, {name: "バドミントン"}, {name: "バレーボール"}, {name: "スケートボード"}, {name: "陸上競技"}, {name: "ラグビー"}, {name: "アメリカンフットボール"}, {name: "ボクシング"}, {name: "ボウリング"}, {name: "その他"}])
 sport_outdoor.children.create([{name: "テント/タープ"}, {name: "ライト/ランタン"}, {name: "寝袋/寝具"}, {name: "テーブル/チェア"}, {name: "ストーブ/コンロ"}, {name: "調理器具"}, {name: "食器"}, {name: "登山用品"}, {name: "その他"}])
 sport_etc.children.create([{name: "旅行用品"}, {name: "その他"}])
+
+
+# ハンドメイド
+
+handmade = Category.create(name: "ハンドメイド")
+
+handmade_accesary_woman = handmade.children.create(name: "アクセサリー(女性用)")
+handmade_fashion = handmade.children.create(name: "ファッション/小物")
+handmade_accesary_watch = handmade.children.create(name: "アクセサリー/時計")
+handmade_interia = handmade.children.create(name: "日用品/インテリア")
+handmade_hobby = handmade.children.create(name: "趣味/おもちゃ")
+handmade_kids = handmade.children.create(name: "キッズ/ベビー")
+handmade_material = handmade.children.create(name: "素材/材料")
+handmade_create = handmade.children.create(name: "二次創作物")
+handmade_etc = handmade.children.create(name: "その他")
+
+
+handmade_accesary_woman.chidlren.create([{name: "ピアス"}, {name: "イヤリング"}, {name: "ネックレス"}, {name: "ブレスレット"}, {name: "リング"}, {name: "チャーム"}, {name: "ヘアゴム"}, {name: "アンクレット"}, {name: "その他"}])
+handmade_fashion.chidlren.create([{name: "バッグ(女性用)"}, {name: "バッグ(男性用)"}, {name: "財布(女性用)"}, {name: "財布(男性用)"}, {name: "ファッション雑貨"}, {name: "その他"}])
+handmade_accesary_watch.chidlren.create([{name: "アクセサリー(男性用)"}, {name: "時計(女性用)"}, {name: "時計(男性用)"}, {name: "その他"}])
+handmade_interia.chidlren.create([{name: "キッチン用品"}, {name: "家具"}, {name: "文房具"}, {name: "アート/写真"}, {name: "アロマ/キャンドル"}, {name: "フラワー/ガーデン"}, {name: "その他"}])
+handmade_hobby.chidlren.create([{name: "クラフト/布製品"}, {name: "おもちゃ/人形"}, {name: "その他"}])
+handmade_kids.chidlren.create([{name: "ファッション雑貨"}, {name: "スタイ/よだれかけ"}, {name: "外出用品"}, {name: "ネームタグ"}, {name: "その他"}])
+handmade_material.chidlren.create([{name: "各種パーツ"}, {name: "生地/糸"}, {name: "型紙/パターン"}, {name: "その他"}])
+handmade_create.chidlren.create([{name: "Ingress"}, {name: "クリエイターズ宇宙兄弟"}, {name: "シンデレラガールズCPグッズ"},])
