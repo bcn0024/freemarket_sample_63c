@@ -323,14 +323,14 @@ handmade_create = handmade.children.create(name: "二次創作物")
 handmade_etc = handmade.children.create(name: "その他")
 
 
-handmade_accesary_woman.chidlren.create([{name: "ピアス"}, {name: "イヤリング"}, {name: "ネックレス"}, {name: "ブレスレット"}, {name: "リング"}, {name: "チャーム"}, {name: "ヘアゴム"}, {name: "アンクレット"}, {name: "その他"}])
-handmade_fashion.chidlren.create([{name: "バッグ(女性用)"}, {name: "バッグ(男性用)"}, {name: "財布(女性用)"}, {name: "財布(男性用)"}, {name: "ファッション雑貨"}, {name: "その他"}])
-handmade_accesary_watch.chidlren.create([{name: "アクセサリー(男性用)"}, {name: "時計(女性用)"}, {name: "時計(男性用)"}, {name: "その他"}])
-handmade_interia.chidlren.create([{name: "キッチン用品"}, {name: "家具"}, {name: "文房具"}, {name: "アート/写真"}, {name: "アロマ/キャンドル"}, {name: "フラワー/ガーデン"}, {name: "その他"}])
-handmade_hobby.chidlren.create([{name: "クラフト/布製品"}, {name: "おもちゃ/人形"}, {name: "その他"}])
-handmade_kids.chidlren.create([{name: "ファッション雑貨"}, {name: "スタイ/よだれかけ"}, {name: "外出用品"}, {name: "ネームタグ"}, {name: "その他"}])
-handmade_material.chidlren.create([{name: "各種パーツ"}, {name: "生地/糸"}, {name: "型紙/パターン"}, {name: "その他"}])
-handmade_create.chidlren.create([{name: "Ingress"}, {name: "クリエイターズ宇宙兄弟"}, {name: "シンデレラガールズCPグッズ"},])
+handmade_accesary_woman.children.create([{name: "ピアス"}, {name: "イヤリング"}, {name: "ネックレス"}, {name: "ブレスレット"}, {name: "リング"}, {name: "チャーム"}, {name: "ヘアゴム"}, {name: "アンクレット"}, {name: "その他"}])
+handmade_fashion.children.create([{name: "バッグ(女性用)"}, {name: "バッグ(男性用)"}, {name: "財布(女性用)"}, {name: "財布(男性用)"}, {name: "ファッション雑貨"}, {name: "その他"}])
+handmade_accesary_watch.children.create([{name: "アクセサリー(男性用)"}, {name: "時計(女性用)"}, {name: "時計(男性用)"}, {name: "その他"}])
+handmade_interia.children.create([{name: "キッチン用品"}, {name: "家具"}, {name: "文房具"}, {name: "アート/写真"}, {name: "アロマ/キャンドル"}, {name: "フラワー/ガーデン"}, {name: "その他"}])
+handmade_hobby.children.create([{name: "クラフト/布製品"}, {name: "おもちゃ/人形"}, {name: "その他"}])
+handmade_kids.children.create([{name: "ファッション雑貨"}, {name: "スタイ/よだれかけ"}, {name: "外出用品"}, {name: "ネームタグ"}, {name: "その他"}])
+handmade_material.children.create([{name: "各種パーツ"}, {name: "生地/糸"}, {name: "型紙/パターン"}, {name: "その他"}])
+handmade_create.children.create([{name: "Ingress"}, {name: "クリエイターズ宇宙兄弟"}, {name: "シンデレラガールズCPグッズ"},])
 
 
 # チケット
@@ -353,3 +353,37 @@ chicket_interia.children.create([{name: "声優/アニメ "}, {name: "キッズ/
 chicket_hobby.children.create([{name: "邦画 "}, {name: "洋画 "}, {name: "その他 "}])
 chicket_kids.children.create([{name: "遊園地/テーマパーク "}, {name: "美術館/博物館 "}, {name: "スキー場 "}, {name: "ゴルフ場 "}, {name: "フィットネスクラブ "}, {name: "プール "}, {name: "ボウリング場 "}, {name: "水族館 "}, {name: "動物園 "}, {name: "その他 "}])
 chicket_material.children.create([{name: "ショッピング "}, {name: "レストラン/食事券 "}, {name: "フード/ドリンク券 "}, {name: "宿泊券 "}, {name: "その他 "}])
+
+
+# 自動車・オートバイ
+
+ride = Category.create(name: "自動車・オートバイ")
+
+ride_original = ride.children.create(name: "自動車本体")
+ride_tire = ride.children.create(name: "自動車タイヤ/ホイール")
+ride_part = ride.children.create(name: "自動車パーツ")
+ride_accesary = ride.children.create(name: "自動車アクセサリー")
+ride_body = ride.children.create(name: "オートバイ車体")
+ride_outbike_part = ride.children.create(name: "オートバイパーツ")
+ride_outbike_accesary = ride.children.create(name: "オートバイアクセサリー")
+
+
+ride_original.children.create([{name: "国内自動車本体"}, {name: "外国自動車本体"}])
+ride_tire.children.create([{name: "タイヤ/ホイールセット"}, {name: "タイヤ"}, {name: "ホイール"}, {name: "その他"}])
+ride_part.children.create([{name: "サスペンション"}, {name: "ブレーキ"}, {name: "外装、エアロパーツ"}, {name: "ライト"}, {name: "内装品、シート"}, {name: "ステアリング"}, {name: "マフラー・排気系"}, {name: "エンジン、過給器、冷却装置"}, {name: "クラッチ、ミッション、駆動系"}, {name: "電装品"}, {name: "補強パーツ"}, {name: "汎用パーツ"}, {name: "外国自動車用パーツ"}, {name: "その他"}])
+ride_accesary.children.create([{name: "車内アクセサリー"}, {name: "カーナビ"}, {name: "カーオーディオ"}, {name: "車外アクセサリー"}, {name: "メンテナンス用品"}, {name: "チャイルドシート"}, {name: "ドライブレコーダー"}, {name: "レーダー探知機"}, {name: "カタログ/マニュアル"}, {name: "セキュリティ"}, {name: "ETC"}, {name: "その他"}])
+ride_outbike_part.children.create([{name: "タイヤ"}, {name: "マフラー"}, {name: "エンジン、冷却装置"}, {name: "カウル、フェンダー、外装"}, {name: "サスペンション"}, {name: "ホイール"}, {name: "シート"}, {name: "ブレーキ"}, {name: "タンク"}, {name: "ライト、ウィンカー"}, {name: "チェーン、スプロケット、駆動系"}, {name: "メーター"}, {name: "電装系"}, {name: "ミラー"}, {name: "外国オートバイ用パーツ"}, {name: "その他"}])
+ride_outbike_accesary.children.create([{name: "ヘルメット/シールド"}, {name: "バイクウエア/装備"}, {name: "アクセサリー"}, {name: "メンテナンス"}, {name: "カタログ/マニュアル"}, {name: "その他"},])
+
+
+# 自動車・オートバイ
+
+ride = Category.create(name: "自動車・オートバイ")
+
+ride_original = ride.children.create(name: "自動車本体")
+ride_tire = ride.children.create(name: "自動車タイヤ/ホイール")
+ride_part = ride.children.create(name: "自動車パーツ")
+ride_accesary = ride.children.create(name: "自動車アクセサリー")
+ride_body = ride.children.create(name: "オートバイ車体")
+ride_outbike_part = ride.children.create(name: "オートバイパーツ")
+ride_outbike_accesary = ride.children.create(name: "オートバイアクセサリー")
