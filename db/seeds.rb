@@ -10,6 +10,8 @@
 # children.create([{name: ""}, {name: ""}, {name: ""}, {name: ""}, {name: ""}, {name: ""}, {name: ""}, {name: ""}, {name: ""}, {name: ""}])
 # {name: ""}, {name: ""}, {name: ""},
 
+# レディース
+
 woman = Category.create(name: "レディース")
 
 woman_tops = woman.children.create(name: "トップス")
@@ -55,7 +57,7 @@ woman_etc.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "そ
 
 
 
-
+# メンズ
 
 man = Category.create(name: "メンズ")
 
@@ -87,12 +89,11 @@ man_watch.children.create([{name: "腕時計(アナログ)"}, {name: "腕時計(
 man_swimwear.children.create([{name: "一般水着"}, {name: "スポーツ用"}, {name: "アクセサリー"}, {name: "その他"}])
 man_legwear.children.create([{name: "ソックス"}, {name: "レギンス/スパッツ"}, {name: "レッグウォーマー"}, {name: "その他"}])
 man_underwear.children.create([{name: "トランクス"}, {name: "ボクサーパンツ"}, {name: "その他"} ])
-man_etc.children.create([{name: "その他"}])
 
 
 
 
-
+# ベビー・キッズ
 
 
 baby = Category.create(name: "ベビー・キッズ")
@@ -132,26 +133,35 @@ baby_etc.children.create([{name: "母子手帳用品"}, {name: "その他"}])
 
 
 
+# インテリア・住まい・小物
+
+house = Category.create(name: "インテリア・住まい・小物")
+
+house_kitchen = house.children.create(name: "トップス")
+house_bed = house.children.create(name: "ジャケット/アウター")
+house_sofa = house.children.create(name: "パンツ")
+house_chair = house.children.create(name: "スカート")
+house_table = house.children.create(name: "ワンピース")
+house_furniture = house.children.create(name: "靴")
+house_mat = house.children.create(name: "ルームウェア/パジャマ")
+house_curtain = house.children.create(name: "レッグウェア")
+house_light = house.children.create(name: "帽子")
+house_sleep = house.children.create(name: "バッグ")
+house_small = house.children.create(name: "アクセサリー ")
+house_season = house.children.create(name: "ヘアアクセサリー")
+house_etc = house.children.create(name: "小物")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+house_kitchen.children.create([{name: "食器"}, {name: "調理器具"}, {name: "収納/キッチン雑貨"}, {name: "弁当用品"}, {name: "カトラリー(スプーン等)"}, {name: "テーブル用品"}, {name: "容器"}, {name: "エプロン"}, {name: "アルコールグッズ"}, {name: "浄水器"}, {name: "その他"}])
+house_bed.children.create([{name: "セミシングルベッド"}, {name: "シングルベッド"}, {name: "セミダブルベッド"}, {name: "ダブルベッド"}, {name: "ワイドダブルベッド"}, {name: "クイーンベッド"}, {name: "キングベッド"}, {name: "脚付きマットレスベッド"}, {name: "マットレス"}, {name: "すのこベッド"}, {name: "ロフトベッド/システムベッド"}, {name: "簡易ベッド/折りたたみベッド"}, {name: "収納付き"}, {name: "その他"}])
+house_sofa.children.create([{name: "ソファセット"},{name: "シングルソファ"},{name: "ラブソファ"},{name: "トリプルソファ"},{name: "オットマン"},{name: "コーナーソファ"},{name: "ビーズソファ/クッションソファ"},{name: "ローソファ/フロアソファ"},{name: "ソファベッド"},{name: "応接セット"},{name: "ソファカバー"},{name: "リクライニングソファ"},{name: "その他"}])
+house_chair.children.create([{name: "一般"},{name: "スツール"},{name: "ダイニングチェア"},{name: "ハイバックチェア"},{name: "ロッキングチェア"},{name: "座椅子"},{name: "折り畳みイス"},{name: "デスクチェア"},{name: "その他"}])
+house_table.children.create([{name: "こたつ"},{name: "カウンターテーブル"},{name: "サイドテーブル"},{name: "センターテーブル"},{name: "ダイニングテーブル"},{name: "座卓/ちゃぶ台"},{name: "アウトドア用"},{name: "パソコン用"},{name: "事務机/学習机"},{name: "その他"},])
+house_furniture.children.create([{name: "リビング収納"},{name: "キッチン収納"},{name: "玄関/屋外収納"},{name: "バス/トイレ収納"},{name: "本収納"},{name: "本/CD/DVD収納"},{name: "洋服タンス/押入れ収納"},{name: "電話台/ファックス台"},{name: "ドレッサー/鏡台"},{name: "棚/ラック"},{name: "ケース/ボックス"},{name: "その他"}])
+house_mat.children.create([{name: "ラグ"}, {name: "カーペット"}, {name: "ホットカーペット"}, {name: "玄関/キッチンマット"}, {name: "トイレ/バスマット"}, {name: "その他"}])
+house_curtain.children.create([{name: "カーテン"},{name: "ブラインド"},{name: "ロールスクリーン"},{name: "のれん"},{name: "その他"}])
+house_light.children.create([{name: "蛍光灯/電球"},{name: "天井照明"},{name: "フロアスタンド"},{name: "その他"}])
+house_sleep.children.create([{name: "布団/毛布"},{name: "枕"},{name: "シーツ/カバー"},{name: "その他"}])
+house_small.children.create([{name: "ごみ箱"},{name: "ウェルカムボード"},{name: "オルゴール"},{name: "クッション"},{name: "クッションカバー"},{name: "スリッパラック"},{name: "ティッシュボックス"},{name: "バスケット/かご"},{name: "フォトフレーム"},{name: "マガジンラック"},{name: "モビール"},{name: "花瓶"},{name: "灰皿"},{name: "傘立て"},{name: "小物入れ"},{name: "置時計"},{name: "掛時計/柱時計"},{name: "鏡(立て掛け式)"},{name: "鏡(壁掛け式)"},{name: "置物"},{name: "風鈴"},{name: "植物/観葉植物"},{name: "その他"}])
+house_season.children.create([{name: "正月"},{name: "成人式"},{name: "バレンタインデー"},{name: "ひな祭り"},{name: "子どもの日"},{name: "母の日"},{name: "父の日"},{name: "サマーギフト/お中元"},{name: "夏/夏休み"},{name: "ハロウィン"},{name: "敬老の日"},{name: "七五三"},{name: "お歳暮"},{name: "クリスマス"},{name: "冬一般"},{name: "その他"},])
+house_etc.children.create([
