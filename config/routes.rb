@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create, :new, :show ,:destoroy] do
     member do
       get 'mypagemore'
+      get 'howtopay'
+      get 'creditnew'
     end
   end
 

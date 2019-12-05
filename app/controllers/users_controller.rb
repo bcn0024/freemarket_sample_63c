@@ -17,6 +17,14 @@ class UsersController < ApplicationController
      @products = @user.products
   end
 
+  def howtopay
+    @user = User.find(params[:id])
+  end
+
+  def creditnew
+    @user = User.find(params[:id])
+  end
+
   def mypagemore
     @user = User.find(params[:id])
     @products = @user.products
