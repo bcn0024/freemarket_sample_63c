@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-
+  
   def index
     @products = Product.limit(10).order('name DESC')
   end
@@ -37,6 +37,23 @@ class ProductsController < ApplicationController
     redirect_to myproduct_product_path(product.id)
   end
 
+  def purchase
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @user = @product.user
+    @products = @product.user.products.limit(6)
+  end
+  def payjp
+    # Payjp.api_key = PAYJP_sk_test_bd4e50db2758c85468065f4c
+    # Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
+    # redirect_to root_path, notice: "支払いが完了しました"
+    Payjp.api_key = "sk_test_bd4e50db2758c85468065f4c"
+    Payjp::Charge.create(
+      amount: 809, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      currency: 'jpy'
+    )
+  end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
@@ -47,3 +64,4 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :postage, :region, :arrival_date, :price)
   end
 end
+

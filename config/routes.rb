@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :create, :new, :destroy, :edit, :update, :show] do
     member do
+      get 'purchase'
+      post 'payjp'
       get 'myproduct'
   end
     resources :images, only: [:index,:destroy]
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create, :new, :show ,:destoroy] do
     member do
       get 'mypagemore'
+      get 'howtopay'
+      get 'creditnew'
     end
   end
 
