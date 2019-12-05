@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # common callback method
   def callback_for(provider)
     info = User.find_oauth(request.env["omniauth.auth"])
-    # snsの情報からuserが登録されているかor snsから情報を取得できているかを確認
+    # snsの情報からuserが登録されているか　or snsから情報を取得できているかを確認
     @user = User.where(nickname: info[:user][:nickname]).or(User.where(email: info[:user][:email])).first || info[:user]
 
     # persisted?はデータがDBに保存されているかを確認する/配列に対しては使えないから@userを定義するときは気をつける
@@ -36,11 +36,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         session[:provider] = info[:sns][:provider]
       end
       #登録フォームのviewにリダイレクトさせる
-      redirect_to step1sns_signup_index_path
+
+      render template: "signup/step1sns"
     end
   end
 
   def failure
-    redirect_to step1sns_signup_index_path
+    redirect_to root_path
   end
 end
