@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users,
+  # controllers: {
+  #   omniauth_callbacks: 'users/omniauth_callbacks'}
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' } 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
   root to:  'products#index'
 
-  resources :products, only: [:index, :create,:new,:destroy, :edit, :update] do
-    resources :images, only: [:index,:destroy]
+
+
+  resources :products, only: [:index, :create, :new, :destroy, :edit, :update, :show] do
     member do
+      get 'purchase'
+      post 'payjp'
       get 'myproduct'
-    end
+  end
+    resources :images, only: [:index,:destroy]
+    
   end
 
 
@@ -18,6 +26,7 @@ Rails.application.routes.draw do
       get 'mypagemore'
       get 'logout'
       get 'profile'
+
     end
   end
 
@@ -27,6 +36,7 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :create,:new,]
     collection do
       get 'step1'
+      get 'step1sns'
       get 'step2'
       get 'done'
       get 'step3'

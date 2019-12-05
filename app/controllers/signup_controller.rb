@@ -1,7 +1,22 @@
 class SignupController < ApplicationController
   
   def step1
-    @user = User.new
+      @user = User.new
+  end
+
+  def step1sns
+    
+   if session[:password_confirmation]
+      
+      @user = User.new(
+        #omniauth_callbacks_controllerで定義したsession
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password_confirmation]
+      )
+    else
+      @user = User.new
+    end
   end
 
   def step2
@@ -21,20 +36,6 @@ class SignupController < ApplicationController
 
   def step3
     session[:phone_number] = user_params[:phone_number]
-    # User.create(
-    #   nickname: session[:nickname],
-    #   email: session[:email],
-    #   password: session[:password],
-    #   password_confirmation: session[:password_confirmation],
-    #   kanji_surname: session[:kanji_surname], 
-    #   kanji_given_name: session[:kanji_given_name], 
-    #   kana_surname: session[:kana_surname],
-    #   kana_given_name: session[:kana_given_name],
-    #   birth_year: session[:birth_year], 
-    #   birth_month: session[:birth_month], 
-    #   birth_day: session[:birth_day],
-    #   phone_number: session[:phone_number],
-    # )
     @address = Address.new
   end
 
@@ -62,6 +63,7 @@ class SignupController < ApplicationController
       birth_month: session[:birth_month], 
       birth_day: session[:birth_day],
       phone_number: session[:phone_number],
+
     )
     
     @address= Address.create(

@@ -1,17 +1,19 @@
 %body
+  =render partial: "users/mainheader"
   .default-container
     %section.item-box-container.l-single-container
-      %h1.item-name COACH　ショルダーバッグ
+      %h1.item-name 
+        = @product.name
       %p.item-wording
-        『COACH　ショルダーバッグ』は、236回の取引実績を持つ
-        =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-          みやきょんさん
-        から出品されました。
-        =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-          コーチ
-        =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-          (ショルダーバッグ/レディース）
-        の商品で、千葉県から2~3日で発送されます。
+        = @product.name + "は、236回の取引実績を持つ"
+        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
+        -#   = @user.nickname
+        -# から出品されました。
+        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
+        -#   コーチ
+        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
+        -#   (ショルダーバッグ/レディース）
+        -# の商品で、千葉県から2~3日で発送されます。
       .item-main-content.clearfix
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
@@ -19,22 +21,13 @@
               .owl-stage{style: "left: 0px; width: 1800px;"}
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-height
-                    =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_1.jpg?1560308557", style: "opacity: 1;",alt: "COACH　ショルダーバッグ",class:"owl-lazy")
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-height
-                    =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_2.jpg?1560308557", style: "opacity: 1;",alt: "COACH　ショルダーバッグ",class:"owl-lazy")
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-width
-                    =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_3.jpg?1560308557", style: "opacity: 1;",alt: "COACH　ショルダーバッグ",class:"owl-lazy")
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-height
-                    =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_4.jpg?1560308557", style: "opacity: 1;",alt: "COACH　ショルダーバッグ",class:"owl-lazy")
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-height
-                    =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_5.jpg?1560308557", style: "opacity: 1;",alt: "COACH　ショルダーバッグ",class:"owl-lazy")
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner
-                    =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_6.jpg?1560308557", style: "opacity: 1;",alt: "COACH　ショルダーバッグ",class:"owl-lazy")
+                    =image_tag (@images[0].image),class:"owl-lazy",size: "188x188" if @images[0].image.present?
+                - @product.images.each_with_index do |i, index|
+                  - if index != 0
+                    .owl-item{style: "width: 300px;"}
+                      %span
+                      .owl-item-inner.is-higher-height
+                        =image_tag (i.image),class:"owl-lazy",size: "188x188"
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
@@ -42,42 +35,31 @@
               .owl-dot.active
                 %span
                 .owl-dot-inner
-                  =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_1.jpg?1560308557", class:"is-higher-height")
-              .owl-dot
-                %span
-                .owl-dot-inner
-                  =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_2.jpg?1560308557", class:"is-higher-height")
-              .owl-dot
-                %span
-                .owl-dot-inner
-                  =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_3.jpg?1560308557", class:"is-higher-height")
-              .owl-dot
-                %span
-                .owl-dot-inner
-                  =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_4.jpg?1560308557", class:"is-higher-height")
-              .owl-dot
-                %span
-                .owl-dot-inner
-                  =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_5.jpg?1560308557", class:"is-higher-height")
-              .owl-dot
-                %span
-                .owl-dot-inner
-                  =image_tag("https://static.mercdn.net/item/detail/orig/photos/m77329607705_6.jpg?1560308557", class:"is-higher-height")
+                  =image_tag (@images[0].image),class:"is-higher-height" if @images[0].image.present?
+
+              - @product.images.each_with_index do |i, index|
+                - if index != 0
+                  .owl-dot
+                    %span
+                    .owl-dot-inner
+                      =image_tag (i.image),class:"is-higher-height"
         .item-price-box.text-center.visible-sp
-          %span.item-price.bold ¥4,600
+          %span.item-price.bold
+            ¥
+            = @product.price
           %span.item-tax (税込)
           %span.item-shipping-fee 送料込み
         %section.visible-sp
           .item-btn-float-area
-            =link_to "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm77329607705%2F",id:"",class:"item-buy-btn" do
+            =link_to purchase_product_path,class:"item-buy-btn" do
               購入画面に進む
         %table.item-detail-table
           %tbody
             %tr
               %th 出品者
               %td
-                =link_to "https://www.mercari.com/jp/u/993970389/",id:"" do
-                  みやきょん
+                =link_to user_path(),id:"" do
+                  = @user.nickname
                 %div
                   .item-user-ratings
                     =icon('far', 'laugh', class: "icon-good")
@@ -125,10 +107,12 @@
               %th 発送日の目安
               %td 2~3日で発送
       .item-price-box.text-center
-        %span.item-price.bold ¥4,600
+        %span.item-price.bold 
+          ¥
+          = @product.price
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
-      %a.item-buy-btn{href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm77329607705%2F"}
+      =link_to purchase_product_path, class:"item-buy-btn" do
         購入画面に進む
       %p.shipping-not-allowed-message.has-error-text.text-center
         この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
@@ -213,79 +197,27 @@
       .product-file
         .head
           .head__content
-            USERのその他の商品
-    .products
-      .back-image
-        .image-block
-          .image
-            =image_tag("/assets/karioki.jpg",size: "220x220",alt:"",class:"item-image")
-          .image-content
-            .item-name
-              メンズ服
-            .price
-              .price-content
-                ¥5,000
-      .back-image
-        .image-block
-          .image
-            =image_tag("/assets/karioki.jpg",size: "220x220",alt:"",class:"item-image")   
-            .price
-              .price-content
-          .image-content
-            .item-name
-              メンズ服 
-            .price
-              .price-content
-                ¥5,000
-      .back-image
-        .image-block  
-          .image
-            =image_tag("/assets/karioki.jpg",size: "220x220",alt:"",class:"item-image")
-          .image-content
-            .item-name
-              メンズ服
-            .price
-              .price-content
-                ¥5,000
-    .products
-      .back-image
-        .image-block
-          .image
-            =image_tag("/assets/karioki.jpg",size: "220x220",alt:"",class:"item-image")
-          .image-content
-            .item-name
-              メンズ服
-            .price
-              .price-content
-                ¥5,000
-      .back-image
-        .image-block
-          .image
-            =image_tag("/assets/karioki.jpg",size: "220x220",alt:"",class:"item-image")   
-            .price
-              .price-content
-          .image-content
-            .item-name
-              メンズ服 
-            .price
-              .price-content
-                ¥5,000
-      .back-image
-        .image-block  
-          .image
-            =image_tag("/assets/karioki.jpg",size: "220x220",alt:"",class:"item-image")
-          .image-content
-            .item-name
-              メンズ服
-            .price
-              .price-content
-                ¥5,000
+            = @user.nickname + "のその他の商品"
+      .products
+        - @products.each do |product|
+          .back-image
+            .image-block
+              .image
+                = link_to product_path(product.id) do
+                  =image_tag (product.images[0].image),size: "220x220",alt:"",class:"item-image"
+              .image-content
+                .item-name
+                  = product.name
+                .price
+                  .price-content
+                    ¥
+                    = product.price
 
     .users-product
       .product-file
         .head
           .head__content
-            USERのその他の商品
+            パーカーのその他の商品
     .products
       .back-image
         .image-block
