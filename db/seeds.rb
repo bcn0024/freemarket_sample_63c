@@ -331,3 +331,25 @@ handmade_hobby.chidlren.create([{name: "クラフト/布製品"}, {name: "おも
 handmade_kids.chidlren.create([{name: "ファッション雑貨"}, {name: "スタイ/よだれかけ"}, {name: "外出用品"}, {name: "ネームタグ"}, {name: "その他"}])
 handmade_material.chidlren.create([{name: "各種パーツ"}, {name: "生地/糸"}, {name: "型紙/パターン"}, {name: "その他"}])
 handmade_create.chidlren.create([{name: "Ingress"}, {name: "クリエイターズ宇宙兄弟"}, {name: "シンデレラガールズCPグッズ"},])
+
+
+# チケット
+
+chicket = Category.create(name: "チケット")
+
+chicket_accesary_woman = chicket.children.create(name: "音楽")
+chicket_fashion = chicket.children.create(name: "スポーツ")
+chicket_accesary_watch = chicket.children.create(name: "演劇/芸能")
+chicket_interia = chicket.children.create(name: "イベント")
+chicket_hobby = chicket.children.create(name: "映画")
+chicket_kids = chicket.children.create(name: "施設利用券")
+chicket_material = chicket.children.create(name: "優待券/割引券")
+chicket_etc = chicket.children.create(name: "その他")
+
+chicket_accesary_woman.children.create([{name: "男性アイドル "}, {name: "女性アイドル "}, {name: "韓流 "}, {name: "国内アーティスト "}, {name: "海外アーティスト "}, {name: "音楽フェス "}, {name: "声優/アニメ "}, {name: "その他 "}])
+chicket_fashion.children.create([{name: "サッカー "}, {name: "野球 "}, {name: "テニス "}, {name: "格闘技/プロレス "}, {name: "相撲/武道 "}, {name: "ゴルフ "}, {name: "バレーボール "}, {name: "バスケットボール "}, {name: "モータースポーツ "}, {name: "ウィンタースポーツ "}, {name: "その他 "}])
+chicket_accesary_watch.children.create([{name: "ミュージカル "}, {name: "演劇 "}, {name: "伝統芸能 "}, {name: "落語 "}, {name: "お笑い "}, {name: "オペラ "}, {name: "サーカス "}, {name: "バレエ "}, {name: "その他 "}])
+chicket_interia.children.create([{name: "声優/アニメ "}, {name: "キッズ/ファミリー "}, {name: "トークショー/講演会 "}, {name: "その他 "}])
+chicket_hobby.children.create([{name: "邦画 "}, {name: "洋画 "}, {name: "その他 "}])
+chicket_kids.children.create([{name: "遊園地/テーマパーク "}, {name: "美術館/博物館 "}, {name: "スキー場 "}, {name: "ゴルフ場 "}, {name: "フィットネスクラブ "}, {name: "プール "}, {name: "ボウリング場 "}, {name: "水族館 "}, {name: "動物園 "}, {name: "その他 "}])
+chicket_material.children.create([{name: "ショッピング "}, {name: "レストラン/食事券 "}, {name: "フード/ドリンク券 "}, {name: "宿泊券 "}, {name: "その他 "}])
