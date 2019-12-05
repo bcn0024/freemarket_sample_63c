@@ -31,10 +31,12 @@
   margin: auto 0;
   display: inline;
   &__input{
+    display: inline-block;
     margin: 70px 0 0 30px;
     height: 40px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    font-size: 30px;
   }
   &__input:focus {
     outline: 0px;
