@@ -1,31 +1,9 @@
--# %h2 Sign up
--# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
--#   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     - if @minimum_password_length
--#       %em
--#         (#{@minimum_password_length} characters minimum)
--#     %br/
--#     = f.password_field :password, autocomplete: "new-password"
--#   .field
--#     = f.label :password_confirmation
--#     %br/
--#     = f.password_field :password_confirmation, autocomplete: "new-password"
--#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
-
 .body
   .contents
     .contents__header
       %h1
         =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
-          %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229"}/
+          = image_tag("/assets/fmarket_logo_red.svg",alt: "mercari")
       %nav.progress
         %ol.clearfix
           %li.active
@@ -48,7 +26,6 @@
         %h2.registration
           会員情報入力
         = form_for @user, method: :get,url: step2_signup_index_path do |f|
-          
           .form-contents
             .form-group
               %label{for: "nickname"} ニックネーム
@@ -66,7 +43,6 @@
               .form-password-revelation-toggle
                 .checkbox-default
                   = f.password_field :password_confirmation, class:'input-default' ,placeholder: '6文字以上'
-                  //%i.icon-check
                   %label{for: "reveal_password"} パスワードを表示する
                 .form-password-revelation-revealed-password-container
                   %span.form-password-revelation-revealed-password
@@ -103,7 +79,7 @@
                   = f.select :birth_month, [["---", "---"],["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"],["9","9"] ,["10","10"] ,["11","11"],["12","12"]],class:'input-default-half'
                 %span 月
                 .select-wrap.select-wrap__day
-                  = f.select :birth_day, [["---", "---"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"]],class:'input-default-half'
+                  = f.select :birth_day, [["---", "---"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"], ["18", "18"], ["19", "19"], ["20", "20"], ["21", "21"], ["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"], ["26", "26"], ["27", "27"], ["28", "28"], ["29", "29"], ["30", "30"], ["31", "31"]],class:'input-default-half'
                 %span 日
               %input{name: "birthday", type: "hidden", value: ""}/
               .clearfix
