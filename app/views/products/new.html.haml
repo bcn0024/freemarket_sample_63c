@@ -51,7 +51,7 @@
                     .select-wrap
                       .select-wrap-parent
                         = icon('fas', 'chevron-down')
-                        = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_id][]'
+                        = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: ""
                     .select-wrap__bottom
                       %label
                         商品の状態
@@ -59,7 +59,7 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
-                        = f.select :description, [["---", "---"],["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]],class:"form-control"
+                        -# = f.select :description, [["---", "---"],["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]],class:"form-control"
               .sell-content
                 %h3.sell-sub-head
                   配送料について

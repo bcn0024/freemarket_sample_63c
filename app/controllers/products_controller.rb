@@ -42,15 +42,6 @@ class ProductsController < ApplicationController
     redirect_to myproduct_product_path(product.id)
   end
 
-  # def search
-  #   respond_to do |format|
-  #     format.html
-  #     format.json do
-  #       @children = Category.find(params[:parent_id]).children
-  #     end
-  #   end
-  # end
-
   def children
     respond_to do |format|
       format.html
@@ -77,6 +68,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name,
       :description,
+      :category_id,
       :region,
       :arrival_date,
       :price,

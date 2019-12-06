@@ -9,7 +9,7 @@ $(function(){
   function buildCHILD(insertHTML) {
     var html = `<div class="select-wrap-child">
                 <i class="fas fa-chevron-down"></i>
-                <select class="select-default" id="child-form" name="item[category_id][]">
+                <select class="select-default" id="child-form" name="child">
                 <option value="">---</option>
                 </div>
                 ${insertHTML}
@@ -22,7 +22,7 @@ $(function(){
     var html = `
                 <div class="select-wrap-grand">
                 <i class="fas fa-chevron-down"></i>
-                <select class="select-default" id="grandchild-form" name="item[category_id][]">
+                <select class="select-default" id="grandchild-form" name="product[category_id]">
                 <option value="">---</option>
                 ${insertHTML}
                 </select>
@@ -51,6 +51,7 @@ $(function(){
           var insertHTML = '';
           children.forEach(function(child){
             insertHTML += buildOPTION(child);
+
           });
           var html = buildCHILD(insertHTML);
           $('.select-wrap:first').append(html);
@@ -82,12 +83,21 @@ $(function(){
 
         .done(function(grandchildren){
           console.log("success");
-          var insertHTML = '';
-          grandchildren.forEach(function(grandchild){
-            insertHTML += buildOPTION(grandchild);
-          });
-          var html = buildGRANDCHILD(insertHTML);
-          $('.select-wrap:first').append(html);
+
+          var length = grandchildren.length
+          console.log(length);
+
+          if (length == 0) {
+            $('select[name="child"]').attr('name', 'product[category_id]')
+          } else {
+            var insertHTML = '';
+            grandchildren.forEach(function(grandchild){
+              insertHTML += buildOPTION(grandchild);
+            });
+            var html = buildGRANDCHILD(insertHTML);
+            $('.select-wrap:first').append(html);
+
+          }
           $("#child-form").on("change", function(){
             $(".select-wrap-grand").remove();
           });
