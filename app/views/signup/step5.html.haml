@@ -1,16 +1,15 @@
-
 .body
   .contents
-    .contents__header
+    %header.single-header
       %h1
-        =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
-          = image_tag("/assets/fmarket_logo_red.svg",alt: "mercari")
-      %nav.progress
+        %a{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3249637286"}/
+      %nav.progress-bar.signup-bar
         %ol.clearfix
-          %li.active
+          %li.through
             会員情報
             .progress-status
-          %li
+          %li.active
             電話番号認証
             .progress-status
           %li
@@ -36,5 +35,6 @@
         .add-last-btn
           = link_to products_path, class:".login-submit.btn-default.btn-red" do
             メルカリを始める 
+    %img.sc-hUMlYv.cYtUcH{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/   
     = render partial: "layouts/footer"
     .login-submit.btn-default.btn-red
