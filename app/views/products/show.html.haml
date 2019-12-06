@@ -58,7 +58,7 @@
             %tr
               %th 出品者
               %td
-                =link_to user_path(),id:"" do
+                =link_to "/users/#{current_user.id}",id:"" do
                   = @user.nickname
                 %div
                   .item-user-ratings
@@ -190,9 +190,9 @@
           right products >
     .social-media
       .social-media__icon
-        =image_tag("/assets/facebook-icon.jpg",class:"facebook")
-        =image_tag("/assets/twitter.jpg",class:"twitter")
-        =image_tag("/assets/pinterest.jpg",class:"pinterest")
+        =image_tag("/images/facebook-icon.jpg",class:"facebook")
+        =image_tag("/images/twitter.jpg",class:"twitter")
+        =image_tag("/images/pinterest.jpg",class:"pinterest")
     .users-product
       .product-file
         .head
