@@ -25,14 +25,14 @@ Rails.application.routes.draw do
     member do
       get 'selling'
       get 'soldout'
+      get 'logout'
+      get 'profile'
     end
     resources :card, only: [:index, :create, :new]
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
-      get 'logout'
-      get 'profile'
     end
   end
 
