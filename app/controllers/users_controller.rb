@@ -31,7 +31,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @products = @user.products
     @soldouts = @products.where('buyer_id is not NULL')
-    puts @soldouts
   end
 
 
