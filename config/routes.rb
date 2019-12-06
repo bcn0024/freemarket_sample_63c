@@ -23,7 +23,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :create, :new, :show, :destoroy, :edit, :update] do
     member do
-      get 'mypagemore'
+      get 'selling'
+      get 'soldout'
     end
     resources :card, only: [:index, :create, :new]
     collection do

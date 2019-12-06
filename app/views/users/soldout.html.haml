@@ -1,0 +1,45 @@
+.wrapper
+
+  =render partial: "users/mainheader"
+
+  =render partial: "header-nav1"
+
+  .main
+    .main_body
+      =render partial: "sidebar"
+      .l-content
+        %section.mypage-tab
+          %h2.mypage-tab-head 出品した商品
+          %ul.listing-tabs
+            %li.active
+              %h3
+                =link_to selling_user_path do
+                  出品中
+            %li
+              %h3
+                =link_to root_path do
+                  取引中
+            %li
+              %h3
+                =link_to soldout_user_path do
+                  売却済み
+          .tab-content
+            %ul
+              %li
+                - @soldouts.each do |soldout|
+                  =link_to myproduct_product_path(soldout.id), class:"mypage-item" do
+                    =image_tag (soldout.images[0].image),class:"item-image",size: "175x175"
+                    %figure
+                      %image
+                    .mypage-item-body
+                      .mypage-item-text
+                        = soldout.name
+                      %div
+                        %span.listing-item-count
+                          %i.icon-like-border
+                        %span.listing-item-count
+                          %i.icon-message
+                        .maypage-item-status
+                          売却済み
+  =render partial:"products/footer-imag"
+  =render partial:"layouts/footer"
