@@ -28,7 +28,7 @@ Rails.application.routes.draw do
       get 'logout'
       get 'profile'
     end
-    resources :card, only: [:index, :create, :new]
+    resources :card, only: [:index, :create, :new, :show]
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'

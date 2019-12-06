@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  
+  require 'payjp'
   def index
     @products = Product.limit(10).order('name DESC')
   end
@@ -51,15 +51,11 @@ class ProductsController < ApplicationController
     @products = @product.user.products.limit(6)
   end
   def payjp
-    # Payjp.api_key = PAYJP_sk_test_bd4e50db2758c85468065f4c
-    # Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
-    # redirect_to root_path, notice: "支払いが完了しました"
-    Payjp.api_key = "PAYJP_"
-    Payjp::Charge.create(
-      amount: 809, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
-      currency: 'jpy'
-    )
+    @product = Product.find(params[:id])
+    Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
+    Payjp::Charge.create(currency: 'jpy', amount: @product.price, card: params['payjp-token'])
+    redirect_to root_path, notice: "支払いが完了しました"
+    Payjp.api_key = "sk_test_bd4e50db2758c85468065f4c"
   end
 
   def move_to_index

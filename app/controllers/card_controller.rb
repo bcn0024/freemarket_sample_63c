@@ -3,12 +3,13 @@ class CardController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    redirect_to  "/users/#{current_user.id}/card/show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     if params['payjp-token'].blank?
+      binding.pry
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
@@ -19,7 +20,7 @@ class CardController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to card_path
       else
         redirect_to action: "pay"
       end
@@ -38,7 +39,8 @@ class CardController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+  def show
+     #Cardのデータpayjpに送り情報を取り出します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
