@@ -21,7 +21,7 @@ list =[
 ["水筒","いい水筒です","300円",0,"大阪","3日","3000"],
 ["時計","いい時計です","300円",0,"大阪","3日","10000"]]
 list.each do |pro|
-  Product.create(name: pro[0],description: pro[1],postage:pro[2],status:pro[3],region:pro[4],arrival_date:pro[5],price:pro[6],size: "M", user_id: 1, brand_id: 0,category_id: 0)
+  Product.create(name: pro[0],description: pro[1],postage:pro[2],status:pro[3],region:pro[4],arrival_date:pro[5],price:pro[6],size: "M", user_id: 1, brand_id: 0,category_id: 0,buyer_id:2)
 end
 
 
