@@ -1,7 +1,9 @@
 .back-image
   .image-block
     .image
-      -# =image_tag (image.image),class:"item-image",size: "188x188"
+      = link_to product_path(product.id) do
+        =image_tag (product.images[0].image),class:"item-image",size: "188x188"
+
       %h1 
         ¥
         = product.price

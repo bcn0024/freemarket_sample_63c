@@ -1,0 +1,24 @@
+.wrapper
+  =render partial: "mainheader"
+  - breadcrumb :profile
+  = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
+  .profile-body
+    =render partial: "sidebar"
+    .profile-right
+      .profile-head
+        %h2 プロフィール
+      .image-tag
+        .image-second
+          .image-cat
+            =image_tag("/images/dummyface.png", height: "50px", width: "50px")
+          .image-second__input
+            = @user.nickname
+            さん
+      .image-text    
+        %textarea{name: "introduction", placeholder: "例) こんにちは🌟ご覧頂きありがとうございます！かわいいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引ができるように心がけておりますので、商品や発送方法などのご質問がございましたらお気軽にどうぞ♪", value: "", cols: "50", rows: "10",  class: "image-text__input"}
+        .image-change
+          = form_for [@user] do |f|
+            =f.submit "変更する", class: "image-change-btn"
+  =render partial: "footer-imag"
+  =render partial: "layouts/mainfooter"
+      

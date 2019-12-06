@@ -2,6 +2,7 @@
     width: 700px;
     margin: 0 auto;
     background: #fff;
+    padding-bottom: 50px;
     .add-head{
         & h2{
             font-size: 22px;
@@ -14,6 +15,7 @@
     .add-bottom{
         max-width: 343px;
         margin: 0 auto;
+        padding: 20px 0;
         & span{
             background-color: #ea352d;
             margin: 0px 0px 0 8px;
@@ -254,12 +256,11 @@
 }
 
 .add-last-btn{
-    // display: grid;
     text-align: center;
-    // width: 100%;
-    & button{
+    a{
+        -webkit-appearance: none;
+        padding: 10px 100px;
         background: #ea352d;
-        border: 1px solid #ea352d;
         color: #fff;
         display: initial;
         width:50%;

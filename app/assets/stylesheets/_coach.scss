@@ -758,11 +758,12 @@ body{
 }
 .products{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto;
   width: 700px;
   .back-image{
-    width: 220px;
-    margin: 0 20px 20px 0;
+    width: 213px;
     cursor:pointer;
     .image-content{
       padding: 16px;

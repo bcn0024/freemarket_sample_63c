@@ -42,7 +42,6 @@
 .btn-red{
   margin-top: 32px;
   background: #ea352d;
-  border: 1px solid #ea352d;
   color: #fff;
   display: block;
   width: 100%;
@@ -61,6 +60,8 @@
     text-decoration: none;
   }
 }
+.form-contents{
+  padding: 40px;
 .form-group{
   margin-top: 32px;
   & label{
@@ -185,4 +186,5 @@
   margin: 8px 0 0;
   line-height: 1.5;
   color: #888;
+}
 }
