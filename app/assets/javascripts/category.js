@@ -34,7 +34,6 @@ $(function(){
 
     $(document).on("change", "#parent-form", function(){
       var parentValue = document.getElementById("parent-form").value;
-      console.log(parentValue);
 
       if (parentValue != '') {
         $.ajax({
@@ -47,7 +46,6 @@ $(function(){
         })
 
         .done(function(children){
-          console.log("success");
           var insertHTML = '';
           children.forEach(function(child){
             insertHTML += buildOPTION(child);
@@ -61,7 +59,7 @@ $(function(){
           });
         })
         .fail(function(){
-          console.log("fail");
+          alert('カテゴリー取得に失敗しました');
         })
       }
     });
@@ -69,7 +67,6 @@ $(function(){
 
     $(document).on("change", "#child-form", function(){
       var childrenValue = document.getElementById("child-form").value;
-      console.log(childrenValue);
 
       if (childrenValue != '') {
         $.ajax({
@@ -82,10 +79,7 @@ $(function(){
         })
 
         .done(function(grandchildren){
-          console.log("success");
-
           var length = grandchildren.length
-          console.log(length);
 
           if (length == 0) {
             $('select[name="child"]').attr('name', 'product[category_id]')
@@ -103,7 +97,7 @@ $(function(){
           });
         })
         .fail(function(){
-          console.log("fail");
+          alert('カテゴリー取得に失敗しました');
         })
       }
     });
