@@ -145,7 +145,7 @@ house_light = house.children.create(name: "ライト/照明")
 house_sleep = house.children.create(name: "寝具")
 house_small = house.children.create(name: "インテリア小物 ")
 house_season = house.children.create(name: "季節/年中行事")
-house_etc = baby.children.create(name: "その他")
+house_etc = house.children.create(name: "その他")
 
 
 house_kitchen.children.create([{name: "食器"}, {name: "調理器具"}, {name: "収納/キッチン雑貨"}, {name: "弁当用品"}, {name: "カトラリー(スプーン等)"}, {name: "テーブル用品"}, {name: "容器"}, {name: "エプロン"}, {name: "アルコールグッズ"}, {name: "浄水器"}, {name: "その他"}])
@@ -230,7 +230,7 @@ cosmetic_body = cosmetic.children.create(name: "ボディけケア")
 cosmetic_oral = cosmetic.children.create(name: "オーラルケア")
 cosmetic_relax = cosmetic.children.create(name: "リラクゼーション")
 cosmetic_diet = cosmetic.children.create(name: "ダイエット")
-cosmetic_etc = toys.children.create(name: "その他")
+cosmetic_etc = cosmetic.children.create(name: "その他")
 
 cosmetic_basemake.children.create([{name: "ファンデーション"}, {name: "化粧下地"}, {name: "コントロールカラー"}, {name: "BBクリーム"}, {name: "CCクリーム"}, {name: "コンシーラー"}, {name: "フェイスパウダー"}, {name: "トライアルセット/サンプル"}, {name: "その他"}])
 cosmetic_makeup.children.create([{name: "アイシャドウ"}, {name: "口紅"}, {name: "リップグロス"}, {name: "リップライナー"}, {name: "チーク"}, {name: "フェイスカラー"}, {name: "マスカラ"}, {name: "アイライナー"}, {name: "つけまつげ"}, {name: "アイブロウペンシル"}, {name: "パウダーアイブロウ"}, {name: "眉マスカラ"}, {name: "トライアルセット/サンプル"}, {name: "メイク道具/化粧小物"}, {name: "美顔用品/美顔ローラー"}, {name: "その他"}])
