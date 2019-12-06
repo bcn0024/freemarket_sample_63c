@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   
   def index
     @products = Product.limit(10).order('name DESC')
+    # 売れた商品については表示させないようにしたい。
   end
 
   def new
