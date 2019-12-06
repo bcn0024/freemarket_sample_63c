@@ -11,6 +11,26 @@ crumb :exhibit do
   link "出品した商品-出品中",  mypagemore_user_path
   parent :user
 end
+
+crumb :myproduct do
+  link "出品中", myproduct_product_path
+  parent :exhibit 
+end
+
+crumb :profile do
+  link "プロフィール", profile_user_path
+  parent :user
+end
+
+crumb :logout do
+  link "ログアウト", logout_user_path
+  parent :user
+end
+
+crumb :edit do
+  link "本人情報の登録", edit_address_path
+  parent :user
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end

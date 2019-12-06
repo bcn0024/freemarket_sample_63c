@@ -1,6 +1,7 @@
 .header_nav {
   border-top: solid 1px #F5F5F5;
   .nav_box {
+    height: 1px;
     width: 1020px;
     margin: 0 auto;
     display: flex;
@@ -19,7 +20,6 @@
       &__icon {
         margin: 0 8px;
         color: #D5D5D5;
-
       }
     }
     .nav_list--current {
@@ -27,4 +27,8 @@
       font-weight: 600;
     }
   }
+}
+
+.breadcrumbs{
+  display: inline;
 }
