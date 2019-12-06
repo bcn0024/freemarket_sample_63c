@@ -21,10 +21,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def mypagemore
+  def selling
     @user = User.find(params[:id])
     @products = @user.products
+    @sellings = @products.where('buyer_id is NULL')
   end
+
+  def soldout
+    @user = User.find(params[:id])
+    @products = @user.products
+    @soldouts = @products.where('buyer_id is not NULL')
+    puts @soldouts
+  end
+
 
   def logout
     @user = User.find(params[:id])

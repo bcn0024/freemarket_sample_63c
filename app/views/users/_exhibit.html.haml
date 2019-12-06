@@ -4,26 +4,27 @@
     %ul.listing-tabs
       %li.active
         %h3
-          %a{href: "#mypage-tab-transaction-now"}
+          =link_to selling_user_path do
             出品中
       %li
         %h3
-          %a{href:"/jp/mypage/listings/in_progress/"}
+          =link_to root_path do
             取引中
       %li
         %h3
-          %a{href: "#mypage-tab-transaction-old"}
+          =link_to soldout_user_path do
             売却済み
     .tab-content
       %ul
         %li
-          - @products.each do |product|
-            =link_to myproduct_product_path(product.id), class:"mypage-item" do
+          - @sellings.each do |selling|
+            =link_to myproduct_product_path(selling.id), class:"mypage-item" do
+              =image_tag (selling.images[0].image),class:"item-image",size: "175x175"
               %figure
                 %image
               .mypage-item-body
                 .mypage-item-text
-                  チョコレート
+                  = selling.name
                 %div
                   %span.listing-item-count
                     %i.icon-like-border
@@ -31,9 +32,3 @@
                     %i.icon-message
                   .maypage-item-status
                     出品中
-              %i.icon-arrow-right    
-  %ul.history-pager
-    %li
-      %a
-    %li
-      %a   

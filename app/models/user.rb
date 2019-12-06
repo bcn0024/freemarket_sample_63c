@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   has_many :sns_credentials, dependent: :destroy
 
+  has_many :buyed_products, foreign_key: "buyer_id", class_name: "Product"
+  has_many :selling_products, -> { where("buyer_id is NULL") }, foreign_key: "user_id", class_name: "Product"
+  has_many :sold_products, -> { where("buyer_id is not NULL") }, foreign_key: "user_id", class_name: "Product"
+
   #validatesは省略
   
     #omniauth_callbacks_controllerで呼び出すメソッド
