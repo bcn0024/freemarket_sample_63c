@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
     @product.save
     redirect_to root_path
@@ -39,6 +40,16 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.update(product_params)
     redirect_to myproduct_product_path(product.id)
+  end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        @children = Category.find(params[:parent_id]).children
+
+      end
+    end
   end
 
 

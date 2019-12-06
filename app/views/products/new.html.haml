@@ -50,7 +50,6 @@
                         必須
                     .select-wrap
                       =icon('fas', 'chevron-down')
-                      -# = f.select :status, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"] ],class:"form-control"
                       = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category][]'
                     .select-wrap__bottom
                       %label

@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   root to:  'products#index'
 
-  resources :products, only: [:index, :create,:new,:destroy, :edit, :update] do
+  resources :products, only: [:index, :create, :new, :destroy, :edit, :update] do
+    collection do
+      get 'search'
+    end
     resources :images, only: [:index,:destroy,:new,:create]
     member do
       get 'myproduct'
