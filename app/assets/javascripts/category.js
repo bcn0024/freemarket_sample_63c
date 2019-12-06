@@ -8,12 +8,12 @@ $(function(){
 
   function buildCHILD(insertHTML) {
     var html = `<div class="select-wrap-child">
-                <i class="fas fa-chevron-down"></i>
-                <select class="select-default" id="child-form" name="child">
-                <option value="">---</option>
+                  <i class="fas fa-chevron-down"></i>
+                  <select class="select-default" id="child-form" name="child">
+                    <option value="">---</option>
+                    ${insertHTML}
+                  </select>
                 </div>
-                ${insertHTML}
-                </select>
               `
     return html;
   }
@@ -21,11 +21,11 @@ $(function(){
   function buildGRANDCHILD(insertHTML) {
     var html = `
                 <div class="select-wrap-grand">
-                <i class="fas fa-chevron-down"></i>
-                <select class="select-default" id="grandchild-form" name="product[category_id]">
-                <option value="">---</option>
-                ${insertHTML}
-                </select>
+                  <i class="fas fa-chevron-down"></i>
+                  <select class="select-default" id="grandchild-form" name="product[category_id]">
+                    <option value="">---</option>
+                    ${insertHTML}
+                  </select>
                 </div>
               `
     return html;
