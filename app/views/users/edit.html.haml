@@ -1,3 +1,7 @@
+=render partial: "users/mainheader"
+=render partial: "sidebar"
+- breadcrumb :edit
+= breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 .main-right
   %h2.check
     本人情報の登録
@@ -67,7 +71,5 @@
             =link_to "", class: "form_bottom__link" do
               本人情報の登録について
               = icon('fas', 'chevron-right')
-
-        
-        
-        
+=render partial:"products/footer-imag"
+=render partial:"layouts/footer"
