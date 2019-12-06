@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :new, :create]
+  before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
 
   def index
     @user = User.new
@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     10.times { @product.images.build }
 
-    @parents = Category.where(ancestry: nil).order("id ASC").limit(13)
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def myproduct
@@ -42,16 +42,31 @@ class ProductsController < ApplicationController
     redirect_to myproduct_product_path(product.id)
   end
 
-  def search
+  # def search
+  #   respond_to do |format|
+  #     format.html
+  #     format.json do
+  #       @children = Category.find(params[:parent_id]).children
+  #     end
+  #   end
+  # end
+
+  def children
     respond_to do |format|
       format.html
       format.json do
         @children = Category.find(params[:parent_id]).children
-
       end
     end
   end
 
+  def grandchildren
+    @grandchildren = Category.find(params[:children_id]).children
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?

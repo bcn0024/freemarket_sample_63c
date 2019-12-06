@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :create, :new, :destroy, :edit, :update] do
     collection do
-      get 'search'
+      get 'children'
+      get 'grandchildren'
     end
     resources :images, only: [:index,:destroy,:new,:create]
     member do
