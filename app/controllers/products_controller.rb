@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     # Payjp.api_key = PAYJP_sk_test_bd4e50db2758c85468065f4c
     # Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
     # redirect_to root_path, notice: "支払いが完了しました"
-    Payjp.api_key = "sk_test_bd4e50db2758c85468065f4c"
+    Payjp.api_key = "PAYJP_"
     Payjp::Charge.create(
       amount: 809, # 決済する値段
       card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
