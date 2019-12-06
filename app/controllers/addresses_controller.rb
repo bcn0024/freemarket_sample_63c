@@ -1,22 +1,15 @@
 class AddressesController < ApplicationController
-  before_action :signup
-  
-  def new
-    @address = Address.new
-  end
 
-  def create
-    binding.pry
-    Address.create
+  def update
+    @user = User.find(params[:id])
+    @address = @user.address
+    @address.update(address_params)
+    redirect_to edit_user_path(@user.id)
   end
-
 
   private
-
-  def signup
-    @signup = Signup.find(params[:id])
+  def address_params
+    params.require(:address).permit(:postal_code, :prefectures, :municipalities, :address, :building)
   end
-
-
 end
 

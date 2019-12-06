@@ -2,8 +2,6 @@
   %ul.nav_box
     %li.nav_list
       =link_to "#", class: "nav_list__anchor" do
-        メルカリ
-      = icon('fas', 'chevron-right', class: "nav_list__icon" )
-    %li.nav_list--current
-      マイページ
-      
+        - breadcrumb :user
+
+        = breadcrumbs separator: "&rsaquo;", class: "bredcrumbs"

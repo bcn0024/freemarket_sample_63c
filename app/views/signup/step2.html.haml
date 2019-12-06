@@ -1,14 +1,14 @@
 .contents  
-  %header.single-header
+  .contents__header
     %h1
-      %a{:href => "https://www.mercari.com/jp/"}
-        %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3249637286"}/
-    %nav.progress-bar.signup-bar
+      =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
+        = image_tag("/images/fmarket_logo_red.svg",alt: "mercari")
+    %nav.progress
       %ol.clearfix
-        %li.through
+        %li.active
           会員情報
           .progress-status
-        %li.active
+        %li
           電話番号認証
           .progress-status
         %li
@@ -31,17 +31,16 @@
             %label
               携帯電話の番号
             = f.text_field :phone_number, placeholder:  "例）08008080808", type: "tel", value:  ""
-            -# %input.input-default{:name => "phone_number", :placeholder => "携帯電話の番号を入力", :type => "tel", :value => ""}/
           %p
             本人確認のため、携帯電話のSMS(ショートメッセージサービス）を利用して認証を行います。
           %button
-            = f.submit "SMSを送信する"
+            = f.submit "SMSを送信する",class: "send-btn"
           %p
             *電話番号は本人確認や不正防止のために利用します。
             他のユーザーに後悔されることはありません。
           .tel-reson
             =link_to "https://www.mercari.com/jp/signup/registration/", id:"" do
               電話番号の確認が必要な理由
-      
+  = render partial: "layouts/footer"
 
 
