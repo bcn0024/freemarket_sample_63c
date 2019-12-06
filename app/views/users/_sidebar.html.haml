@@ -14,11 +14,11 @@
           いいね！一覧
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
-        =link_to "#", class: "mypage__anchor" do
+        =link_to new_product_path, class: "mypage__anchor" do
           出品する
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
-        =link_to mypagemore_user_path, class: "mypage__anchor" do
+        =link_to selling_user_path, class: "mypage__anchor" do
           出品した商品-出品中
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
@@ -26,8 +26,8 @@
           出品した商品-取引中
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
-        =link_to "#", class: "mypage__anchor" do
-          購入した商品-売却済み
+        =link_to soldout_user_path, class: "mypage__anchor" do
+          出品した商品-売却済み
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
         =link_to "#", class: "mypage__anchor" do
@@ -35,7 +35,7 @@
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
         =link_to "#", class: "mypage__anchor" do
-          出品した商品-過去の取引
+          購入した商品-過去の取引
           = icon('fas', 'chevron-right', class: "mypage__icon" )   
       %li.mypage__list
         =link_to "#", class: "mypage__anchor" do
@@ -71,7 +71,7 @@
 
     %ul.mypage
       %li.mypage__list
-        =link_to "#", class: "mypage__anchor" do
+        =link_to profile_user_path, class: "mypage__anchor" do
           プロフィール
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
@@ -79,7 +79,7 @@
           発送元・お届け先住所変更
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
-        =link_to "#", class: "mypage__anchor" do
+        =link_to "/users/#{current_user.id}/card", class: "mypage__anchor" do
           支払い方法
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
@@ -87,7 +87,7 @@
           メール/パスワード
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
-        =link_to "#", class: "mypage__anchor" do
+        =link_to edit_user_path, class: "mypage__anchor" do
           本人情報
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
@@ -95,7 +95,7 @@
           電話番号の確認
           = icon('fas', 'chevron-right', class: "mypage__icon" )
       %li.mypage__list
-        = link_to destroy_user_session_path, method: :delete ,class: "mypage__anchor" do
+        = link_to logout_user_path,class: "mypage__anchor" do
           ログアウト
           = icon('fas', 'chevron-right', class: "mypage__icon" )
 

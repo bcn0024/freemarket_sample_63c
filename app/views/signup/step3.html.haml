@@ -1,6 +1,26 @@
 .body
   .contents
-    = render partial: "layouts/header"
+    .contents__header
+      %h1
+        =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
+          = image_tag("/images/fmarket_logo_red.svg",alt: "mercari")
+      %nav.progress
+        %ol.clearfix
+          %li.active
+            会員情報
+            .progress-status
+          %li
+            電話番号認証
+            .progress-status
+          %li
+            お届け先住所入力
+            .progress-status
+          %li
+            支払い方法
+            .progress-status
+          %li
+            完了
+            .progress-status
     .contents__main
       .main-head
         .main-head__confirmation
@@ -8,13 +28,12 @@
         .buy-contents
           .content
             .purchase-pref
-              = form_for @address, method: :get, url: step4_signup_index_path do |f|
+              = form_for @address, method: :post, url: "/signup/done" do |f|
                 .form-group-first
                   %label{for: "zip_code1"} 郵便番号
                   %span.require 必須
-                  = f.text_field :postal_code, maxlength: "8", pattern: "\\d{3}-\\d{4}", placeholder: "例) 123-4567", type: "text", value: ""
-                  -# %input.default{"data-region" => "jp", maxlength: "8", name: "zip_code1", pattern: "\\d{3}-\\d{4}", placeholder: "例) 123-4567", type: "text", value: ""}/
-                .form-group-prefecture
+                  = f.text_field :postal_code, maxlength: "8", pattern: "\\d{3}-\\d{4}", placeholder: "例) 123-4567", type: "text", value: "", class: "input-form"
+                .form-group
                   %label{for: "prefecture"} 都道府県
                   %span.require 必須
                   .select-wrap
@@ -23,18 +42,15 @@
                 .form-group
                   %label{for: "address1_label"} 市区町村
                   %span.require 必須
-                  = f.text_field :address, placeholder: "例) 横浜市緑区", class:'default', value:""
+                  = f.text_field :address, placeholder: "例) 横浜市緑区", class:'default', value:"", class: "input-form"
                 .form-group
                   %label{for: "address1_label"} 番地
                   %span.require 必須
-                  = f.text_field :municipalities, placeholder: "例) 青山1−1−1", class:'default', value:""
-                  -# %input.default{name: "address1", placeholder: "例) 青山1−1−1", type: "text", value: ""}/
+                  = f.text_field :municipalities, placeholder: "例) 青山1−1−1", class:'default', value:"", class: "input-form"
                 .form-group
                   %label{for: "address2_label"} 建物名
                   %any.arbitrary 任意
-                  = f.text_field :building, placeholder: "例) 柳ビル103", class:'default', value:""
-                -# %input.default{name: "address2", placeholder: "例) 柳ビル103", type: "text", value: ""}/
-                %h1
-                  = f.submit "変更する", class: 'login-submit.btn-default.btn-red'
-                  -# %button.login-submit.btn-default.btn-red{type: "submit"} 変更する
+                  = f.text_field :building, placeholder: "例) 柳ビル103", class:'default', value:"", class: "input-form"
+                %h2
+                  = f.submit "次へ進む", class: 'btn-red'
     = render partial: "layouts/footer"

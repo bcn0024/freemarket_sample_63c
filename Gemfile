@@ -78,12 +78,20 @@ end
 gem "font-awesome-sass"
 gem 'ancestry'
 gem 'pry-rails'
-
 gem 'carrierwave'
 gem 'fog-aws'
-
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'gretel'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
 
+gem 'dotenv-rails'
+
+gem 'omniauth-google-oauth2'
+
+gem 'dotenv-rails'
+
+gem 'payjp'
 
 
