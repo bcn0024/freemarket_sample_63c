@@ -16,6 +16,13 @@ class ProductsController < ApplicationController
     @products = @product.user.products.limit(6)
   end
 
+  def myproduct
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @user = @product.user
+    @products = @product.user.products.limit(6)
+  end
+
   def create 
     Product.create(product_params)
     redirect_to :back
