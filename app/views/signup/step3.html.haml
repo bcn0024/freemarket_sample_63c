@@ -28,7 +28,7 @@
         .buy-contents
           .content
             .purchase-pref
-              = form_for @address, method: :get, url: step4_signup_index_path do |f|
+              = form_for @address, method: :post, url: "/signup/done" do |f|
                 .form-group-first
                   %label{for: "zip_code1"} 郵便番号
                   %span.require 必須

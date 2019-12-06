@@ -13,13 +13,7 @@ class UsersController < ApplicationController
      @products = @user.products
   end
 
-  def howtopay
-    @user = User.find(params[:id])
-  end
 
-  def creditnew
-    @user = User.find(params[:id])
-  end
 
   def selling
     @user = User.find(params[:id])
