@@ -2,7 +2,7 @@
   .contents__header
     %h1
       =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
-        = image_tag("/assets/fmarket_logo_red.svg",alt: "mercari")
+        = image_tag("/images/fmarket_logo_red.svg",alt: "mercari")
     %nav.progress
       %ol.clearfix
         %li.active
@@ -21,7 +21,7 @@
           完了
           .progress-status
   .contents-main
-    = form_for @user,method: :get,url: step3_signup_index_path do |f|
+    = form_for @user,method: :get ,url: step3_signup_index_path do |f|
       .tel-contents
         .tel-head
           %h2

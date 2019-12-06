@@ -1,7 +1,7 @@
 .header
   .header-top
     .header-top__image
-      =image_tag("/assets/fmarket_logo_red.svg", alt: "Mercari", size: "134x36")
+      =image_tag("/images/fmarket_logo_red.svg", alt: "Mercari", size: "134x36")
     .header_form
     -# = form_for [@product] do |f|
     -#   = f.text_field :nickname, placeholder: '何かお探しですか', class: "header_form__input"
@@ -23,7 +23,7 @@
           = link_to "いいね一覧"
         - else
           = icon("fas", "heart")
-          = link_to "新規登録", users_path
+          = link_to "新規登録", "/users"
       %li.bottom-header2__category
         = icon("fas", "bell")
         = link_to "お知らせ"

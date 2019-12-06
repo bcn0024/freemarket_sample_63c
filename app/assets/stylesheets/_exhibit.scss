@@ -13,19 +13,17 @@
     .listing-tabs{
       display: flex;
       background-color: #eee;
-      .active{
-        line-height: 72px;
-        background-color: #fff;
-        h3{
-          border-top: 2px solid #ea352d;
-          font-size: 22px;
-          a{
-            
-            font-size: 16px;
-
-          }
-        }
-      }
+      // .active{
+      //   line-height: 72px;
+      //   background-color: #fff;
+      //   h3{
+      //     border-top: 2px solid #ea352d;
+      //     font-size: 22px;
+      //     a{ 
+      //       font-size: 16px;
+      //     }
+      //   }
+      // }
       li{
         line-height: 72px;
         height: 72px;
@@ -36,16 +34,18 @@
       }
     }
     .tab-content{
-      .maypage-item-status{
-        background-color: #0099e8;
-        display:inline-block;
-        margin: 8px 0 0 0;
-        padding: 5px 6px;
-        border-radius: 2px;
-        font-size: 12px;
-        color: #fff;
+      .mypage-item{
+      background-color: #fff;
+        .maypage-item-status{
+          background-color: #0099e8;
+          display:inline-block;
+          margin: 8px 0 0 0;
+          padding: 5px 6px;
+          border-radius: 2px;
+          font-size: 12px;
+          color: #fff;
+        }
       }
-
     }
   }
 }

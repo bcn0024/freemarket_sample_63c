@@ -3,7 +3,7 @@
     .contents__header
       %h1
         =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
-          = image_tag("/assets/fmarket_logo_red.svg",alt: "mercari")
+          = image_tag("/images/fmarket_logo_red.svg",alt: "mercari")
       %nav.progress
         %ol.clearfix
           %li.active
@@ -28,7 +28,7 @@
         .buy-contents
           .content
             .purchase-pref
-              = form_for @address, method: :get, url: step4_signup_index_path do |f|
+              = form_for @address, method: :post, url: "/signup/done" do |f|
                 .form-group-first
                   %label{for: "zip_code1"} 郵便番号
                   %span.require 必須
