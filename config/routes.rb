@@ -28,11 +28,10 @@ Rails.application.routes.draw do
       get 'logout'
       get 'profile'
     end
-    resources :card, only: [:index, :create, :new, :show]
+    resources :card, only: [:index, :create, :new, :show, :destroy]
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
     end
   end
 
