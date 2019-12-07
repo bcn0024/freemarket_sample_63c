@@ -58,16 +58,8 @@ class SignupController < ApplicationController
 
     )
     
-    @address= Address.create(
-      postal_code: session[:postal_code],
-      prefectures: session[:prefectures],
-      address: session[:address],
-      municipalities: session[:municipalities],
-      building: session[:building],
-      user_id: @user.id
-     )
-  
-    
+    @address= Address.new(address_params)
+    @address.save
     sign_in(@user) unless user_signed_in?
     
     if @address.save
@@ -135,7 +127,7 @@ class SignupController < ApplicationController
       :address,
       :municipalities,
       :building,
-  )
+  ).merge(user_id: @user.id)
   end
 
 end
