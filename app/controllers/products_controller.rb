@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     10.times { @product.images.build }
+    @product.build_brand
 
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
@@ -97,10 +98,12 @@ class ProductsController < ApplicationController
       :name,
       :description,
       :category_id,
+      :brand_id,
       :region,
       :arrival_date,
       :price,
-      images_attributes:[:id, :image]
+      images_attributes:[:id, :image],
+      brand_attributes: [:id, :name]
     ).merge(user_id: current_user.id)
   end
 end
