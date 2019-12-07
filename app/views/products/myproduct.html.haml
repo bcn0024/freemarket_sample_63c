@@ -1,4 +1,3 @@
-
 = render 'users/mainheader'
 - breadcrumb :myproduct
 = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
@@ -10,14 +9,6 @@
         = @product.name
       %p.item-wording
         = @product.name + "は、236回の取引実績を持つ"
-        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-        -#   = @user.nickname
-        -# から出品されました。
-        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-        -#   コーチ
-        -# =link_to "https://www.mercari.com/jp/u/993970389/",id:"",class:"user-products-info" do
-        -#   (ショルダーバッグ/レディース）
-        -# の商品で、千葉県から2~3日で発送されます。
       .item-main-content.clearfix
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
