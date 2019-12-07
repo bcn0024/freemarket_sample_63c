@@ -52,6 +52,18 @@
                       .select-wrap-parent
                         = icon('fas', 'chevron-down')
                         = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: ""
+
+
+                  .sell-form-select.sell-form-select-brand
+                    %label
+                      ブランド
+                      %span.form-require
+                        任意
+                    .select-wrap#brand
+                      .select-wrap-brand
+                        = f.fields_for :brand do |b|
+                          = icon('fas', 'chevron-down')
+                          = f.text_field :brand, placeholder: ' 例）シャネル'
                     .select-wrap__bottom
                       %label
                         商品の状態
