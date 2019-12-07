@@ -23,6 +23,7 @@
                       ドラッグアンドドロップ
                       /react-text: 125
                       を必ずご確認ください。またはクリックしてファイルをアップロード
+
             .sell-dropbox-container
               .sell-content
                 .form-product-name
@@ -49,6 +50,7 @@
                       %span.form-require
                         必須
                     .select-wrap
+
                       .select-wrap-parent
                         = icon('fas', 'chevron-down')
                         = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: ""
@@ -63,6 +65,7 @@
                       .select-wrap-brand
                         = f.fields_for :brand do |b|
                           = f.text_field :brand, placeholder: ' 例）シャネル'
+
                     .select-wrap__bottom
                       %label
                         商品の状態
@@ -70,7 +73,9 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
+
                         -# = f.select :description, [["---", "---"],["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]],class:"form-control"
+
               .sell-content
                 %h3.sell-sub-head
                   配送料について

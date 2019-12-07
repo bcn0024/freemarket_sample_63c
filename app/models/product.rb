@@ -20,4 +20,5 @@ class Product < ApplicationRecord
   # has_many :favorites,dependent: :destroy
 
 
+
 end

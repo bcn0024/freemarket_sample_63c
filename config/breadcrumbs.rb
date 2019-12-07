@@ -8,7 +8,7 @@ crumb :user do
 end
 
 crumb :exhibit do
-  link "出品した商品-出品中",  mypagemore_user_path
+  link "出品した商品-出品中", "/users/#{current_user.id}/mypagemore"
   parent :user
 end
 
