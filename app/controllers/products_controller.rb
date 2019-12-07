@@ -31,7 +31,8 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
-    redirect_back(fallback_location: products_path)
+    redirect_to root_path
+    # redirect_back(fallback_location: products_path)
   end
 
   def destroy
