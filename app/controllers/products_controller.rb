@@ -52,11 +52,10 @@ class ProductsController < ApplicationController
 
 
   def children
+    @children = Category.find(params[:parent_id]).children
     respond_to do |format|
       format.html
-      format.json do
-        @children = Category.find(params[:parent_id]).children
-      end
+      format.json
     end
   end
 
@@ -66,6 +65,7 @@ class ProductsController < ApplicationController
       format.html
       format.json
     end
+  end
 
   def purchase
     @product = Product.find(params[:id])
@@ -73,6 +73,7 @@ class ProductsController < ApplicationController
     @user = @product.user
     @products = @product.user.products.limit(6)
   end
+
   def payjp
     # Payjp.api_key = PAYJP_sk_test_bd4e50db2758c85468065f4c
     # Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
