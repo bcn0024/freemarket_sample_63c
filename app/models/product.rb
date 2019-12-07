@@ -7,16 +7,17 @@ class Product < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images
   belongs_to :user, class_name: "User"
+  belongs_to :brand
   belongs_to :buyer, class_name: "User"
+
 
 
   # 単体テストの際、エラーが出るためコメントアウト
   # 下記モデル作成後、その都度コメントアウト外す。
 
   # has_many :categorys,dependent: :destroy
-
   # has_many :chats,dependent: :destroy
   # has_many :favorites,dependent: :destroy
-  # belongs_to :brand
+
 
 end
