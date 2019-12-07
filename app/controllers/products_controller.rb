@@ -52,10 +52,10 @@ class ProductsController < ApplicationController
   end
   def payjp
     @product = Product.find(params[:id])
-    Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(currency: 'jpy', amount: @product.price, card: params['payjp-token'])
     redirect_to root_path, notice: "支払いが完了しました"
-    Payjp.api_key = "sk_test_bd4e50db2758c85468065f4c"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 
   def move_to_index
