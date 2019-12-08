@@ -149,6 +149,12 @@
     justify-content: space-between;
 }
 
+.preview {
+    &__bottom {
+        display: flex;
+    }
+}
+
 .sell-images{
  .sell-image{
      display: block;

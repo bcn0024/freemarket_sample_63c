@@ -12,12 +12,15 @@ $(function(){
       return function(e){
         $(".preview").empty();
 
-        $(".preview").prepend($("<img>").attr({
-                    src: e.target.result,
-                    width:"100px",
-                    class: "preview-image",
-                    title: file.name
+        $(".preview").append($("<img>").attr({
+          src: e.target.result,
+          width:"100px",
+          class: "preview__image",
+          title: file.name
+
         }));
+
+        $(".preview").append('<div class="preview__bottom"><div class="preview__edit">編集</div><div class="preview__delete">削除</div></div>');
 
         $(".sell-image").css("width", "500px");
       };
