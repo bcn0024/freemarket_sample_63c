@@ -9,9 +9,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    10.times { @product.images.build }
+    @product.images.build
     @product.build_brand
-
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
@@ -30,8 +29,15 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
-    @product.save
+    # binding.pry
+    @product.save!
+
+
+    # brand_id = Brand.find(@product.id).id  #Shipmentテーブルのidを取り出す
+    # product = Product.find(@product.id)    #作成したItemのidを取り出す
+    # product.update(brand_id: brand_id)     #Itemテーブルにshipment_idのカラムを入れる
     redirect_to root_path
     # redirect_back(fallback_location: products_path)
   end
@@ -98,7 +104,7 @@ class ProductsController < ApplicationController
       :name,
       :description,
       :category_id,
-      :brand_id,
+      # :brand_id,
       :region,
       :arrival_date,
       :price,

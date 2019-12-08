@@ -14,16 +14,16 @@
                   必須
               %p
                 最大10枚までアップロードできます。
-
               = f.fields_for :images do |i|
-                .sell-images
-                  = i.label :image, class: 'sell-image' do
-                    = i.file_field :image, class: 'hidden'
-                    %pre
-                      ドラッグアンドドロップ
-                      /react-text: 125
-                      を必ずご確認ください。またはクリックしてファイルをアップロード
-
+                .preview-box
+                  .preview
+                  .sell-images
+                    = i.label :image, class: 'sell-image' do
+                      = i.file_field :image, class: 'hidden'
+                      %pre
+                        ドラッグアンドドロップ
+                        /react-text: 125
+                        を必ずご確認ください。またはクリックしてファイルをアップロード
             .sell-dropbox-container
               .sell-content
                 .form-product-name
@@ -64,7 +64,7 @@
                     .select-wrap#brand
                       .select-wrap-brand
                         = f.fields_for :brand do |b|
-                          = b.text_field :name, placeholder: ' 例）シャネル'
+                          = b.text_field :name, placeholder: '例）シャネル'
 
                     .select-wrap__bottom
                       %label
