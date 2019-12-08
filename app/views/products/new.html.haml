@@ -17,6 +17,7 @@
               = f.fields_for :images do |i|
                 .preview-box
                   .preview
+                    .preview_content
                   .sell-images
                     = i.label :image, class: 'sell-image' do
                       = i.file_field :image, class: 'hidden'
@@ -50,21 +51,21 @@
                       %span.form-require
                         必須
                     .select-wrap
-
                       .select-wrap-parent
                         = icon('fas', 'chevron-down')
                         = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: ""
 
 
                   .sell-form-select.sell-form-select-brand
-                    %label
-                      ブランド
-                      %span.form-require
-                        任意
-                    .select-wrap#brand
-                      .select-wrap-brand
-                        = f.fields_for :brand do |b|
-                          = b.text_field :name, placeholder: '例）シャネル'
+                    .select-brand-box
+                      %label
+                        ブランド
+                        %span.form-require
+                          任意
+                      .select-wrap#brand
+                        .select-wrap-brand
+                          = f.fields_for :brand do |b|
+                            = b.text_field :name, placeholder: '例）シャネル'
 
                     .select-wrap__bottom
                       %label
