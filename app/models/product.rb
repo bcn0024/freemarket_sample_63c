@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
   belongs_to :user, class_name: "User"
   # belongs_to :brand
-  belongs_to :buyer, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional:true
 
 
 
