@@ -5,14 +5,15 @@
   font-size: 14px;
   color: #333;
   line-height: 1;
-  .main{
+  .purchase-main{
+    text-align: center;
     .main-box{
       max-width: 1000px;
       margin: 0 auto;
-      display: flex;
+      text-align: center;
       .card-info{
         margin-top: 20px;
-        .contents{
+        .purchase-contents{
           &__main{
             display: block;
             .main-head{
@@ -20,7 +21,7 @@
               background-color: #fff;
               width: 700px;
               &__confirmation{
-                padding: 20px;
+                padding: 35px;
                 text-align: center;
                 display: block;
                 font-size: 1.5em;
@@ -52,7 +53,6 @@
                   .form{
                     width: 100%;
                     .price{
-
                       margin: 10px 0 0;
                       line-height: 1.5;
                       display: flex;
@@ -91,17 +91,7 @@
                         text-align: right;
                       }
                     }
-                    .btn-red{
-                      width: 100%;
-                      display: block;
-                      margin: 8px 0 0;
-                      background: #ea352d;
-                      border: 1px solid #ea352d;
-                      color: #fff;
-                      padding: 25px 0;
-                      font-weight: bold;
-                      font-size:14px;
-                    }
+                    
                     .purchase{
                       text-decoration: none;
                     }
@@ -109,23 +99,25 @@
                 }
               }
               .buy-user-info1{
-                margin: 40px 0 0;
-                padding: 24px 12.5% 0;
+                padding: 24px 185px 0;
                 border-top: 1px solid #f5f5f5;
                 .buy-content-inner{
                   max-width: 320px;
-                  margin: 0 auto;
+                  text-align: left;
                   .inner{
                     font-weight:bold;
                   }
+                  
                   .address{
                     margin: 8px 0 0;
                     font-size: 14px;
                     line-height: 1.4;
+
                   }
                   li{
                     display: block;
                     text-align: right;
+
                   }
                 }
               }
@@ -135,9 +127,17 @@
                 border-top: 1px solid #f5f5f5;
                 .buy-content-inner{
                   max-width: 320px;
-                  margin: 0 auto;
-                  .inner{
+                  
+                  .purchase-inner{
                     font-weight:bold;
+                    padding: 0 100px;
+                    .purchase-howto{
+                      font-weight:bold;
+                      text-align: left;
+                    }
+                  }
+                  .registration-card{
+                    color:#0099e8;
                   }
                   .number{
                     margin: 8px 0 0;
@@ -148,6 +148,31 @@
                     display: block;
                     text-align: right;
                   }
+                }
+              }
+              .buy-button-contents{
+                margin: 40px 0 0;
+                padding: 24px 185px 40px;
+                border-top: 1px solid #f5f5f5;
+                text-align: center;
+                .btn-none{
+                  padding: 17px 0;
+                  margin: 16px 0 0;
+                  background-color:gray;
+                  color: #fff;
+                  font-weight: bold;
+                  font-size:14px;
+                }
+                .purchase{
+                  width: 50%;
+                  display: block;
+                  margin: 8px 0 0;
+                  background: #ea352d;
+                  border: 1px solid #ea352d;
+                  color: #fff;
+                  padding: 20px 0;
+                  font-weight: bold;
+                  font-size:14px;
                 }
               }
             }  

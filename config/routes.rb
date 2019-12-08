@@ -15,12 +15,21 @@ Rails.application.routes.draw do
       get 'purchase'
       post 'payjp'
       get 'myproduct'
+      get 'cardnew'
+      get 'cardshow'
+      post 'pay', to: 'products#pay'
+    end
+      resources :card, only: [:index, :create, :new, :show, :destroy]
+        collection do
+          post 'show', to: 'card#show'
+          post 'pay', to: 'card#pay'
+          get 'cardnew'
+          get 'cardshow'
+      end
   end
-    resources :images, only: [:index,:destroy]
+    resources :images, only: [:index,:destroy]do
     
   end
-
-
   resources :users, only: [:index, :create, :new, :show, :destoroy, :edit, :update] do
     member do
       get 'selling'

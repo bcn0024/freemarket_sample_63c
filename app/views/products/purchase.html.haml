@@ -1,65 +1,80 @@
+=render "layouts/header"
 .body
-  .contents
-    .contents__main
-      .main-head
-        .main-head__confirmation
-          購入内容の確認
-        .buy-content 
-          .buy-content-inner
-            =image_tag (@images[0].image),class:"owl-lazy",size: "148x148" if @images[0].image.present?
-            -# %img.inner-image{alt: "karioki", src: "assets/nikorun.jpeg",height: "148",width: "148"}/
-            .item-name
-              = @product.name
-            .form
-              .price
-                .price-bold
-                  ¥
-                  = @product.price
-                .price-font
-                  送料込み
-              .point
-                ポイントはありません
-              .price-total
-                .price-total__siharai
-                  支払い金額
-                .price-total__bold
-                  ¥
-                  = @product.price
-              .purchase
-              -# %button.btn-red{type: "submit"} 購入する
-              = form_with url: payjp_product_path ,type: "submit", class: "btn-red",value:"購入する"do
-                :plain
-                  <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_ef63b463bb0dce2a127045de"></script>
-                
-        .buy-user-info1
-          .buy-content-inner
-            .inner
-              配送先
-            .address
-              .number
-                〒552-0002
-              .address-info
-                大阪府大阪市港区市岡元町3-3-21-402
-              .user-name
-                蔵田 亮人
-            .fix
-            %li
-              =link_to "", id:"",class: "change" do
-                変更する >
-        .buy-user-info2
-          .buy-content-inner
-            .inner
-              支払い方法
-            .number
-              .secret-number
-                *********1049
-              .year-month
-                10/24
-              .figure
-              %img{alt: "jcb", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2177740229", width: "26"}/
+  .purchase-main
+    .main-box
+      .card-info
+        .purchase-contents
+          .purchase-contents__main
+            .main-head
+              .main-head__confirmation
+                購入内容の確認
+              .buy-content 
+                .buy-content-inner
+                  =image_tag (@images[0].image),class:"owl-lazy",size: "148x148" if @images[0].image.present?
+                  .item-name
+                    = @product.name
+                  .form
+                    .price
+                      .price-bold
+                        ¥
+                        = @product.price
+                      .price-font
+                        送料込み
+                    .point
+                      ポイントはありません
+                    .price-total
+                      .price-total__siharai
+                        支払い金額
+                      .price-total__bold
+                        ¥
+                        = @product.price
+              .buy-user-info2
+                .buy-content-inner
+                  .purchase-inner
+                    .purchase-howto
+                      支払い方法
+                  - if @card.blank?
+                    .registration-card
+                      =link_to "/products/cardnew", class: "registration-card" do
+                        ➕登録してください
+                  - else 
+                    .number
+                      .secret-number
+                        = "**** **** **** " + @default_card_information.last4
+                      .year-month
+                        - exp_month = @default_card_information.exp_month.to_s
+                        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                        = exp_month + " / " + exp_year
+                      .figure
+                      %img{alt: "jcb", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2177740229", width: "26"}/
 
-            .fix
-            %li
-              =link_to "", id:"",class: "change" do
-                変更する >
-    
+                    .fix
+                    %li
+                      =link_to "", id:"",class: "change" do
+                        変更する >     
+              .buy-user-info1
+                .buy-content-inner
+                  .inner
+                    配送先
+                  .address
+                    .number
+                      〒552-0002
+                    .address-info
+                      大阪府大阪市港区市岡元町3-3-21-402
+                    .user-name
+                      蔵田 亮人
+                  .fix
+                  %li
+                    =link_to "", id:"",class: "change" do
+                      変更する >
+              .buy-button-contents
+                - if @card.blank?
+                  .btn-none
+                    購入する
+                - else
+                  .purchase
+                  = form_with url: payjp_product_path ,type: "submit", class: "btn-red",value:"購入する"do
+                    :plain
+                      <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_ef63b463bb0dce2a127045de"></script>
+              
+          =render "layouts/footer"
