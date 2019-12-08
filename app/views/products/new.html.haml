@@ -126,16 +126,16 @@
                           %p
                             ¥
                           .input-price
-                            = f.text_field :price, class: 'form__message', placeholder: '例）３００'
+                            = f.text_field :price, class: 'form__message', id: 'price_form', placeholder: '例）３００'
                     %li.product-tax
                       .l-left
                         販売手数料（１０％）
-                      .l-right
+                      .l-right-fee
                         ー
                     %li.product-tax-bold
                       .l-left
                         販売利益
-                      .l-right
+                      .l-right-profit
                         ー
               .sell-btn-box
                 .ex

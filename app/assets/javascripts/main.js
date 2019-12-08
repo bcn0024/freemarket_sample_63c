@@ -10,7 +10,6 @@ $(function(){
     render.onload =(function(file) {
       return function(e){
         $(".preview").empty();
-
         $(".preview").append($("<img>").attr({
           src: e.target.result,
           width:"130px",
@@ -32,10 +31,20 @@ $(function(){
 
 
     render.readAsDataURL(file);
+  });
 
-    // $("#grandchild-form").on("change", function(){
-    //   $('.select-brand-box').css("display", "block");
-    // });
 
+  $("#price_form").on("keyup", function() {
+    var price = $("#price_form").val();
+    Number(price);
+    if(price <= 9999999 && price >= 300) {
+      var fee = price * 0.1;
+      var profit = price - fee;
+      $(".l-right-fee").text("¥" + fee);
+      $(".l-right-profit").text("¥" + profit);
+    } else {
+      $(".l-right-fee").text("ー");
+      $(".l-right-profit").text("ー");
+    }
   });
 });
