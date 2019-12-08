@@ -30,9 +30,12 @@ $(function(){
       };
     })(file);
 
+
     render.readAsDataURL(file);
 
+    // $("#grandchild-form").on("change", function(){
+    //   $('.select-brand-box').css("display", "block");
+    // });
+
   });
-
-
 });

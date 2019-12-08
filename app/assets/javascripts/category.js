@@ -56,6 +56,7 @@ $(function(){
           $("#parent-form").on("change", function(){
             $(".select-wrap-child").remove();
             $(".select-wrap-grand").remove();
+            $(".select-brand-box").hide();
           });
         })
         .fail(function(){
@@ -91,9 +92,14 @@ $(function(){
             var html = buildGRANDCHILD(insertHTML);
             $('.select-wrap:first').append(html);
 
+            $("#grandchild-form").on("change", function(){
+              $('.select-brand-box').css("display", "block");
+            });
+
           }
           $("#child-form").on("change", function(){
             $(".select-wrap-grand").remove();
+            $(".select-brand-box").hide();
           });
         })
         .fail(function(){
