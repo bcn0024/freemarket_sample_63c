@@ -56,12 +56,13 @@ ActiveRecord::Schema.define(version: 2019_12_07_041008) do
     t.string "name", null: false
     t.string "description", null: false
     t.string "postage", null: false
+    t.integer "status", limit: 1, default: 0, null: false
     t.string "region", null: false
     t.string "arrival_date", null: false
     t.string "price", null: false
-    t.string "size"
+    t.string "size", null: false
     t.integer "user_id", null: false
-    t.integer "brand_id"
+    t.integer "brand_id", null: false
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
