@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   root to:  'products#index'
 
 
-
   resources :products, only: [:index, :create, :new, :destroy, :edit, :update, :show] do
+    collection do
+      get 'children'
+      get 'grandchildren'
+    end
+    resources :images, only: [:index,:destroy,:new,:create]
+
     member do
       get 'purchase'
       post 'payjp'
