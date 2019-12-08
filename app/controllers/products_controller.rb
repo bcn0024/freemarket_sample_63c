@@ -4,13 +4,12 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.limit(10).order('name DESC')
+    @products = Product.limit(10).order('created_at DESC')
   end
 
   def new
     @product = Product.new
     10.times { @product.images.build }
-
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
