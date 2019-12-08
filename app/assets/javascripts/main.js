@@ -14,15 +14,16 @@ $(function(){
 
         $(".preview").append($("<img>").attr({
           src: e.target.result,
-          width:"100px",
+          width:"130px",
+          height:"111px",
           class: "preview__image",
           title: file.name
 
         }));
 
-        $(".preview").append('<div class="preview__bottom"><div class="preview__edit">編集</div><div class="preview__delete">削除</div></div>');
+        $(".preview").append('<div class="preview__bottom"><div class="preview__edit"><a>編集</a></div><div class="preview__delete"><a>削除</a></div></div>');
 
-        $(".sell-image").css("width", "500px");
+        $(".sell-image").css({"width":"450px", "margin-left": "20px"});
       };
     })(file);
 
