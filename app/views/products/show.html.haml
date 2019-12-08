@@ -14,7 +14,9 @@
               .owl-stage{style: "left: 0px; width: 1800px;"}
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-height
+
                     =image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
+
                 - @product.images.each_with_index do |i, index|
                   - if index != 0
                     .owl-item{style: "width: 300px;"}
@@ -28,7 +30,9 @@
               .owl-dot.active
                 %span
                 .owl-dot-inner
+
                   =image_tag @images.first.image.url,class:"is-higher-height" if @images[0].image.present?
+
 
               - @product.images.each_with_index do |i, index|
                 - if index != 0
@@ -195,7 +199,9 @@
             .image-block
               .image
                 = link_to product_path(product.id) do
+
                   =image_tag product.images.first.image.url,size: "220x220",alt:"",class:"item-image"
+
               .image-content
                 .item-name
                   = product.name

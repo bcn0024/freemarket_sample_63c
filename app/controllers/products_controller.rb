@@ -4,13 +4,12 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.limit(10).order('name DESC')
+    @products = Product.limit(10).order('created_at DESC')
   end
 
   def new
     @product = Product.new
     10.times { @product.images.build }
-
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
@@ -30,8 +29,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_back(fallback_location: products_path)
+    if @product.save
+      redirect_to root_path
+    else
+      redirect_back(fallback_location: products_path)
+    end
   end
 
   def destroy
