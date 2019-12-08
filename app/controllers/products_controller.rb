@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    binding.pry
     @product = Product.new(product_params)
     @product.save
     redirect_back(fallback_location: products_path)
@@ -92,10 +93,12 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name,
       :description,
+      :postage,
       :category_id,
       :region,
       :arrival_date,
       :price,
+      :size,
       images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
   end
