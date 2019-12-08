@@ -432,5 +432,7 @@ image =[
   ["https://cache.ymall.jp/webcom/item/multiimage/300/4463658013_001.jpg",11],
   ["https://images-na.ssl-images-amazon.com/images/I/71NElIYC0XL._UX342_.jpg",12]]
 image.each do |i|
-  Image.create(image: i[0],product_id:i[1])
+  Image.create(image: i[0],product_id: i[1])
 end
+
+# Image.create(image: "https://img.rococoblog.com/00item/11691c1.jpg", product_id: 1)
