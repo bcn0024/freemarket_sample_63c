@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
    
     @product.save
+    binding.pry
     redirect_back(fallback_location: products_path)
   end
 
