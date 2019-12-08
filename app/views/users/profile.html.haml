@@ -1,5 +1,7 @@
 .wrapper
   =render partial: "mainheader"
+  - breadcrumb :profile
+  = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
   .profile-body
     =render partial: "sidebar"
     .profile-right

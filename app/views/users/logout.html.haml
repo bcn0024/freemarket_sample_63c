@@ -1,4 +1,6 @@
 =render partial: "mainheader"
+- breadcrumb :logout
+= breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 .logout
   .logout-chapter
     %form.single{action: "https://www.mercari.com/jp/logout/", method: "POST", novalidate: "novalidate"}

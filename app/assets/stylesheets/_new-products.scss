@@ -174,7 +174,9 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
-
+        .hidden {
+            display: none;
+          }
     }
 
 }
