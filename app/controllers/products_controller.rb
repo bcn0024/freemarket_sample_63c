@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
     # brand_id = Brand.find(@product.id).id  #Shipmentテーブルのidを取り出す
     # product = Product.find(@product.id)    #作成したItemのidを取り出す
     # product.update(brand_id: brand_id)     #Itemテーブルにshipment_idのカラムを入れる
-  
+
     if @product.save
       redirect_to root_path
     else
@@ -90,7 +90,7 @@ class ProductsController < ApplicationController
     Payjp.api_key = "PAYJP_"
     Payjp::Charge.create(
       amount: 809,
-      card: params['payjp-token'], 
+      card: params['payjp-token'],
       currency: 'jpy'
     )
   end
@@ -110,8 +110,8 @@ class ProductsController < ApplicationController
       :region,
       :arrival_date,
       :price,
-      brand_attributes: [:id, :name]
-      :size,
+      brand_attributes: [:id, :name],
+      # :size,
       images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
   end
