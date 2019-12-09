@@ -2,7 +2,9 @@ class ProductsController < ApplicationController
 
   before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
   before_action :set_product, only:[:show,:myproduct,:destroy,:edit,:update,:purchase,:payjp]
+  before_action :set_card, only:[:cardshow,:purchase]
 
+  require 'payjp'
 
   def index
     @products = Product.limit(10).order('created_at DESC')
@@ -116,5 +118,13 @@ class ProductsController < ApplicationController
       # :size,
       images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first
   end
 end
