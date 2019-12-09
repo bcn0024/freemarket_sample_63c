@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      redirect_back(fallback_location: products_path)
+      redirect_to new_product_path
     end
   end
 

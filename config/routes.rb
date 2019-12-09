@@ -30,9 +30,8 @@ Rails.application.routes.draw do
       get 'cardshow'
       post 'pay', to: 'products#pay'
     end
-      resources :card, only: [:index, :create, :new, :show, :destroy]
+      resources :card, only: [:index, :create, :new, :destroy]
         collection do
-          post 'show', to: 'card#show'
           post 'pay', to: 'card#pay'
           get 'cardnew'
           get 'cardshow'
