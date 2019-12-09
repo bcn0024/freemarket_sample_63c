@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show, :myproduct, :edit, :update, :purchase, :payjp]
+  before_action :set_product, only: [:show, :myproduct, :edit, :update, :purchase, :payjp, :move_to_index_purchase, :move_to_index_edit]
   before_action :move_to_login, except: [:index, :show]
   before_action :move_to_index_purchase, only: [:purchase]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
@@ -109,12 +109,10 @@ class ProductsController < ApplicationController
   end
 
   def move_to_index_purchase
-    @product = Product.find(params[:id])
     redirect_to root_path if user_signed_in? && current_user.id == @product.user.id
   end
   
   def move_to_index_edit
-    @product = Product.find(params[:id])
     redirect_to root_path unless user_signed_in? && current_user.id == @product.user.id
   end
 
