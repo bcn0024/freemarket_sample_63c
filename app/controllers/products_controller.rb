@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
 
-  before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
-  before_action :set_product, only: [:show,:myproduct,:destroy,:edit,:update,:purchase,:payjp]
+  before_action :set_product, only: [:show, :myproduct, :edit, :update, :purchase, :payjp, :move_to_index_purchase, :move_to_index_edit]
+  before_action :move_to_login, except: [:index, :show]
+  before_action :move_to_index_purchase, only: [:purchase]
+  before_action :move_to_index_edit, only: [:edit, :update, :destroy]
   before_action :set_card, only: [:cardshow,:purchase]
   
   require 'payjp'
-  
 
   def index
     @products = Product.limit(10).order('created_at DESC')
@@ -33,16 +34,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
-    # binding.pry
     @product.save!
-
-
-    # brand_id = Brand.find(@product.id).id  #Shipmentテーブルのidを取り出す
-    # product = Product.find(@product.id)    #作成したItemのidを取り出す
-    # product.update(brand_id: brand_id)     #Itemテーブルにshipment_idのカラムを入れる
-
     if @product.save
       redirect_to root_path
     else
@@ -142,6 +135,7 @@ end
   end
 
   private
+
   def product_params
     params.require(:product).permit(
       :name,
@@ -149,12 +143,10 @@ end
       :status,
       :postage,
       :category_id,
-      # :brand_id,
       :region,
       :arrival_date,
       :price,
       brand_attributes: [:id, :name],
-      # :size,
       images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
   end
@@ -163,7 +155,20 @@ end
     @product = Product.find(params[:id])
   end
 
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in? 
+  end
+
+  def move_to_index_purchase
+    redirect_to root_path if user_signed_in? && current_user.id == @product.user.id
+  end
+  
+  def move_to_index_edit
+    redirect_to root_path unless user_signed_in? && current_user.id == @product.user.id
+  end
+
   def set_card
     @card = Card.where(user_id: current_user.id).first
   end
+
 end

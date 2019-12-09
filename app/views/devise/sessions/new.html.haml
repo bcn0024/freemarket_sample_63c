@@ -8,7 +8,7 @@
             アカウントをお持ちでない方はこちら
           .login-head__new
             %p
-              =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
+              =link_to users_path, class: "mercari-icon", id:"" do
                 新規会員登録
         .login-bottom
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

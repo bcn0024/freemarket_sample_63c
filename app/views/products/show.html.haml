@@ -40,16 +40,16 @@
                     %span
                     .owl-dot-inner
                       =image_tag i.image.url,class:"is-higher-height"
-        .item-price-box.text-center.visible-sp
-          %span.item-price.bold
-            ¥
-            = @product.price
-          %span.item-tax (税込)
-          %span.item-shipping-fee 送料込み
-        %section.visible-sp
-          .item-btn-float-area
-            =link_to purchase_product_path,class:"item-buy-btn" do
-              購入画面に進む
+        -# .item-price-box.text-center.visible-sp
+        -#   %span.item-price.bold
+        -#     ¥
+        -#     = @product.price
+        -#   %span.item-tax (税込)
+        -#   %span.item-shipping-fee 送料込み
+        -# %section.visible-sp
+        -#   .item-btn-float-area
+        -#     =link_to purchase_product_path,class:"item-buy-btn" do
+        -#       購入画面に進む
         %table.item-detail-table
           %tbody
             %tr
@@ -112,15 +112,29 @@
           = @product.price
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
-      =link_to purchase_product_path, class:"item-buy-btn" do
-        購入画面に進む
-      %p.shipping-not-allowed-message.has-error-text.text-center
-        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-      =link_to "#", id:"",class:"item-action-text" do
-        アプリで購入
       .item-description.f14
         %p.item-description-inner
           = @product.description
+      - if user_signed_in? && current_user.id == @product.user.id
+        .item-chenge
+          .products-edit-btn
+            =link_to "商品の編集", edit_product_path
+          .or-content
+            or
+          .btn-gray
+            %a
+              出品を一旦停止する
+          .btn-gray
+            %li
+              =link_to product_path, id:"", method: :delete,class: "delete" do
+                この商品を削除する
+      - else
+        =link_to purchase_product_path, class:"item-buy-btn" do
+          購入画面に進む
+        %p.shipping-not-allowed-message.has-error-text.text-center
+          この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+        =link_to "#", id:"",class:"item-action-text" do
+          アプリで購入
       .item-button-container.clearfix
         .item-button-left
           =link_to "#", id:"", class:"item-button-like" do
