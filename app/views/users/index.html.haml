@@ -1,6 +1,6 @@
 .body
   .contents
-    = render partial: "layouts/header"
+    = render partial: "shared/header"
     .contents__main
       .container
         %h2.registration
@@ -14,4 +14,4 @@
               = icon('fab', 'facebook-square', class: "facebook-icon")
               Facebookで登録
             = button_to "googleで登録",user_google_oauth2_omniauth_authorize_path, method: :post, class:"google"
-    = render partial: "layouts/footer"
+    = render partial: "shared/footer"

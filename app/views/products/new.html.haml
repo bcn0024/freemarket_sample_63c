@@ -1,6 +1,6 @@
 .body
   .contents
-    = render partial: "layouts/header"
+    = render partial: "shared/header"
     .contents__main
       .new-product
         %h2
@@ -161,4 +161,4 @@
                 = f.submit '出品する', class: 'submit-product'
                 =link_to root_path, class: "sell-return" do
                   もどる
-    = render partial: "layouts/footer"
+    = render partial: "shared/footer"
