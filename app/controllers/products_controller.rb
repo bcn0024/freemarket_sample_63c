@@ -104,6 +104,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name,
       :description,
+      :status,
       :postage,
       :category_id,
       # :brand_id,
