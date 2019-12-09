@@ -25,13 +25,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @images = @product.images
     @user = @product.user
+    @brand = @product.brand
+    @category = @product.category
+    # binding.pry
     @products = @product.user.products.limit(6)
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
-    # binding.pry
     @product.save!
 
 
@@ -54,6 +55,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def update

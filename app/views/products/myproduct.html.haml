@@ -4,7 +4,7 @@
 %body
   .default-container
     %section.item-box-container.l-single-container
-      %h1.item-name 
+      %h1.item-name
         = @product.name
       %p.item-wording
         = @product.name + "は、236回の取引実績を持つ"
@@ -67,21 +67,23 @@
               %th カテゴリー
               %td
                 =link_to "https://www.mercari.com/jp/category/1/",id:"" do
-                  %div レディース
+                  %div
+                  - if @category.parent.parent != nil
+                    = @category.parent.parent.name
                 =link_to "https://www.mercari.com/jp/category/20/",id:"" do
                   .item-detail-table-sub-category
                     %i.icon-arrow-right
-                    バッグ
+                      = @category.parent.name
                 =link_to "https://www.mercari.com/jp/category/214/",id:"" do
                   .item-detail-table-sub-sub-category
                     %i.icon-arrow-right
-                    ショルダーバッグ
+                      = @category.name
             %tr
               %th ブランド
               %td
                 =link_to "https://www.mercari.com/jp/brand/539/",id:"" do
                   %div
-                    コーチ
+                    = @brand.name
             %tr
               %th 商品の状態
               %td やや傷や汚れあり
@@ -100,7 +102,7 @@
               %th 発送日の目安
               %td 2~3日で発送
       .item-price-box.text-center
-        %span.item-price.bold 
+        %span.item-price.bold
           ¥
           = @product.price
         %span.item-tax (税込)
@@ -166,6 +168,6 @@
               %p
                 コメントする
     .navigation
-      
+
 = render 'users/footer-imag'
 = render 'layouts/mainfooter'
