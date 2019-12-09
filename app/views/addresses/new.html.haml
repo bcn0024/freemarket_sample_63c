@@ -1,6 +1,6 @@
 .body
   .contents
-    = render partial: "shared/header"
+    = render partial: "layouts/header"
     .contents__main
       .main-head
         .main-head__confirmation
@@ -41,4 +41,4 @@
                 =link_to id:"",class:"change" do
                   = f.submit "変更する", class: 'login-submit.btn-default.btn-red',type: "submit"
                   
-    = render partial: "shared/footer"
+    = render partial: "layouts/footer"
