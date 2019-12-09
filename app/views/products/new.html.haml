@@ -14,16 +14,17 @@
                   必須
               %p
                 最大10枚までアップロードできます。
-
               = f.fields_for :images do |i|
-                .sell-images
-                  = i.label :image, class: 'sell-image' do
-                    = i.file_field :image, class: 'hidden'
-                    %pre
-                      ドラッグアンドドロップ
-                      /react-text: 125
-                      を必ずご確認ください。またはクリックしてファイルをアップロード
-
+                .preview-box
+                  .preview
+                    .preview_content
+                  .sell-images
+                    = i.label :image, class: 'sell-image' do
+                      = i.file_field :image, class: 'hidden'
+                      %pre
+                        ドラッグアンドドロップ
+                        /react-text: 125
+                        を必ずご確認ください。またはクリックしてファイルをアップロード
             .sell-dropbox-container
               .sell-content
                 .form-product-name
@@ -50,21 +51,21 @@
                       %span.form-require
                         必須
                     .select-wrap
-
                       .select-wrap-parent
                         = icon('fas', 'chevron-down')
                         = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: ""
 
 
                   .sell-form-select.sell-form-select-brand
-                    %label
-                      ブランド
-                      %span.form-require
-                        任意
-                    .select-wrap#brand
-                      .select-wrap-brand
-                        = f.fields_for :brand do |b|
-                          = f.text_field :brand, placeholder: ' 例）シャネル'
+                    .select-brand-box
+                      %label
+                        ブランド
+                        %span.form-require
+                          任意
+                      .select-wrap#brand
+                        .select-wrap-brand
+                          = f.fields_for :brand do |b|
+                            = b.text_field :name, placeholder: '例）シャネル'
 
                     .select-wrap__bottom
                       %label
@@ -73,9 +74,7 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
-
-                        -# = f.select :description, [["---", "---"],["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]],class:"form-control"
-
+                        = f.select :status, Product.statuses.keys, class:"form-control"
               .sell-content
                 %h3.sell-sub-head
                   配送料について
@@ -90,7 +89,7 @@
                         必須
                     .select-wrap
                       =icon('fas', 'chevron-down')
-                      -# = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+                      = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
                     .select-wrap__bottom
                       %label
                         配送元の地域
@@ -125,16 +124,16 @@
                           %p
                             ¥
                           .input-price
-                            = f.text_field :price, class: 'form__message', placeholder: '例）３００'
+                            = f.text_field :price, class: 'form__message', id: 'price_form', placeholder: '例）３００'
                     %li.product-tax
                       .l-left
                         販売手数料（１０％）
-                      .l-right
+                      .l-right-fee
                         ー
                     %li.product-tax-bold
                       .l-left
                         販売利益
-                      .l-right
+                      .l-right-profit
                         ー
               .sell-btn-box
                 .ex

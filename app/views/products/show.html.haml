@@ -14,13 +14,15 @@
               .owl-stage{style: "left: 0px; width: 1800px;"}
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-height
-                    =image_tag (@images[0].image),class:"owl-lazy",size: "188x188" if @images[0].image.present?
+
+                    =image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
+
                 - @product.images.each_with_index do |i, index|
                   - if index != 0
                     .owl-item{style: "width: 300px;"}
                       %span
                       .owl-item-inner.is-higher-height
-                        =image_tag (i.image),class:"owl-lazy",size: "188x188"
+                        =image_tag i.image.url,class:"owl-lazy",size: "188x188"
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
@@ -28,14 +30,16 @@
               .owl-dot.active
                 %span
                 .owl-dot-inner
-                  =image_tag (@images[0].image),class:"is-higher-height" if @images[0].image.present?
+
+                  =image_tag @images.first.image.url,class:"is-higher-height" if @images[0].image.present?
+
 
               - @product.images.each_with_index do |i, index|
                 - if index != 0
                   .owl-dot
                     %span
                     .owl-dot-inner
-                      =image_tag (i.image),class:"is-higher-height"
+                      =image_tag i.image.url,class:"is-higher-height"
         .item-price-box.text-center.visible-sp
           %span.item-price.bold
             ¥
@@ -84,10 +88,12 @@
                     コーチ
             %tr
               %th 商品の状態
-              %td やや傷や汚れあり
+              %td 
+                = @product.status
             %tr
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td 
+                = @product.postage
             %tr
               %th 配送の方法
               %td ゆうゆうメルカリ便
@@ -95,10 +101,11 @@
               %th 配送元地域
               %td
                 =link_to "#",id:"" do
-                  千葉県
+                  = @product.region
             %tr
               %th 発送日の目安
-              %td 2~3日で発送
+              %td
+                = @product.arrival_date
       .item-price-box.text-center
         %span.item-price.bold 
           ¥
@@ -195,7 +202,9 @@
             .image-block
               .image
                 = link_to product_path(product.id) do
-                  =image_tag (product.images[0].image),size: "220x220",alt:"",class:"item-image"
+
+                  =image_tag product.images.first.image.url,size: "220x220",alt:"",class:"item-image"
+
               .image-content
                 .item-name
                   = product.name
