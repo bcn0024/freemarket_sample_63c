@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-  before_action :set_product, only: [:show,:myprocuct,:destroy,:edit,:update,:purchase]
+  before_action :set_product, only: [:show,:myprocuct,:destroy,:edit,:update,:purchase,:payjp]
   before_action :set_card, only: [:cardshow,:purchase]
   before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
   
@@ -97,7 +97,7 @@ class ProductsController < ApplicationController
  def pay #payjpとCardのデータベース作成を実施します。
   Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   if params['payjp-token'].blank?
-    redirect_to  cardnew_products_path(card.customer_id)
+    redirect_to  cardnew_products_path(current_user.id)
   else
     customer = Payjp::Customer.create(
     description: '登録テスト', #なくてもOK
@@ -107,15 +107,14 @@ class ProductsController < ApplicationController
     ) #念の為metadataにuser_idを入れましたがなくてもOK
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     if @card.save
-      redirect_to cardshow_products_path(card.customer_id)
+      redirect_to cardshow_products_path(current_user.id)
     else
-      redirect_to  cardnew_products_path(card.customer_id)
+      redirect_to  cardnew_products_path(current_user.id)
     end
   end
 end
 
   def payjp
-    @product = Product.find(params[:id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(currency: 'jpy', amount: @product.price, card: params['payjp-token'])
     redirect_to root_path, notice: "支払いが完了しました"
@@ -146,6 +145,6 @@ end
   end
 
   def set_card
-    card = Card.where(user_id: current_user.id).first
+    @card = Card.where(user_id: current_user.id).first
   end
 end

@@ -1,6 +1,6 @@
 class CardController < ApplicationController
   require "payjp"
-  before_action :set_card, only: [:index,:show,:destroy,]
+  before_action :set_card, only: [:index,:show,:destroy]
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -56,7 +56,8 @@ class CardController < ApplicationController
     @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
+private
   def set_card
-    card = Card.where(user_id: current_user.id).first
+    @card = Card.where(user_id: current_user.id).first
   end
 end
