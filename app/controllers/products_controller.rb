@@ -18,14 +18,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
   end
 
   def myproduct
-    @product = Product.find(params[:id])
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
@@ -50,17 +48,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to  root_path
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    product = Product.find(params[:id])
     product.update(product_params)
     redirect_to myproduct_product_path(product.id)
   end
@@ -83,7 +78,6 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-    @product = Product.find(params[:id])
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
