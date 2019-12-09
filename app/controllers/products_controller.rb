@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  
+
+  before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
   before_action :set_product, only: [:show,:myproduct,:destroy,:edit,:update,:purchase,:payjp]
   before_action :set_card, only: [:cardshow,:purchase]
-  before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
   
   require 'payjp'
   
