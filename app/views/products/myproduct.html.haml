@@ -44,7 +44,7 @@
           %span.item-shipping-fee 送料込み
         %section.visible-sp
           .item-btn-float-area
-            =link_to purchase_product_path,class:"item-buy-btn" do
+            =link_to purchase_product_path(current_user.id),class:"item-buy-btn" do
               購入画面に進む
         %table.item-detail-table
           %tbody
