@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
-  before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
-
+  before_action :move_to_login, except: [:index, :show]
+  before_action :move_to_index_purchase, only: [:purchase]
+  before_action :move_to_index_edit, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.limit(10).order('created_at DESC')
@@ -95,8 +96,18 @@ class ProductsController < ApplicationController
     )
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in? 
+  end
+
+  def move_to_index_purchase
+    @product = Product.find(params[:id])
+    redirect_to root_path if user_signed_in? && current_user.id == @product.user.id
+  end
+  
+  def move_to_index_edit
+    @product = Product.find(params[:id])
+    redirect_to root_path unless user_signed_in? && current_user.id == @product.user.id
   end
 
   private
