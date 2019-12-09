@@ -14,7 +14,7 @@
                 クレジットカード一覧
               .box_content__add
                 .add-content
-                  =link_to new_user_card_path, class: "add-content__link" do
+                  =link_to new_user_card_path(current_user.id), class: "add-content__link" do
                     = icon('fas', 'credit-card', class: 'add-content__icon')
                     クレジットカードを追加する
             .box_footer
@@ -39,7 +39,7 @@
                         - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
                         = exp_month + " / " + exp_year
                       .show_right
-                        = form_tag"/users/#{current_user.id}/card/3", method: :delete, id: 'charge-form',  name: "inputForm" do
+                        = form_tag user_card_path(current_user.id,@card.customer_id), method: :delete, id: 'charge-form',  name: "inputForm" do
                           %input{ type: "hidden", name: "card_id", value: "", class: "show_right__delete" }
                           %button.show_right__delete
                             削除する

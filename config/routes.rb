@@ -24,6 +24,12 @@ Rails.application.routes.draw do
       get 'cardshow'
       post 'pay', to: 'products#pay'
     end
+
+    collection do
+      get 'cardnew'
+      get 'cardshow'
+      post 'pay', to: 'products#pay'
+    end
       resources :card, only: [:index, :create, :new, :show, :destroy]
         collection do
           post 'show', to: 'card#show'
@@ -42,9 +48,8 @@ Rails.application.routes.draw do
       get 'logout'
       get 'profile'
     end
-    resources :card, only: [:index, :create, :new, :show, :destroy]
+    resources :card, only: [:index, :create, :new, :destroy]
     collection do
-      post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
     end
   end
