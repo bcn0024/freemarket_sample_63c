@@ -86,10 +86,12 @@
                     = @brand.name
             %tr
               %th 商品の状態
-              %td やや傷や汚れあり
+              %td
+                = @product.status
             %tr
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td
+                = @product.postage
             %tr
               %th 配送の方法
               %td ゆうゆうメルカリ便
@@ -97,10 +99,11 @@
               %th 配送元地域
               %td
                 =link_to "https://www.mercari.com/jp/area/12/",id:"" do
-                  千葉県
+                  = @product.region
             %tr
               %th 発送日の目安
-              %td 2~3日で発送
+              %td
+                = @product.arrival_date
       .item-price-box.text-center
         %span.item-price.bold
           ¥
