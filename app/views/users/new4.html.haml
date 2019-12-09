@@ -1,11 +1,11 @@
 .wrapper
-  =render partial: "header"
-  =render partial: "header-nav2"
+  =render partial: "shared/header"
+  =render partial: "shared/header-nav2"
 
   .main
     .main_body
-      =render partial: "sidebar"
-      =render partial: "logout"
+      =render partial: "shared/sidebar"
+      =render partial: "shared/logout"
 
-  =render partial:"footer-imag"
-  =render partial:"footer"
+  =render partial:"shared/footer-imag"
+  =render partial:"shared/footer"

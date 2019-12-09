@@ -1,5 +1,5 @@
 .wrapper
-  =render partial: "users/mainheader"
+  =render partial: "shared/mainheader"
   .top-main
     =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/top-banner-camp-4f3fd88c685e8932d7dde2ad3a8336ba.jpg",height: "390",width: "100%",class:"header-image",alt: "")
     =link_to new_product_path, class: "exhibit-button" do
@@ -37,7 +37,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
       .items
         .item-review
           .ladies-new
@@ -49,7 +49,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
       .items
         .item-review
           .ladies-new
@@ -61,7 +61,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
       .items
         .item-review
           .ladies-new
@@ -73,7 +73,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
     .main
       .main-header
         .famous-categories
@@ -102,7 +102,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
       .items
         .item-review
           .ladies-new
@@ -114,7 +114,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
       .items
         .item-review
           .ladies-new
@@ -126,7 +126,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product } 
       .items
         .item-review
           .ladies-new
@@ -138,6 +138,6 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "productimage", locals: { product: product } 
-  =render partial:"footer-imag"
-  =render partial:"layouts/mainfooter"
+                = render partial: "shared/productimage", locals: { product: product } 
+  =render partial:"shared/footer-imag"
+  =render partial:"shared/mainfooter"
