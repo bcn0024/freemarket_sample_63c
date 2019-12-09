@@ -89,7 +89,7 @@ class SignupController < ApplicationController
       if @card.save
         render '/signup/step5'
       else
-        redirect_to action: "step4"
+        redirect_to action: "step5"
       end
     end
     def step5
