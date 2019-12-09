@@ -89,12 +89,38 @@ class ProductsController < ApplicationController
     end
   end
 
-  
+
 
   def cardnew
     @card = Card.where(user_id: current_user.id)
   end
 
+  def cardshow
+    if @card.blank?
+      redirect_to action:"cardnew"
+    else
+      Payjp.api_key = ENV['PAYJP_PRAYVATE_KEY']
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = cutomer.cards.retrieve(@card.card_id)
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   def payjp
     Payjp.api_key = "PAYJP_"
