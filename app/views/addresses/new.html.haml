@@ -13,7 +13,7 @@
                   %label{for: "zip_code1"} 郵便番号
                   %span.require 必須
                   = f.text_field :postal_code, maxlength: "8", name: "zip_code1", pattern: "\\d{3}-\\d{4}", placeholder: "例) 123-4567", type: "text", value: ""
-                  -# %input.default{"data-region" => "jp", maxlength: "8", name: "zip_code1", pattern: "\\d{3}-\\d{4}", placeholder: "例) 123-4567", type: "text", value: ""}/
+                  
 
                 .form-group-prefecture
                   %label{for: "prefecture"} 都道府県
@@ -26,19 +26,19 @@
                   %label{for: "address1_label"} 番地
                   %span.require 必須
                   = f.text_field :municipalities, placeholder: "例) 青山1−1−1", type:"text", class:'default', value:""
-                  -# %input.default{name: "address1", placeholder: "例) 青山1−1−1", type: "text", value: ""}/
+                  
                 .form-group
                   %label{for: "address2_label"} 建物名
                   %any.arbitrary 任意
                   = f.text_field :building, placeholder: "例) 柳ビル103", type:"text", class:'default', value:""
-                  -# %input.default{name: "address2", placeholder: "例) 柳ビル103", type: "text", value: ""}/
+                 
                 .form-group
                   %label{for: "address2_label"} 電話
                   %any.arbitrary 任意
                   = f.text_field :phone_number, placeholder:  "例）08008080808", type: "tel", value:  ""
-                  -# %input.input-default{:name => "phone_number", :placeholder => "例）08008080808", :type => "tel", :value => ""}/
+                  
                 %h1
                 =link_to id:"",class:"change" do
                   = f.submit "変更する", class: 'login-submit.btn-default.btn-red',type: "submit"
-                  -# %button.login-submit.btn-default.btn-red{type: "submit"} 変更する
+                  
     = render partial: "layouts/footer"

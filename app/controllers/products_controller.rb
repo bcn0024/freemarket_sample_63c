@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.limit(10).order('name DESC')
+    @products = Product.limit(10).order('created_at DESC')
   end
 
   def new
@@ -38,8 +38,12 @@ class ProductsController < ApplicationController
     # brand_id = Brand.find(@product.id).id  #Shipmentテーブルのidを取り出す
     # product = Product.find(@product.id)    #作成したItemのidを取り出す
     # product.update(brand_id: brand_id)     #Itemテーブルにshipment_idのカラムを入れる
-    redirect_to root_path
-    # redirect_back(fallback_location: products_path)
+  
+    if @product.save
+      redirect_to root_path
+    else
+      redirect_back(fallback_location: products_path)
+    end
   end
 
   def destroy
@@ -83,13 +87,10 @@ class ProductsController < ApplicationController
   end
 
   def payjp
-    # Payjp.api_key = PAYJP_sk_test_bd4e50db2758c85468065f4c
-    # Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
-    # redirect_to root_path, notice: "支払いが完了しました"
     Payjp.api_key = "PAYJP_"
     Payjp::Charge.create(
-      amount: 809, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      amount: 809,
+      card: params['payjp-token'], 
       currency: 'jpy'
     )
   end
@@ -103,13 +104,15 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name,
       :description,
+      :postage,
       :category_id,
       # :brand_id,
       :region,
       :arrival_date,
       :price,
-      images_attributes:[:id, :image],
       brand_attributes: [:id, :name]
+      :size,
+      images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
   end
 end

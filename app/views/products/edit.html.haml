@@ -18,7 +18,6 @@
                 .sell-image
                   %pre
                     ドラッグアンドドロップ
-                    /react-text: 125
                     を必ずご確認ください。またはクリックしてファイルをアップロード
             .sell-dropbox-container
               .sell-content
@@ -47,7 +46,6 @@
                         必須
                     .select-wrap
                       =icon('fas', 'chevron-down')
-                      -# = f.select :status, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"] ],class:"form-control"
                     .select-wrap__bottom
                       %label
                         商品の状態
@@ -55,7 +53,6 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
-                        -# = f.select :status, [["---", "---"],["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4],["全体的に状態が悪い", 5]],class:"form-control"
               .sell-content
                 %h3.sell-sub-head
                   配送料について

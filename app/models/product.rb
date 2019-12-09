@@ -9,7 +9,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :brand
   belongs_to :user, class_name: "User"
-  belongs_to :buyer, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional:true
 
 
 
