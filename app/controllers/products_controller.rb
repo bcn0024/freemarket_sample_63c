@@ -27,18 +27,12 @@ class ProductsController < ApplicationController
     @user = @product.user
     @brand = @product.brand
     @category = @product.category
-    # binding.pry
     @products = @product.user.products.limit(6)
   end
 
   def create
     @product = Product.new(product_params)
     @product.save!
-
-
-    # brand_id = Brand.find(@product.id).id  #Shipmentテーブルのidを取り出す
-    # product = Product.find(@product.id)    #作成したItemのidを取り出す
-    # product.update(brand_id: brand_id)     #Itemテーブルにshipment_idのカラムを入れる
 
     if @product.save
       redirect_to root_path
@@ -106,10 +100,10 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name,
       :description,
+      :category_id,
       :status,
       :postage,
-      :category_id,
-      # :brand_id,
+      :delibery,
       :region,
       :arrival_date,
       :price,
