@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
 
   before_action :move_to_index, except: [:index, :show, :new, :create, :children, :grandchildren]
-  before_action :set_product, only:[:show,:myproduct,:destroy,:edit,:update,:purchase,:payjp]
-  before_action :set_card, only:[:cardshow,:purchase]
-
+  before_action :set_product, only: [:show,:myproduct,:destroy,:edit,:update,:purchase,:payjp]
+  before_action :set_card, only: [:cardshow,:purchase]
+  
   require 'payjp'
+  
 
   def index
     @products = Product.limit(10).order('created_at DESC')
@@ -21,12 +22,14 @@ class ProductsController < ApplicationController
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
+    
   end
 
   def myproduct
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
+    
   end
 
   def create
@@ -89,48 +92,51 @@ class ProductsController < ApplicationController
     end
   end
 
-
-
   def cardnew
     @card = Card.where(user_id: current_user.id)
+    # redirect_to action: "cardshow" if @card.exists?
   end
 
   def cardshow
-    if @card.blank?
-      redirect_to action:"cardnew"
+    #Cardのデータpayjpに送り情報を取り出します
+   if @card.blank?
+     redirect_to action: "cardnew" 
+   else
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
+   end
+ end
+ 
+ def pay #payjpとCardのデータベース作成を実施します。
+  
+  Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+  
+  if params['payjp-token'].blank?
+    redirect_to  cardnew_products_path(current_user.id)
+  else
+    customer = Payjp::Customer.create(
+    description: '登録テスト', #なくてもOK
+    email: current_user.email, #なくてもOK
+    card: params['payjp-token'],
+    metadata: {user_id: current_user.id}
+    ) #念の為metadataにuser_idを入れましたがなくてもOK
+    @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+    if @card.save
+      redirect_to cardshow_products_path(current_user.id)
     else
-      Payjp.api_key = ENV['PAYJP_PRAYVATE_KEY']
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @default_card_information = cutomer.cards.retrieve(@card.card_id)
+      redirect_to  cardnew_products_path(current_user.id)
     end
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+end
 
   def payjp
-    Payjp.api_key = "PAYJP_"
-    Payjp::Charge.create(
-      amount: 809,
-      card: params['payjp-token'],
-      currency: 'jpy'
-    )
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(currency: 'jpy', amount: @product.price, card: params['payjp-token'])
+    redirect_to root_path, notice: "支払いが完了しました"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
-
+  
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
