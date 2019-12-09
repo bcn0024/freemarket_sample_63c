@@ -6,13 +6,15 @@ class ProductsController < ApplicationController
   
   require 'payjp'
   
+
   def index
     @products = Product.limit(10).order('created_at DESC')
   end
 
   def new
     @product = Product.new
-    10.times { @product.images.build }
+    @product.images.build
+    @product.build_brand
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
@@ -31,7 +33,16 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
+    # binding.pry
+    @product.save!
+
+
+    # brand_id = Brand.find(@product.id).id  #Shipmentテーブルのidを取り出す
+    # product = Product.find(@product.id)    #作成したItemのidを取り出す
+    # product.update(brand_id: brand_id)     #Itemテーブルにshipment_idのカラムを入れる
+
     if @product.save
       redirect_to root_path
     else
@@ -135,12 +146,15 @@ end
     params.require(:product).permit(
       :name,
       :description,
+      :status,
       :postage,
       :category_id,
+      # :brand_id,
       :region,
       :arrival_date,
       :price,
-      :size,
+      brand_attributes: [:id, :name],
+      # :size,
       images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
   end

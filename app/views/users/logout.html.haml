@@ -1,4 +1,4 @@
-=render partial: "mainheader"
+=render partial: "shared/mainheader"
 - breadcrumb :logout
 = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 .logout
@@ -8,6 +8,6 @@
         = link_to destroy_user_session_path, method: :delete, class:"single-btn" do
           ログアウト
         %input{name: "__csrf_value", type: "hidden", value: "bc27fb35571ca2219a4fa4a82cf5824d4fe92bc3ab23c7f59db0c89e2e671ca983265e35bc4db57bb74481d213886f2287fd8acb6b7f163a8e168744838965a32"}/
-=render partial: "sidebar"
-=render partial: "footer-imag"
-=render partial: "layouts/mainfooter"
+=render partial: "shared/sidebar"
+=render partial: "shared/footer-imag"
+=render partial: "shared/mainfooter"

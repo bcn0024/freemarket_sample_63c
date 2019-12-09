@@ -1,6 +1,6 @@
 .body
   .contents
-    = render partial: "layouts/header"
+    = render partial: "shared/header"
     .contents__main
       .login-main
         .login-head
@@ -39,4 +39,4 @@
                 %button.login-submit.btn-default.btn-red{:type => "submit"} ログイン
               %a
                 パスワードをお忘れの方            
-      = render partial: "layouts/footer"
+      = render partial: "shared/footer"

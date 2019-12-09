@@ -1,9 +1,9 @@
 .wrapper
-  =render partial: "mainheader"
+  =render partial: "shared/mainheader"
   - breadcrumb :profile
   = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
   .profile-body
-    =render partial: "sidebar"
+    =render partial: "shared/sidebar"
     .profile-right
       .profile-head
         %h2 プロフィール
@@ -19,6 +19,6 @@
         .image-change
           = form_for [@user] do |f|
             =f.submit "変更する", class: "image-change-btn"
-  =render partial: "footer-imag"
-  =render partial: "layouts/mainfooter"
+  =render partial: "shared/footer-imag"
+  =render partial: "shared/mainfooter"
       

@@ -1,12 +1,12 @@
 .wrapper
 
-  =render partial: "users/mainheader"
+  =render partial: "shared/mainheader"
 
-  =render partial: "header-nav1"
+  =render partial: "shared/header-nav1"
 
   .main
     .main_body
-      =render partial: "sidebar"
+      =render partial: "shared/sidebar"
       .l-content
         %section.mypage-tab
           %h2.mypage-tab-head 出品した商品
@@ -41,5 +41,5 @@
                           %i.icon-message
                         .maypage-item-status
                           売却済み
-  =render partial:"products/footer-imag"
-  =render partial:"layouts/footer"
+  =render partial:"shared/footer-imag"
+  =render partial:"shared/footer"
