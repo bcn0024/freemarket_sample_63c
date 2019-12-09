@@ -144,6 +144,57 @@
  line-height: 1.5;
 }
 
+.preview-box {
+    display: flex;
+
+}
+
+.preview {
+    border: solid 1px #EEEEEE;
+    background-color: #F5F5F5;
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+    }
+
+    &__edit {
+        width: 50%;
+        text-align: center;
+        border-right: solid 1px #EEEEEE;
+    }
+
+    &__edit:hover {
+        opacity: 0.6;
+        cursor: pointer;
+        a {
+            display: inline;
+            border-bottom: 1px solid #0099E8;
+        }
+    }
+
+    &__delete {
+        width: 50%;
+        text-align: center;
+    }
+
+    &__delete:hover {
+        opacity: 0.6;
+        cursor: pointer;
+        a {
+            display: inline;
+            border-bottom: 1px solid #0099E8;
+        }
+    }
+
+
+    a {
+        margin: 0;
+        color: #0099E8;
+        font-size: 14px;
+        display: block;
+    }
+}
 
 .sell-images{
  .sell-image{
@@ -309,6 +360,16 @@
     }
 }
 
+.sell-form-select-brand {
+    label {
+        margin-top: 20px;
+    }
+
+    .select-brand-box {
+        display: none;
+    }
+}
+
 .name-space{
  input{
      width: 95%;
@@ -468,7 +529,11 @@
          text-decoration: none;
      }
  }
+}
 
+.l-right-profit {
+    font-size: 34px;
+    font-weight: 600;
 }
 
 .purchase-pref{
