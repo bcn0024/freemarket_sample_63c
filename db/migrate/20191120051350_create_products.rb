@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string         :name, null: false
       t.string         :description, null: false
       t.string         :postage, null: false
+      # t.string         :delibery, null: false
       t.integer        :status, null: false
       t.string         :region,null: false
       t.string         :arrival_date,null: false

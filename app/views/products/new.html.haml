@@ -86,9 +86,18 @@
                       配送料の負担
                       %span
                         必須
-                    .select-wrap
+                    .select-wrap.postage
                       =icon('fas', 'chevron-down')
                       = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+
+                    .select-wrap__bottom.delibery
+                      %label
+                        配送の方法
+                        %span
+                          必須
+                      .select-wrap.deliber
+                        =icon('fas', 'chevron-down')
+                        = f.select :delibery, [["---", "---"], ["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"]],class:"form-control"
                     .select-wrap__bottom
                       %label
                         配送元の地域
@@ -104,7 +113,7 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
-                        = f.select :arrival_date, [["---", "---"], ["2~3日で発送", "2~3日で発送 "], ["3~4日で発送", "3~4日で発送 "], ["4~7日で発送", "4~7日で発送 "]],class:"form-control"
+                        = f.select :arrival_date, [["---", "---"], ["1~2日で発送", "1~2日で発送 "], ["2~3日で発送", "2~3日で発送 "], ["3~4日で発送", "3~4日で発送 "], ["4~7日で発送", "4~7日で発送 "]],class:"form-control"
               .sell-content-tax
                 %h3.exam-tax
                   販売価格(300〜9,999,999)
@@ -140,20 +149,20 @@
                     =link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", id:"" do
                       禁止されている出品
 
-                    =link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", id:"" do 
+                    =link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", id:"" do
 
                       行為
                     を必ずご確認ください。
                   %p
                     またブランド品でシリアルナンバー等がある場合はご記載ください。
 
-                    =link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",  id:"" do 
+                    =link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",  id:"" do
 
                       偽ブランドの販売
                     は犯罪であり処罰される可能性があります。
                   %p
                     また、出品をもちまして
-                    =link_to "https://www.mercari.com/jp/seller_terms/", id:"" do  
+                    =link_to "https://www.mercari.com/jp/seller_terms/", id:"" do
 
                       加盟店規約
                     に同意したことになります。

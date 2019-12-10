@@ -225,9 +225,12 @@
          white-space: pre-wrap;
          word-wrap: break-word;
      }
-
  }
+}
 
+.sell-image.edit {
+    width: 450px;
+    margin-left: 20px;
 }
 
 
@@ -292,6 +295,9 @@
          font-size: 12px;
          vertical-align: top
          }
+  }
+  .delibery {
+      display: none;
   }
 }
 .select-wrap{

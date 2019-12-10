@@ -23,6 +23,8 @@ class ProductsController < ApplicationController
   def show
     @images = @product.images
     @user = @product.user
+    @brand = @product.brand
+    @category = @product.category
     @products = @product.user.products.limit(6)
 
   end
@@ -30,14 +32,19 @@ class ProductsController < ApplicationController
   def myproduct
     @images = @product.images
     @user = @product.user
+    @brand = @product.brand
+    @category = @product.category
     @products = @product.user.products.limit(6)
 
   end
 
   def create
     @product = Product.new(product_params)
-    @product.save!
-    if @product.save
+
+    @images = @product.images
+
+    if @images.length != 0
+      @product.save
       redirect_to root_path
     else
       redirect_to new_product_path
@@ -50,6 +57,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def update
@@ -168,9 +178,10 @@ end
     params.require(:product).permit(
       :name,
       :description,
+      :category_id,
       :status,
       :postage,
-      :category_id,
+      :delibery,
       :region,
       :arrival_date,
       :price,
