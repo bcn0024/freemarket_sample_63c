@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_084551) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
-    t.string "delibery", null: false
+    t.string "delibery"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

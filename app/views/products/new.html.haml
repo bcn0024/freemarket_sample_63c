@@ -87,16 +87,16 @@
                       配送料の負担
                       %span
                         必須
-                    .select-wrap
+                    .select-wrap.postage
                       =icon('fas', 'chevron-down')
                       = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
 
-                    .select-wrap__bottom
+                    .select-wrap__bottom.delibery
                       %label
                         配送の方法
                         %span
                           必須
-                      .select-wrap
+                      .select-wrap.deliber
                         =icon('fas', 'chevron-down')
                         = f.select :delibery, [["---", "---"], ["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"]],class:"form-control"
                     .select-wrap__bottom

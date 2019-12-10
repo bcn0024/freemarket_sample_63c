@@ -47,4 +47,8 @@ $(function(){
       $(".l-right-profit").text("ー");
     }
   });
+
+  $(".postage").on("change", function(){
+    $('.delibery').css("display", "block");
+  });
 });
