@@ -7,7 +7,7 @@ class CardController < ApplicationController
     redirect_to user_card_index_path(current_user.id) if card.exists?
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
+  def pay 
     Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
 
     if params['payjp-token'].blank?
@@ -28,7 +28,7 @@ class CardController < ApplicationController
     end
   end
   
-  def destroy #PayjpとCardデータベースを削除します
+  def destroy 
     if @card.blank?
     else
       Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
@@ -40,9 +40,7 @@ class CardController < ApplicationController
   end
   
   def index
-    #  Cardのデータpayjpに送り情報を取り出します
     if @card.blank?
-      # redirect_to action: "" 
     else
       Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
       customer = Payjp::Customer.retrieve(@card.customer_id)

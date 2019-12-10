@@ -103,11 +103,9 @@ class ProductsController < ApplicationController
 
   def cardnew
     @card = Card.where(user_id: current_user.id)
-    # redirect_to action: "cardshow" if @card.exists?
   end
 
   def cardshow
-    #Cardのデータpayjpに送り情報を取り出します
    if @card.blank?
      redirect_to action: "cardnew"
    else
@@ -132,7 +130,7 @@ class ProductsController < ApplicationController
    end
  end
 
- def pay #payjpとCardのデータベース作成を実施します。
+ def pay
 
   Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
 
@@ -140,11 +138,11 @@ class ProductsController < ApplicationController
     redirect_to  cardnew_products_path(current_user.id)
   else
     customer = Payjp::Customer.create(
-    description: '登録テスト', #なくてもOK
-    email: current_user.email, #なくてもOK
+    description: '登録テスト',
+    email: current_user.email,
     card: params['payjp-token'],
     metadata: {user_id: current_user.id}
-    ) #念の為metadataにuser_idを入れましたがなくてもOK
+    )
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     if @card.save
       redirect_to cardshow_products_path(current_user.id)
