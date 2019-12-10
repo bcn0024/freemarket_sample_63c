@@ -79,7 +79,7 @@ class ProductsController < ApplicationController
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
     end
@@ -95,7 +95,7 @@ class ProductsController < ApplicationController
    if @card.blank?
      redirect_to action: "cardnew"
    else
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
    end
@@ -103,7 +103,7 @@ class ProductsController < ApplicationController
 
  def pay #payjpとCardのデータベース作成を実施します。
 
-  Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+  Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
 
   if params['payjp-token'].blank?
     redirect_to  cardnew_products_path(current_user.id)
@@ -124,7 +124,7 @@ class ProductsController < ApplicationController
 end
 
   def payjp
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     Payjp::Charge.create(currency: 'jpy',customer: @card.customer_id ,amount: @product.price, card: params['payjp-token'])
     redirect_to root_path, notice: "支払いが完了しました"
   end
