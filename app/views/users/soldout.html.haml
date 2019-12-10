@@ -1,12 +1,15 @@
 .wrapper
-
-  =render partial: "users/mainheader"
-
-  =render partial: "header-nav1"
+  =render partial: "shared/mainheader"
+  %nav.header_nav
+    %ul.nav_box
+      %li.nav_list
+        =link_to "#", class: "nav_list__anchor" do
+          - breadcrumb :soldout
+          = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 
   .main
     .main_body
-      =render partial: "sidebar"
+      =render partial: "shared/sidebar"
       .l-content
         %section.mypage-tab
           %h2.mypage-tab-head 出品した商品
@@ -41,5 +44,5 @@
                           %i.icon-message
                         .maypage-item-status
                           売却済み
-  =render partial:"products/footer-imag"
-  =render partial:"layouts/footer"
+  =render partial:"shared/footer-imag"
+  =render partial:"shared/footer"

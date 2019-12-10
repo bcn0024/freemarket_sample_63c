@@ -1,6 +1,6 @@
 .body
   .contents
-    = render partial: "layouts/header"
+    = render partial: "shared/header"
     .contents__main
       .login-main
         .login-head
@@ -8,7 +8,7 @@
             アカウントをお持ちでない方はこちら
           .login-head__new
             %p
-              =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
+              =link_to users_path, class: "mercari-icon", id:"" do
                 新規会員登録
         .login-bottom
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -39,4 +39,4 @@
                 %button.login-submit.btn-default.btn-red{:type => "submit"} ログイン
               %a
                 パスワードをお忘れの方            
-      = render partial: "layouts/footer"
+      = render partial: "shared/footer"

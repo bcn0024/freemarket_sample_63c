@@ -1,6 +1,10 @@
-= render 'users/mainheader'
-- breadcrumb :myproduct
-= breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
+= render 'shared/mainheader'
+%nav.header_nav
+  %ul.nav_box
+    %li.nav_list
+      =link_to "#", class: "nav_list__anchor" do
+        - breadcrumb :myproduct
+        = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 %body
   .default-container
     %section.item-box-container.l-single-container
@@ -44,7 +48,7 @@
           %span.item-shipping-fee 送料込み
         %section.visible-sp
           .item-btn-float-area
-            =link_to purchase_product_path,class:"item-buy-btn" do
+            =link_to purchase_product_path(current_user.id),class:"item-buy-btn" do
               購入画面に進む
         %table.item-detail-table
           %tbody
@@ -171,7 +175,7 @@
             .submit
               %p
                 コメントする
-    .navigation
+    .navigation 
+= render 'shared/footer-imag'
+= render 'shared/mainfooter'
 
-= render 'users/footer-imag'
-= render 'layouts/mainfooter'

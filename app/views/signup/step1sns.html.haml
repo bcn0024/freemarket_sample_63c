@@ -44,7 +44,6 @@
               .form-password-revelation-toggle
                 .checkbox-default
                   = f.password_field :password_confirmation, class:'input-default' ,placeholder: '6文字以上'
-                  //%i.icon-check
                   %label{for: "reveal_password"} パスワードを表示する
                 .form-password-revelation-revealed-password-container
                   %span.form-password-revelation-revealed-password
@@ -107,4 +106,4 @@
                 %a{href: "/jp/help_center/article/423/", target: "_blank",class:"person"}
                   本人情報の登録について
                   = icon('fas', 'arrow-right', class:"icon-arrow-right")
-    = render partial: "layouts/footer"
+    = render partial: "shared/footer"

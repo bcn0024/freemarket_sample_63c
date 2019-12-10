@@ -31,6 +31,11 @@ crumb :edit do
   link "本人情報の登録", edit_address_path
   parent :user
 end
+
+crumb :soldout do
+  link "出品した商品-売却済み",soldout_user_path
+  parent :user
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end

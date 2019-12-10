@@ -1,19 +1,53 @@
-.credit_box
-  .box_top
-    支払い方法
+.body
+  =render "shared/mainheader"
+  .main
+    .main-box
+      .card-main
+        =render "shared/sidebar"
+        .card-info
+          .credit_box
+            .box_top
+              支払い方法
+          - if @card.blank?
+            .box_main
+              .box_content
+                .box_content__show
+                  クレジットカード一覧
+                .box_content__add
+                  .add-content
+                    =link_to new_user_card_path(current_user.id), class: "add-content__link" do
+                      = icon('fas', 'credit-card', class: 'add-content__icon')
+                      クレジットカードを追加する
+              .box_footer
+                =link_to "#", class: "box_footer__link" do
+                  %span 支払い方法について 
+                  = icon('fas', 'chevron-right')
+          - else
+            .main-head
+              .buy-user-info2
+                .box_main
+                  .box_content
+                    %h3 
+                      クレジットカード一覧
+                    .box_show
+                      .show_left
+                        .show_left__icon
+                        = image_tag "/images/credit-cards/#{@card_src}", width: '26', height: '20', alt: @default_card_brand, id: "card_image"
+                        .show_left__info
+                          = "**** **** **** " + @default_card_information.last4
+                        .show_left__expire
+                          - exp_month = @default_card_information.exp_month.to_s
+                          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                          = exp_month + " / " + exp_year
+                        .show_right
+                          = form_tag user_card_path(current_user.id,@card.customer_id), method: :delete, id: 'charge-form',  name: "inputForm" do
+                            %input{ type: "hidden", name: "card_id", value: "", class: "show_right__delete" }
+                            %button.show_right__delete
+                              削除する
+                  .box_footer
+                    =link_to "#", class: "box_footer__link" do
+                      %span 支払い方法について 
+                      = icon('fas', 'chevron-right')
+  =render "shared/footer-imag"
+  =render "shared/mainfooter"
 
-  .box_main
-    .box_content
-      .box_content__show
-        クレジットカード一覧
-      
-      .box_content__add
-        .add-content
-          =link_to "/users/#{current_user.id}/card/new", class: "add-content__link" do
-            = icon('fas', 'credit-card', class: 'add-content__icon')
-            クレジットカードを追加する
-
-    .box_footer
-      =link_to "#", class: "box_footer__link" do
-        %span 支払い方法について 
-        = icon('fas', 'chevron-right')

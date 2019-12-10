@@ -53,8 +53,6 @@ woman_etc.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "そ
 
 
 
-# メンズ
-
 man = Category.create(name: "メンズ")
 
 man_tops = man.children.create(name: "トップス")
@@ -88,8 +86,6 @@ man_underwear.children.create([{name: "トランクス"}, {name: "ボクサー�
 
 
 
-
-# ベビー・キッズ
 
 
 baby = Category.create(name: "ベビー・キッズ")
@@ -129,7 +125,6 @@ baby_etc.children.create([{name: "母子手帳用品"}, {name: "その他"}])
 
 
 
-# インテリア・住まい・小物
 
 house = Category.create(name: "インテリア・住まい・小物")
 
@@ -162,7 +157,7 @@ house_small.children.create([{name: "ごみ箱"},{name: "ウェルカムボー�
 house_season.children.create([{name: "正月"},{name: "成人式"},{name: "バレンタインデー"},{name: "ひな祭り"},{name: "子どもの日"},{name: "母の日"},{name: "父の日"},{name: "サマーギフト/お中元"},{name: "夏/夏休み"},{name: "ハロウィン"},{name: "敬老の日"},{name: "七五三"},{name: "お歳暮"},{name: "クリスマス"},{name: "冬一般"},{name: "その他"},])
 
 
-#本・音楽・ゲーム
+
 
 enjoyment = Category.create(name: "本・音楽・ゲーム")
 
@@ -184,7 +179,7 @@ enjoyment_record.children.create([{name: "邦楽"}, {name: "洋楽"}, {name: "�
 enjoyment_tvgame.children.create([{name: "家庭用ゲーム本体"}, {name: "家庭用ゲームソフト"}, {name: "携帯用ゲーム本体"}, {name: "携帯用ゲームソフト"}, {name: "PCゲーム"}, {name: "その他"},])
 
 
-# おもちゃ・ホビー・グッズ
+
 
 toys = Category.create(name: "おもちゃ・ホビー・グッズ")
 
@@ -216,7 +211,7 @@ toys_etc.children.create([{name: "トランプ/UNO"},  {name: "カルタ/百人�
 
 
 
-# コスメ・香水・美容
+
 
 cosmetic = Category.create(name: "コスメ・香水・美容")
 
@@ -245,7 +240,7 @@ cosmetic_diet.children.create([{name: "ダイエット食品"}, {name: "エク�
 cosmetic_etc.children.create([{name: "健康用品"}, {name: "看護/介護用品"}, {name: "救急/衛生用品"}, {name: "その他"}])
 
 
-# 家電・スマホ・カメラ
+
 
 devise = Category.create(name: "家電・スマホ・カメラ")
 
@@ -272,7 +267,7 @@ devise_aircondition.children.create([{name: "エアコン"}, {name: "空気清�
 devise_life.children.create([{name: "冷蔵庫"}, {name: "洗濯機"}, {name: "炊飯器"}, {name: "電子レンジ/オーブン"}, {name: "調理機器"}, {name: "アイロン"}, {name: "掃除機"}, {name: "エスプレッソマシン"}, {name: "コーヒーメーカー"}, {name: "衣類乾燥機"}, {name: "その他"}])
 
 
-# スポーツ・レジャー
+
 
 sport = Category.create(name: "スポーツ・レジャー")
 
@@ -304,7 +299,7 @@ sport_outdoor.children.create([{name: "テント/タープ"}, {name: "ライト/
 sport_etc.children.create([{name: "旅行用品"}, {name: "その他"}])
 
 
-# ハンドメイド
+
 
 handmade = Category.create(name: "ハンドメイド")
 
@@ -329,7 +324,7 @@ handmade_material.children.create([{name: "各種パーツ"}, {name: "生地/糸
 handmade_create.children.create([{name: "Ingress"}, {name: "クリエイターズ宇宙兄弟"}, {name: "シンデレラガールズCPグッズ"},])
 
 
-# チケット
+
 
 chicket = Category.create(name: "チケット")
 
@@ -351,7 +346,7 @@ chicket_kids.children.create([{name: "遊園地/テーマパーク "}, {name: "�
 chicket_material.children.create([{name: "ショッピング "}, {name: "レストラン/食事券 "}, {name: "フード/ドリンク券 "}, {name: "宿泊券 "}, {name: "その他 "}])
 
 
-# 自動車・オートバイ
+
 
 ride = Category.create(name: "自動車・オートバイ")
 
@@ -372,7 +367,6 @@ ride_outbike_part.children.create([{name: "タイヤ"}, {name: "マフラー"}, 
 ride_outbike_accesary.children.create([{name: "ヘルメット/シールド"}, {name: "バイクウエア/装備"}, {name: "アクセサリー"}, {name: "メンテナンス"}, {name: "カタログ/マニュアル"}, {name: "その他"},])
 
 
-# その他
 
 etc = Category.create(name: "その他")
 

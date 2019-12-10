@@ -3,8 +3,8 @@ require 'rails_helper'
 describe Product do
 
   describe '#create' do
-    it "is valid with a name, description, postage, status, region, arrival_date, price, size, " do
-      product = build(:product)
+    it "is valid with a name, description, postage, status, region, arrival_date, price, " do
+      product = build(:product, brand_id: nil)
       expect(product).to be_valid
     end
     it "is invalid without a name" do
@@ -41,11 +41,6 @@ describe Product do
       product = build(:product, price: nil)
       product.valid?
       expect(product.errors[:price]).to include("can't be blank")
-    end
-    it "is invalid without a size" do
-      product = build(:product, size: nil)
-      product.valid?
-      expect(product.errors[:size]).to include("can't be blank")
     end
   end
 end

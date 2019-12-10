@@ -1,16 +1,17 @@
 .wrapper
-  =render partial: "users/mainheader"
-  %ul.nav_box
-    %li.nav_list
-      =link_to "#", class: "nav_list__anchor" do
-        - breadcrumb :user
-        = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
+  =render partial: "shared/mainheader"
+  %nav.header_nav
+    %ul.nav_box
+      %li.nav_list
+        =link_to "#", class: "nav_list__anchor" do
+          - breadcrumb :user
+          = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 
 
   .main
     .main_body
-      =render partial: "sidebar"
-      =render partial: "usermypage"
+      =render partial: "shared/sidebar"
+      =render partial: "shared/usermypage"
 
-  =render partial:"products/footer-imag"
-  =render partial:"layouts/footer"
+  =render partial:"shared/footer-imag"
+  =render partial:"shared/footer"

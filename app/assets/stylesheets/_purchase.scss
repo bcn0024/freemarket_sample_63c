@@ -5,190 +5,668 @@
   font-size: 14px;
   color: #333;
   line-height: 1;
-  .contents{
-    &__main{
-      display: block;
-      .main-head{
-        margin: 0 auto;
-        background-color: #fff;
-        width: 700px;
-        &__confirmation{
-          padding: 20px;
-          text-align: center;
-          display: block;
-          font-size: 1.5em;
-          margin-block-start: 0.83em;
-          margin-block-end: 0.83em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-          font-weight: bold;
-          margin: 0px;
-        }
-        .buy-content{
-          padding: 24px 12.5% 0;
-          border-top: 1px solid #f5f5f5;
-          text-align: center;
-          .buy-content-inner{
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 320px;
-            margin: 0 auto;
-            .innner-image{
-              height:22px;
-              width: 22px;
-            }
-            .item-name{
-              font-weight: bold;
-              margin:0 0 0 16px;
-              padding:5px 0 0 0;
-            }
-            .form{
-              width: 100%;
-              .price{
-
-                margin: 10px 0 0;
-                line-height: 1.5;
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                .price-bold{
-                  font-size: 20px;
-                  color: #333; 
-                  font-weight: bold;
-                }
-                .price-font{
-                  margin: 5px 0 0 8px;
-                  font-size: 14px;
-                }
-              }
-              .point{
-                padding: 17px 0;
-                margin: 16px 0 0;
-                background-color: #ccc;
-              }
-              .price-total{
-                width: 100%;
-                font-weight: bold;
-                display: flex;
-                &__siharai{
-                  font-size:17px;
-                  padding: 25px 0 16px 0;
-                  width: 50%;
-                  text-align: left;
-                  bottom: 0px;
-                }
-                &__bold{
-                  padding: 16px 0;
-                  width: 50%;
-                  font-size:25px;
-                  text-align: right;
-                }
-              }
-              .btn-red{
-                width: 100%;
+  .purchase-main{
+    text-align: center;
+    .main-box{
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      .card-info{
+        margin-top: 20px;
+        .purchase-contents{
+          margin: 0 auto;
+          &__main{
+            display: block;
+            .main-head{
+              margin: 0 auto;
+              background-color: #fff;
+              width: 700px;
+              &__confirmation{
+                padding: 35px;
+                text-align: center;
                 display: block;
-                margin: 8px 0 0;
-                background: #ea352d;
-                border: 1px solid #ea352d;
-                color: #fff;
-                padding: 25px 0;
+                font-size: 1.5em;
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
                 font-weight: bold;
-                font-size:14px;
+                margin: 0px;
               }
-              .purchase{
+              .buy-content{
+                padding: 24px 12.5% 0;
+                border-top: 1px solid #f5f5f5;
+                text-align: center;
+                .buy-content-inner{
+                  display: flex;
+                  flex-wrap: wrap;
+                  max-width: 320px;
+                  margin: 0 auto;
+                  .innner-image{
+                    height:22px;
+                    width: 22px;
+                  }
+                  .item-name{
+                    font-weight: bold;
+                    margin:0 0 0 16px;
+                    padding:5px 0 0 0;
+                  }
+                  .form{
+                    width: 100%;
+                    .price{
+                      margin: 10px 0 0;
+                      line-height: 1.5;
+                      display: flex;
+                      width: 100%;
+                      justify-content: center;
+                      .price-bold{
+                        font-size: 20px;
+                        color: #333; 
+                        font-weight: bold;
+                      }
+                      .price-font{
+                        margin: 5px 0 0 8px;
+                        font-size: 14px;
+                      }
+                    }
+                    .point{
+                      padding: 17px 0;
+                      margin: 16px 0 0;
+                      background-color: #ccc;
+                    }
+                    .price-total{
+                      width: 100%;
+                      font-weight: bold;
+                      display: flex;
+                      &__siharai{
+                        font-size:17px;
+                        padding: 25px 0 16px 0;
+                        width: 50%;
+                        text-align: left;
+                        bottom: 0px;
+                      }
+                      &__bold{
+                        padding: 16px 0;
+                        width: 50%;
+                        font-size:25px;
+                        text-align: right;
+                      }
+                    }
+                    .purchase{
+                      text-decoration: none;
+                    }
+                  }
+                }
+              }
+              .buy-user-info1{
+                padding: 24px 185px 0;
+                border-top: 1px solid #f5f5f5;
+                .buy-content-inner{
+                  max-width: 320px;
+                  text-align: left;
+                  .inner{
+                    font-weight:bold;
+                  }
+                  
+                  .address{
+                    margin: 8px 0 0;
+                    font-size: 14px;
+                    line-height: 1.4;
+
+                  }
+                  li{
+                    display: block;
+                    text-align: right;
+
+                  }
+                }
+              }
+              .buy-user-info2{
+                padding: 24px 185px 0;
+                border-top: 1px solid #f5f5f5;
+                .buy-content-inner{
+                  max-width: 320px;
+                  text-align: left;
+                  .fix{
+                    float:right;
+                  }
+                  .purchase-inner{
+                    font-weight:bold;
+                    padding: 0 100px;
+                  }
+                    .purchase-howto{
+                      font-weight:bold;
+                      text-align: left;
+                    }
+                  .registration-card{
+                    color:#0099e8;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                  }
+                  .number{
+                    margin: 8px 0 0;
+                    font-size: 14px;
+                    line-height: 1.4;
+                  }
+                  li{
+                    display: block;
+                    text-align: right;
+                  }
+                }
+              }
+              .buy-button-contents{
+                margin: 40px 0 0;
+                padding: 24px 185px 40px;
+                border-top: 1px solid #f5f5f5;
+                text-align: center;
+                max-width: 320px;
+                .btn-none{
+                  padding: 17px 0;
+                  margin: 16px 0 0;
+                  background-color:gray;
+                  color: #fff;
+                  font-weight: bold;
+                  font-size:14px;
+                }
+                .btn-red{
+                  margin: 16px 0 0;
+                  background-color:#ea352d;
+                  
+                  color: #fff;
+                  font-weight: bold;
+                  font-size:14px;
+                  & div{
+                      & input{
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }  
+          }
+          &__footer{
+            width: 456px;
+            height: 140px;
+            margin: 0 auto;
+            padding: 90px 0px 40px 0px;
+            text-align: center;
+            nav{
+              ul{
+                font-size: 0;
+                list-style-type: disc;
+                li:first-child{
+                  margin: 0;
+                }
+                li{
+                  display: inline-block;
+                  font-size: 12px;
+                  margin: 0 0 0 16px;
+                  a{
+                    height: 12px;
+                    color: #333;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+            .mercari-icon{
+              display: block;
+              color: #333;
+              width: 80px;
+              height: 65px;
+              margin: 40px auto 0;
+              text-decoration: none;
+              touch-action: manipulation;
+            }
+            p{
+              margin: 8px 0 0;
+              display: block;
+              small{
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-info-set{
+    margin-top: 20px;
+    .purchase-contents{
+      margin: 0 auto;
+      &__main{
+        display: block;
+        .main-head{
+          margin: 0 auto;
+          background-color: #fff;
+          width: 700px;
+          &__confirmation{
+            padding: 35px;
+            text-align: center;
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            margin: 0px;
+          }
+          .buy-content{
+            padding: 24px 12.5% 0;
+            border-top: 1px solid #f5f5f5;
+            text-align: center;
+            .buy-content-inner{
+              display: flex;
+              flex-wrap: wrap;
+              max-width: 320px;
+              margin: 0 auto;
+              .innner-image{
+                height:22px;
+                width: 22px;
+              }
+              .item-name{
+                font-weight: bold;
+                margin:0 0 0 16px;
+                padding:5px 0 0 0;
+              }
+              .form{
+                width: 100%;
+                .price{
+                  margin: 10px 0 0;
+                  line-height: 1.5;
+                  display: flex;
+                  width: 100%;
+                  justify-content: center;
+                  .price-bold{
+                    font-size: 20px;
+                    color: #333; 
+                    font-weight: bold;
+                  }
+                  .price-font{
+                    margin: 5px 0 0 8px;
+                    font-size: 14px;
+                  }
+                }
+                .point{
+                  padding: 17px 0;
+                  margin: 16px 0 0;
+                  background-color: #ccc;
+                }
+                .price-total{
+                  width: 100%;
+                  font-weight: bold;
+                  display: flex;
+                  &__siharai{
+                    font-size:17px;
+                    padding: 25px 0 16px 0;
+                    width: 50%;
+                    text-align: left;
+                    bottom: 0px;
+                  }
+                  &__bold{
+                    padding: 16px 0;
+                    width: 50%;
+                    font-size:25px;
+                    text-align: right;
+                  }
+                }
+                .purchase{
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .buy-user-info1{
+            padding: 24px 185px 0;
+            border-top: 1px solid #f5f5f5;
+            .buy-content-inner{
+              max-width: 320px;
+              text-align: left;
+              .inner{
+                font-weight:bold;
+              }
+              
+              .address{
+                margin: 8px 0 0;
+                font-size: 14px;
+                line-height: 1.4;
+
+              }
+              li{
+                display: block;
+                text-align: right;
+
+              }
+            }
+          }
+          .buy-user-info2{
+            padding: 24px 185px 0;
+            border-top: 1px solid #f5f5f5;
+            .buy-content-inner{
+              max-width: 320px;
+              text-align: left;
+              .fix{
+                float:right;
+              }
+              .purchase-inner{
+                font-weight:bold;
+                padding: 0 100px;
+              }
+                .purchase-howto{
+                  font-weight:bold;
+                  text-align: left;
+                }
+              .registration-card{
+                color:#0099e8;
+                margin-top: 20px;
+                margin-bottom: 40px;
+              }
+              .number{
+                margin: 8px 0 0;
+                font-size: 14px;
+                line-height: 1.4;
+              }
+              li{
+                display: block;
+                text-align: right;
+              }
+            }
+          }
+          .buy-button-contents{
+            margin: 40px 0 0;
+            padding: 24px 185px 40px;
+            border-top: 1px solid #f5f5f5;
+            text-align: center;
+            max-width: 320px;
+            .btn-none{
+              padding: 17px 0;
+              margin: 16px 0 0;
+              background-color:gray;
+              color: #fff;
+              font-weight: bold;
+              font-size:14px;
+            }
+            .btn-red{
+              margin: 16px 0 0;
+              background-color:#ea352d;
+              
+              color: #fff;
+              font-weight: bold;
+              font-size:14px;
+              & div{
+                  & input{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }  
+      }
+      &__footer{
+        width: 456px;
+        height: 140px;
+        margin: 0 auto;
+        padding: 90px 0px 40px 0px;
+        text-align: center;
+        nav{
+          ul{
+            font-size: 0;
+            list-style-type: disc;
+            li:first-child{
+              margin: 0;
+            }
+            li{
+              display: inline-block;
+              font-size: 12px;
+              margin: 0 0 0 16px;
+              a{
+                height: 12px;
+                color: #333;
                 text-decoration: none;
               }
             }
           }
         }
-        .buy-user-info1{
-          margin: 40px 0 0;
-          padding: 24px 12.5% 0;
-          border-top: 1px solid #f5f5f5;
-          .buy-content-inner{
-            max-width: 320px;
-            margin: 0 auto;
-            .inner{
-              font-weight:bold;
-            }
-            .address{
-              margin: 8px 0 0;
-              font-size: 14px;
-              line-height: 1.4;
-            }
-            li{
-              display: block;
-              text-align: right;
-            }
-          }
+        .mercari-icon{
+          display: block;
+          color: #333;
+          width: 80px;
+          height: 65px;
+          margin: 40px auto 0;
+          text-decoration: none;
+          touch-action: manipulation;
         }
-        .buy-user-info2{
-          margin: 40px 0 0;
-          padding: 24px 12.5% 40px;
-          border-top: 1px solid #f5f5f5;
-          .buy-content-inner{
-            max-width: 320px;
-            margin: 0 auto;
-            .inner{
-              font-weight:bold;
-            }
-            .number{
-              margin: 8px 0 0;
-              font-size: 14px;
-              line-height: 1.4;
-            }
-            li{
-              display: block;
-              text-align: right;
-            }
-          }
-        }
-      }  
-    }
-    &__footer{
-      width: 456px;
-      height: 140px;
-      margin: 0 auto;
-      padding: 90px 0px 40px 0px;
-      text-align: center;
-      nav{
-        ul{
-          font-size: 0;
-          list-style-type: disc;
-          li:first-child{
-            margin: 0;
-          }
-          li{
-            display: inline-block;
+        p{
+          margin: 8px 0 0;
+          display: block;
+          small{
             font-size: 12px;
-            margin: 0 0 0 16px;
-            a{
-              height: 12px;
-              color: #333;
-              text-decoration: none;
-            }
           }
         }
       }
-      .mercari-icon{
+    }
+
+    .card-info-set{
+    margin-top: 20px;
+    .purchase-contents{
+      margin: 0 auto;
+      &__main{
         display: block;
-        color: #333;
-        width: 80px;
-        height: 65px;
-        margin: 40px auto 0;
-        text-decoration: none;
-        touch-action: manipulation;
+        .main-head{
+          margin: 0 auto;
+          background-color: #fff;
+          width: 700px;
+          &__confirmation{
+            padding: 35px;
+            text-align: center;
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            margin: 0px;
+          }
+          .buy-content{
+            padding: 24px 12.5% 0;
+            border-top: 1px solid #f5f5f5;
+            text-align: center;
+            .buy-content-inner{
+              display: flex;
+              flex-wrap: wrap;
+              max-width: 320px;
+              margin: 0 auto;
+              .innner-image{
+                height:22px;
+                width: 22px;
+              }
+              .item-name{
+                font-weight: bold;
+                margin:0 0 0 16px;
+                padding:5px 0 0 0;
+              }
+              .form{
+                width: 100%;
+                .price{
+                  margin: 10px 0 0;
+                  line-height: 1.5;
+                  display: flex;
+                  width: 100%;
+                  justify-content: center;
+                  .price-bold{
+                    font-size: 20px;
+                    color: #333; 
+                    font-weight: bold;
+                  }
+                  .price-font{
+                    margin: 5px 0 0 8px;
+                    font-size: 14px;
+                  }
+                }
+                .point{
+                  padding: 17px 0;
+                  margin: 16px 0 0;
+                  background-color: #ccc;
+                }
+                .price-total{
+                  width: 100%;
+                  font-weight: bold;
+                  display: flex;
+                  &__siharai{
+                    font-size:17px;
+                    padding: 25px 0 16px 0;
+                    width: 50%;
+                    text-align: left;
+                    bottom: 0px;
+                  }
+                  &__bold{
+                    padding: 16px 0;
+                    width: 50%;
+                    font-size:25px;
+                    text-align: right;
+                  }
+                }
+                .purchase{
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .buy-user-info1{
+            padding: 24px 185px 0;
+            border-top: 1px solid #f5f5f5;
+            .buy-content-inner{
+              max-width: 320px;
+              text-align: left;
+              .inner{
+                font-weight:bold;
+              }
+              
+              .address{
+                margin: 8px 0 0;
+                font-size: 14px;
+                line-height: 1.4;
+
+              }
+              li{
+                display: block;
+                text-align: right;
+
+              }
+            }
+          }
+          .buy-user-info2{
+            padding: 24px 185px 0;
+            border-top: 1px solid #f5f5f5;
+            .buy-content-inner{
+              max-width: 320px;
+              text-align: left;
+              .fix{
+                float:right;
+              }
+              .purchase-inner{
+                font-weight:bold;
+                padding: 0 100px;
+              }
+                .purchase-howto{
+                  font-weight:bold;
+                  text-align: left;
+                }
+              .registration-card{
+                color:#0099e8;
+              }
+              .number{
+                margin: 8px 0 0;
+                font-size: 14px;
+                line-height: 1.4;
+              }
+              li{
+                display: block;
+                text-align: right;
+              }
+            }
+          }
+          .buy-button-contents{
+            margin: 40px 0 0;
+            padding: 24px 185px 40px;
+            border-top: 1px solid #f5f5f5;
+            text-align: center;
+            max-width: 320px;
+            .btn-none{
+              padding: 17px 0;
+              margin: 16px 0 0;
+              background-color:gray;
+              color: #fff;
+              font-weight: bold;
+              font-size:14px;
+            }
+            .btn-red{
+              margin: 16px 0 0;
+              background-color:#ea352d;
+              
+              color: #fff;
+              font-weight: bold;
+              font-size:14px;
+              & div{
+                  & input{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }  
       }
-      p{
-        margin: 8px 0 0;
-        display: block;
-        small{
-          font-size: 12px;
+      &__footer{
+        width: 456px;
+        height: 140px;
+        margin: 0 auto;
+        padding: 90px 0px 40px 0px;
+        text-align: center;
+        nav{
+          ul{
+            font-size: 0;
+            list-style-type: disc;
+            li:first-child{
+              margin: 0;
+            }
+            li{
+              display: inline-block;
+              font-size: 12px;
+              margin: 0 0 0 16px;
+              a{
+                height: 12px;
+                color: #333;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        .mercari-icon{
+          display: block;
+          color: #333;
+          width: 80px;
+          height: 65px;
+          margin: 40px auto 0;
+          text-decoration: none;
+          touch-action: manipulation;
+        }
+        p{
+          margin: 8px 0 0;
+          display: block;
+          small{
+            font-size: 12px;
+          }
         }
       }
     }
-  }
-}
-.change{
-  color:#0099e8;
-}
+
+
+
+

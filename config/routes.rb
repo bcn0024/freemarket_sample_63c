@@ -14,18 +14,33 @@ Rails.application.routes.draw do
       get 'children'
       get 'grandchildren'
     end
+    
     resources :images, only: [:index,:destroy,:new,:create]
 
     member do
       get 'purchase'
       post 'payjp'
       get 'myproduct'
+      get 'cardnew'
+      get 'cardshow'
+      post 'pay', to: 'products#pay'
+    end
+
+    collection do
+      get 'cardnew'
+      get 'cardshow'
+      post 'pay', to: 'products#pay'
+    end
+      resources :card, only: [:index, :create, :new, :destroy]
+        collection do
+          post 'pay', to: 'card#pay'
+          get 'cardnew'
+          get 'cardshow'
+      end
   end
-    resources :images, only: [:index,:destroy]
+    resources :images, only: [:index,:destroy]do
     
   end
-
-
   resources :users, only: [:index, :create, :new, :show, :destoroy, :edit, :update] do
     member do
       get 'selling'
@@ -33,11 +48,9 @@ Rails.application.routes.draw do
       get 'logout'
       get 'profile'
     end
-    resources :card, only: [:index, :create, :new]
+    resources :card, only: [:index, :create, :new, :destroy]
     collection do
-      post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
     end
   end
 
