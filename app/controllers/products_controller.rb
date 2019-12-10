@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index_purchase, only: [:purchase]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
   before_action :set_card, only: [:cardshow,:purchase,:payjp]
-  
+ 
   require 'payjp'
 
   def index
@@ -23,14 +23,14 @@ class ProductsController < ApplicationController
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
-    
+
   end
 
   def myproduct
     @images = @product.images
     @user = @product.user
     @products = @product.user.products.limit(6)
-    
+
   end
 
   def create
@@ -93,18 +93,18 @@ class ProductsController < ApplicationController
   def cardshow
     #Cardのデータpayjpに送り情報を取り出します
    if @card.blank?
-     redirect_to action: "cardnew" 
+     redirect_to action: "cardnew"
    else
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
    end
  end
- 
+
  def pay #payjpとCardのデータベース作成を実施します。
-  
+
   Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-  
+
   if params['payjp-token'].blank?
     redirect_to  cardnew_products_path(current_user.id)
   else
@@ -128,7 +128,7 @@ end
     Payjp::Charge.create(currency: 'jpy',customer: @card.customer_id ,amount: @product.price, card: params['payjp-token'])
     redirect_to root_path, notice: "支払いが完了しました"
   end
-  
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
@@ -155,13 +155,13 @@ end
   end
 
   def move_to_login
-    redirect_to new_user_session_path unless user_signed_in? 
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
   def move_to_index_purchase
     redirect_to root_path if user_signed_in? && current_user.id == @product.user.id
   end
-  
+
   def move_to_index_edit
     redirect_to root_path unless user_signed_in? && current_user.id == @product.user.id
   end

@@ -1,13 +1,16 @@
-=render partial: "shared/mainheader"
-- breadcrumb :logout
-= breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
-.logout
-  .logout-chapter
-    %form.single{action: "https://www.mercari.com/jp/logout/", method: "POST", novalidate: "novalidate"}
-      .logout-content
-        = link_to destroy_user_session_path, method: :delete, class:"single-btn" do
-          ログアウト
-        %input{name: "__csrf_value", type: "hidden", value: "bc27fb35571ca2219a4fa4a82cf5824d4fe92bc3ab23c7f59db0c89e2e671ca983265e35bc4db57bb74481d213886f2287fd8acb6b7f163a8e168744838965a32"}/
-=render partial: "shared/sidebar"
-=render partial: "shared/footer-imag"
-=render partial: "shared/mainfooter"
+.wrapper
+  =render partial: "shared/mainheader"
+  %nav.header_nav
+    %ul.nav_box
+      %li.nav_list
+        =link_to "#", class: "nav_list__anchor" do
+          - breadcrumb :logout
+          = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
+
+  .main
+    .main_body
+      =render partial: "shared/sidebar"
+      =render partial: "shared/logout"
+
+  =render partial: "shared/footer-imag"
+  =render partial: "shared/mainfooter"
