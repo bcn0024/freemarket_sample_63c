@@ -18,6 +18,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @images = @product.images
     @user = @product.user
+    @brand = @product.brand
+    @category = @product.category
     @products = @product.user.products.limit(6)
   end
 
@@ -31,12 +33,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-
     @product = Product.new(product_params)
-    # binding.pry
-    @product.save
+    @images = @product.images
 
-    if @product.save
+    if @images.length != 0
+      @product.save
       redirect_to root_path
     else
       redirect_back(fallback_location: products_path)
@@ -51,6 +52,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @images = @product.images
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
 

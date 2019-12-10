@@ -17,9 +17,16 @@
               = f.fields_for :images do |i|
                 .preview-box
                   .preview
-                    .preview_content
-                  .sell-images
-                    = i.label :image, class: 'sell-image' do
+                    = image_tag @images.first.image.url, class: "preview__image", size: "130x111"
+                    .preview__bottom
+                      .preview__edit
+                        = link_to "#", class: "preview__edit--anchor" do
+                          編集
+                      .preview__delete
+                        = link_to "#", class: "preview__delete--anchor" do
+                          削除
+                  .sell-images.edit
+                    = i.label :image, class: 'sell-image edit' do
                       = i.file_field :image, class: 'hidden'
                       %pre
                         ドラッグアンドドロップ
@@ -90,6 +97,18 @@
                     .select-wrap
                       =icon('fas', 'chevron-down')
                       = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+
+
+                    .select-wrap__bottom.edit-delibery
+                    %label
+                      配送の方法
+                      %span
+                        必須
+                    .select-wrap.edit-deliber
+                      =icon('fas', 'chevron-down')
+                      = f.select :delibery, [["---", "---"], ["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"]],class:"form-control"
+
+
                     .select-wrap__bottom
                       %label
                         配送元の地域

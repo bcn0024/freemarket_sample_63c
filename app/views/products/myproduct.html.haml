@@ -29,7 +29,7 @@
               .owl-dot.active
                 %span
                 .owl-dot-inner
-                  =image_tag @images.first.image.url,class:"is-higher-height"
+                  =image_tag @images.first.image.url,class:"is-higher-height" if @images[0].image.present?
               - @product.images.each_with_index do |i, index|
                 - if index != 0
                   .owl-dot
@@ -94,7 +94,8 @@
                 = @product.postage
             %tr
               %th 配送の方法
-              %td ゆうゆうメルカリ便
+              %td
+                = @product.delibery
             %tr
               %th 配送元地域
               %td

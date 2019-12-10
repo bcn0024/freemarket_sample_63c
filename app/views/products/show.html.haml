@@ -2,11 +2,11 @@
   =render partial: "users/mainheader"
   .default-container
     %section.item-box-container.l-single-container
-      %h1.item-name 
+      %h1.item-name
         = @product.name
       %p.item-wording
         = @product.name + "は、236回の取引実績を持つ"
-   
+
       .item-main-content.clearfix
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
@@ -71,32 +71,35 @@
               %th カテゴリー
               %td
                 =link_to "#",id:"" do
-                  %div レディース
+                  %div
+                  - if @category.parent.parent != nil
+                    = @category.parent.parent.name
                 =link_to "#",id:"" do
                   .item-detail-table-sub-category
                     %i.icon-arrow-right
-                    バッグ
+                      = @category.parent.name
                 =link_to "#",id:"" do
                   .item-detail-table-sub-sub-category
                     %i.icon-arrow-right
-                    ショルダーバッグ
+                      = @category.name
             %tr
               %th ブランド
               %td
                 =link_to "#",id:"" do
                   %div
-                    コーチ
+                    = @brand.name
             %tr
               %th 商品の状態
-              %td 
+              %td
                 = @product.status
             %tr
               %th 配送料の負担
-              %td 
+              %td
                 = @product.postage
             %tr
               %th 配送の方法
-              %td ゆうゆうメルカリ便
+              %td
+                = @product.delibery
             %tr
               %th 配送元地域
               %td
@@ -107,7 +110,7 @@
               %td
                 = @product.arrival_date
       .item-price-box.text-center
-        %span.item-price.bold 
+        %span.item-price.bold
           ¥
           = @product.price
         %span.item-tax (税込)
@@ -232,17 +235,17 @@
       .back-image
         .image-block
           .image
-            =image_tag("/images/karioki.jpg",size: "220x220",alt:"",class:"item-image")   
+            =image_tag("/images/karioki.jpg",size: "220x220",alt:"",class:"item-image")
             .price
               .price-content
           .image-content
             .item-name
-              メンズ服 
+              メンズ服
             .price
               .price-content
                 ¥5,000
       .back-image
-        .image-block  
+        .image-block
           .image
             =image_tag("/images/karioki.jpg",size: "220x220",alt:"",class:"item-image")
           .image-content
@@ -265,17 +268,17 @@
       .back-image
         .image-block
           .image
-            =image_tag("/images/karioki.jpg",size: "220x220",alt:"",class:"item-image")   
+            =image_tag("/images/karioki.jpg",size: "220x220",alt:"",class:"item-image")
             .price
               .price-content
           .image-content
             .item-name
-              メンズ服 
+              メンズ服
             .price
               .price-content
                 ¥5,000
       .back-image
-        .image-block  
+        .image-block
           .image
             =image_tag("/images/karioki.jpg",size: "220x220",alt:"",class:"item-image")
           .image-content
