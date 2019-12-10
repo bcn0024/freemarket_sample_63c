@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'children'
       get 'grandchildren'
     end
+    
     resources :images, only: [:index,:destroy,:new,:create]
 
     member do
