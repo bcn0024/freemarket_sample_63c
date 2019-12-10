@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show, :myproduct, :edit, :update, :purchase, :payjp, :move_to_index_purchase, :move_to_index_edit]
+  before_action :set_product, only: [:show, :myproduct, :edit, :update, :purchase, :payjp, :move_to_index_purchase, :move_to_index_edit,:cardnew]
   before_action :move_to_login, except: [:index, :show]
   before_action :move_to_index_purchase, only: [:purchase]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
-  before_action :set_card, only: [:cardshow,:purchase]
-
+  before_action :set_card, only: [:cardshow,:purchase,:payjp]
+ 
   require 'payjp'
 
   def index
@@ -125,9 +125,8 @@ end
 
   def payjp
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(currency: 'jpy', amount: @product.price, card: params['payjp-token'])
+    Payjp::Charge.create(currency: 'jpy',customer: @card.customer_id ,amount: @product.price, card: params['payjp-token'])
     redirect_to root_path, notice: "支払いが完了しました"
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 
   def move_to_index

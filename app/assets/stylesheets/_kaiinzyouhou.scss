@@ -44,13 +44,14 @@
   background: #ea352d;
   color: #fff;
   display: block;
-  width: 100%;
+  width: 320px;
   line-height: 48px;
   font-size: 14px;
   -webkit-transition: all ease-out .3s;
   transition: all ease-out .3s;
   cursor: pointer;
   text-align: center;
+  margin:32px auto 0;
 }
 .text-right{
   margin-top: 32px;
