@@ -1,5 +1,6 @@
 .back-image
   .image-block
+  -if product.images.length != 0
     .image
       = link_to product_path(product.id) do
         = image_tag product.images.first.image.url, class:"item-image",size: "188x188"
