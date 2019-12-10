@@ -1,6 +1,10 @@
 = render 'shared/mainheader'
-- breadcrumb :myproduct
-= breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
+%nav.header_nav
+  %ul.nav_box
+    %li.nav_list
+      =link_to "#", class: "nav_list__anchor" do
+        - breadcrumb :myproduct
+        = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
 %body
   .default-container
     %section.item-box-container.l-single-container
