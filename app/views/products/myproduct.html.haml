@@ -19,7 +19,10 @@
               .owl-stage{style: "left: 0px; width: 1800px;"}
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-height
-                    =image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
+                    -if @images.length != 0
+                      =image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
+                    - else
+                      =image_tag "",class:"owl-lazy",size: "188x188"
                 - @product.images.each_with_index do |i, index|
                   - if index != 0
                     .owl-item{style: "width: 300px;"}
@@ -33,7 +36,10 @@
               .owl-dot.active
                 %span
                 .owl-dot-inner
-                  =image_tag @images.first.image.url,class:"is-higher-height" if @images[0].image.present?
+                  -if @images.length != 0
+                    = image_tag @images.first.image.url,class:"is-higher-height"
+                  - else
+                    = image_tag "",class:"is-higher-height"
               - @product.images.each_with_index do |i, index|
                 - if index != 0
                   .owl-dot
@@ -175,7 +181,6 @@
             .submit
               %p
                 コメントする
-    .navigation 
+    .navigation
 = render 'shared/footer-imag'
 = render 'shared/mainfooter'
-
