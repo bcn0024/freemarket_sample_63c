@@ -1,9 +1,12 @@
 .back-image
   .image-block
-  -if product.images.length != 0
     .image
+    -if product.images.length != 0
       = link_to product_path(product.id) do
         = image_tag product.images.first.image.url, class:"item-image",size: "188x188"
+    - else
+      = link_to product_path(product.id) do
+        = image_tag "", class:"item-image",size: "188x188"
       %h1
         ¥
         = product.price
