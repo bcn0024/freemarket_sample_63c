@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show, :myproduct, :edit, :destroy, :update, :purchase, :payjp, :move_to_index_purchase, :move_to_index_edit,:cardnew]
+  before_action :set_product, only: [:show, :myproduct, :edit, :destroy, :update, :purchase, :payjp, :pay, :move_to_index_purchase, :move_to_index_edit,:cardnew, :cardshow]
   before_action :move_to_login, except: [:index, :show]
-  before_action :move_to_index_purchase, only: [:purchase]
+  before_action :move_to_index_purchase, only: [:purchase ,:payjp]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
   before_action :set_card, only: [:cardshow,:purchase,:payjp]
 
@@ -83,6 +83,7 @@ class ProductsController < ApplicationController
 
   def purchase
     if @card.blank?
+      @images = @product.images
     else
     @images = @product.images
     @user = @product.user
@@ -142,7 +143,7 @@ class ProductsController < ApplicationController
   Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
 
   if params['payjp-token'].blank?
-    redirect_to  cardnew_products_path(current_user.id)
+    redirect_to  cardnew_products_path(@product.id)
   else
     customer = Payjp::Customer.create(
     description: '登録テスト',
@@ -152,9 +153,9 @@ class ProductsController < ApplicationController
     )
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     if @card.save
-      redirect_to cardshow_products_path(current_user.id)
+      redirect_to "/products/#{@product.id}/cardshow"
     else
-      redirect_to  cardnew_products_path(current_user.id)
+      redirect_to "/products/#{@product.id}/cardshow"
     end
   end
 end

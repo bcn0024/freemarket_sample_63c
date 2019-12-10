@@ -10,7 +10,7 @@
                 購入内容の確認
               .buy-content 
                 .buy-content-inner
-                  =image_tag @images.first.image.url,class:"owl-lazy",size: "148x148"
+                  =image_tag(@images.first.image.url,class:"owl-lazy",size: "148x148")
                   .item-name
                     = @product.name
                   .form
