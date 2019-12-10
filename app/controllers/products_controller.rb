@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index_purchase, only: [:purchase]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
   before_action :set_card, only: [:cardshow,:purchase,:payjp]
- 
+
   require 'payjp'
 
   def index
@@ -40,9 +40,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
     @images = @product.images
-
     if @images.length != 0
       @product.save
       redirect_to root_path
@@ -57,14 +55,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @images = @product.images
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def update
-    product.update(product_params)
-    redirect_to myproduct_product_path(product.id)
+    @product.update(product_params)
+    redirect_to myproduct_product_path(@product.id)
   end
 
 
@@ -93,7 +90,7 @@ class ProductsController < ApplicationController
     Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
-    @card_brand = @default_card_information.brand      
+    @card_brand = @default_card_information.brand
       case @card_brand
       when "Visa"
         @card_src = "visa.svg"
@@ -122,7 +119,7 @@ class ProductsController < ApplicationController
     Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
-    @card_brand = @default_card_information.brand      
+    @card_brand = @default_card_information.brand
       case @card_brand
       when "Visa"
         @card_src = "visa.svg"
