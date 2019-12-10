@@ -3,8 +3,7 @@
     .image
       = link_to product_path(product.id) do
 
-        =image_tag product.images.first.image.url, class:"item-image",size: "188x188"
-
+        = image_tag product.images.first.image.url, class:"item-image",size: "188x188"
 
       %h1
         ¥

@@ -73,7 +73,8 @@ $(function(){
               var length = grandchildren.length
 
               if (length == 0) {
-                $('select[name="child"]').attr('name', 'product[category_id]')
+                $('select[name="child"]').attr('name', 'product[category_id]');
+                $('.select-brand-box').css("display", "block");
               } else {
                 var insertHTML = '';
                 grandchildren.forEach(function(grandchild){

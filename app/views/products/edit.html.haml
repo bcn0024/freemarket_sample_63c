@@ -1,4 +1,4 @@
-.body  
+.body
   .contents
     = render partial: "shared/header"
     .contents__main
@@ -14,11 +14,24 @@
                   必須
               %p
                 最大10枚までアップロードできます。
-              .sell-images
-                .sell-image
-                  %pre
-                    ドラッグアンドドロップ
-                    を必ずご確認ください。またはクリックしてファイルをアップロード
+              = f.fields_for :images do |i|
+                .preview-box
+                  .preview
+                    = image_tag @images.first.image.url, class: "preview__image", size: "130x111"
+                    .preview__bottom
+                      .preview__edit
+                        = link_to "#", class: "preview__edit--anchor" do
+                          編集
+                      .preview__delete
+                        = link_to "#", class: "preview__delete--anchor" do
+                          削除
+                  .sell-images.edit
+                    = i.label :image, class: 'sell-image edit' do
+                      = i.file_field :image, class: 'hidden'
+                      %pre
+                        ドラッグアンドドロップ
+                        /react-text: 125
+                        を必ずご確認ください。またはクリックしてファイルをアップロード
             .sell-dropbox-container
               .sell-content
                 .form-product-name
@@ -34,18 +47,33 @@
                     %span.form-require
                       必須
                   = f.text_area :description, class: 'textarea-default', rows: '5' ,placeholder: ''
-                    
+
               .sell-content
                 %h3.sell-sub-head
                   商品の詳細
                 .sell-form-kateg
                   .sell-form-select
                     %label
-                      カテゴリー 
+                      カテゴリー
                       %span.form-require
                         必須
                     .select-wrap
-                      =icon('fas', 'chevron-down')
+                      .select-wrap-parent
+                        = icon('fas', 'chevron-down')
+                        = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form", name: ""
+
+
+                  .sell-form-select.sell-form-select-brand
+                    .select-brand-box
+                      %label
+                        ブランド
+                        %span.form-require
+                          任意
+                      .select-wrap#brand
+                        .select-wrap-brand
+                          = f.fields_for :brand do |b|
+                            = b.text_field :name, placeholder: '例）シャネル'
+
                     .select-wrap__bottom
                       %label
                         商品の状態
@@ -53,7 +81,7 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
-                        = f.select :status,[["---", "---"], ["新品、未使用", "未使用に近い"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+                        = f.select :status, Product.statuses.keys, class:"form-control"
               .sell-content
                 %h3.sell-sub-head
                   配送料について
@@ -69,6 +97,18 @@
                     .select-wrap
                       =icon('fas', 'chevron-down')
                       = f.select :postage, [["---", "---"], ["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]],class:"form-control"
+
+
+                    .select-wrap__bottom.edit-delibery
+                    %label
+                      配送の方法
+                      %span
+                        必須
+                    .select-wrap.edit-deliber
+                      =icon('fas', 'chevron-down')
+                      = f.select :delibery, [["---", "---"], ["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"]],class:"form-control"
+
+
                     .select-wrap__bottom
                       %label
                         配送元の地域
@@ -84,11 +124,11 @@
                           必須
                       .select-wrap
                         =icon('fas', 'chevron-down')
-                        = f.select :arrival_date, [["---", "---"], ["2~3日で発送", "2~3日で発送 "], ["3~4日で発送", "3~4日で発送 "], ["4~7日で発送", "4~7日で発送 "]],class:"form-control"
+                        = f.select :arrival_date, [["---", "---"], ["1~2日で発送", "1~2日で発送 "], ["2~3日で発送", "2~3日で発送 "], ["3~4日で発送", "3~4日で発送 "], ["4~7日で発送", "4~7日で発送 "]],class:"form-control"
               .sell-content-tax
                 %h3.exam-tax
                   販売価格(300〜9,999,999)
-                  .sell-content-question  
+                  .sell-content-question
                     =link_to "https://www.mercari.com/jp/privacy/", id:"" do
                       ?
                 .sell-form-box
@@ -103,16 +143,16 @@
                           %p
                             ¥
                           .input-price
-                            = f.text_field :price, class: 'form__message', placeholder: '例）３００'
+                            = f.text_field :price, class: 'form__message', id: 'price_form', placeholder: '例）３００'
                     %li.product-tax
                       .l-left
                         販売手数料（１０％）
-                      .l-right
+                      .l-right-fee
                         ー
                     %li.product-tax-bold
                       .l-left
                         販売利益
-                      .l-right
+                      .l-right-profit
                         ー
               .sell-btn-box
                 = f.submit '変更する', class: 'submit-product'

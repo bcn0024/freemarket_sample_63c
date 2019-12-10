@@ -22,15 +22,37 @@ $(function(){
         $(".sell-image").css({"width":"450px", "margin-left": "20px"});
 
         $(".preview__delete--anchor").on("click", function(){
+          var val = $('input[type="file"]').val();
+          console.log(val);
           $(".preview").children().remove();
           $(".sell-image").css({"width":"620px", "margin-left": "0"});
           $('input[type="file"]').val("");
+          var val = $('input[type="file"]').val();
+          console.log(val);
         });
+
+
+        // $(".preview__delete--anchor").on("click", function(){
+        //   console.log("hello");
+        //   $(".preview").children().remove();
+        //   $(".sell-image.edit").css({"width":"620px", "margin-left": "0"});
+        //   $('input[type="file"]').val("");
+        // });
       };
     })(file);
 
 
     render.readAsDataURL(file);
+  });
+
+  $(".preview__delete--anchor").on("click", function(){
+    var val = $('input[type="file"]').val();
+    console.log(val);
+    $(".preview").children().remove();
+    $(".sell-image.edit").css({"width":"620px", "margin-left": "0"});
+    $('input[type="file"]').val("");
+    var val = $('input[type="file"]').val();
+    console.log(val);
   });
 
 
@@ -46,5 +68,9 @@ $(function(){
       $(".l-right-fee").text("ー");
       $(".l-right-profit").text("ー");
     }
+  });
+
+  $(".postage").on("change", function(){
+    $('.delibery').css("display", "block");
   });
 });
