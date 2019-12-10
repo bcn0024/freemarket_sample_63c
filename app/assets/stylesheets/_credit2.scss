@@ -1,8 +1,21 @@
+  
+.card-info{
+  display:inline-block;
+  position: absolute;
+  margin-top: 20px;
+}  
   .credit_box {
     margin: 0 auto ;
     width: 700px;
   }
-  
+.card-main{
+  .sidebar {
+    width: 280px;
+    margin-right: 40px;
+    display: inline-block;
+    margin-left: 200px;
+  } 
+}
   .box_top {
     font-size: 24px;
     font-weight: bold;
