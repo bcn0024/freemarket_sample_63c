@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   require 'payjp'
 
   def index
+    @product = Product.new
     @products = Product.limit(10).order('created_at DESC')
   end
 
