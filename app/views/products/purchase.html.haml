@@ -61,11 +61,16 @@
                       配送先
                     .address
                       .number
-                        〒552-0002
+                        〒
+                        = @address.postal_code
                       .address-info
-                        大阪府大阪市港区市岡元町3-3-21-402
+                        = @address.prefectures
+                        = @address.address
+                        = @address.municipalities
+                        = @address.building
                       .user-name
-                        蔵田 亮人
+                        = @user.kanji_surname
+                        = @user.kanji_given_name
                     .fix
                     %li
                       =link_to "", id:"",class: "change" do

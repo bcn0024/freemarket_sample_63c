@@ -85,8 +85,9 @@ class ProductsController < ApplicationController
     if @card.blank?
       @images = @product.images
     else
+    @address = current_user.address
     @images = @product.images
-    @user = @product.user
+    @user = current_user
     @products = @product.user.products.limit(6)
     Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     customer = Payjp::Customer.retrieve(@card.customer_id)
