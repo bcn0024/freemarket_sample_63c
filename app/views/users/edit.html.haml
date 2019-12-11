@@ -6,7 +6,8 @@
         =link_to "#", class: "nav_list__anchor" do
           - breadcrumb :edit
           = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
-
+  .top-main
+    = render partial: "shared/exhabit-button"
   .main
     .main_body
       =render partial: "shared/sidebar"
