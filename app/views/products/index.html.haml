@@ -88,61 +88,16 @@
     .main
       .main-header
         .famous-categories
-          人気のブランド
+          新着商品一覧
         .category
           .ladies
             .font
-              シャネル
-          .mens
-            .font
-              ルイヴィトン
-          .av
-            .font
-              シュプリーム
-          .hoby
-            .font
-              ナイキ
+              衣服・家電・プラモデルなど多数の商品お取り扱い中！
       .items
         .item-review
           .ladies-new
             .content
-              シャネル新着アイテム
-              %li
-                =link_to "", id:"",class: "more" do
-                  もっと見る >
-          .item-images
-            .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product }
-      .items
-        .item-review
-          .ladies-new
-            .content
-              ルイヴィトン新着アイテム
-              %li
-                =link_to "", id:"",class: "more" do
-                  もっと見る >
-          .item-images
-            .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product }
-      .items
-        .item-review
-          .ladies-new
-            .content
-              シュプリーム新着アイテム
-              %li
-                =link_to "", id:"",class: "more" do
-                  もっと見る >
-          .item-images
-            .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product }
-      .items
-        .item-review
-          .ladies-new
-            .content
-              ナイキ新着アイテム
+              新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >

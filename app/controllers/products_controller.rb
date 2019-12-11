@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   def index
     @product = Product.new
-    @products = Product.limit(10).order('created_at DESC')
+    @products = Product.limit(20).order('created_at DESC')
     @ladies_products = Product.where("category_id >= 2 and category_id < 197")
     @mens_products = Product.where("category_id >= 198 and category_id < 342")
     @devise_products = Product.where("category_id >= 890 and category_id < 974")
