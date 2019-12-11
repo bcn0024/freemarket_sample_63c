@@ -1,20 +1,19 @@
-  
+
 .card-info{
   display:inline-block;
-  position: absolute;
-  margin-top: 20px;
-}  
+}
   .credit_box {
     margin: 0 auto ;
     width: 700px;
   }
 .card-main{
+  display: flex;
+  max-width: 1020px;
+  margin: 40px auto 40px ;
   .sidebar {
     width: 280px;
     margin-right: 40px;
-    display: inline-block;
-    margin-left: 200px;
-  } 
+  }
 }
   .box_top {
     font-size: 24px;
@@ -25,7 +24,7 @@
     border-bottom: 1px solid #F5F5F5;
     background-color: #fff;
   }
-  
+
   .box_main {
     padding: 64px;
     background-color: #fff;
@@ -44,7 +43,7 @@
     }
     }
   }
-  
+
   .box_content {
     border-bottom: 1px solid #F5F5F5;
     h3 {

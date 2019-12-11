@@ -70,12 +70,13 @@
                       必須
                     .name-first
                       = text_field_tag "cvc", "", class:'input-default', placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-                  .card-content-question  
+                  .card-content-question
                     =link_to "https://www.mercari.com/jp/privacy/", class:"question-card" do
                       ?
                     =link_to "https://www.mercari.com/jp/privacy/", class:"question-message" do
-                      カードの背面の番号とは？ 
+                      カードの背面の番号とは？
                   .next-button
                     #card_token
                     = submit_tag "追加する", id: "token_submit",class: 'login-submit.btn-default.btn-red'
-    = render partial: "shared/footer"
+    =render partial:"shared/footer-imag"
+    =render partial:"shared/mainfooter"
