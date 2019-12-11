@@ -40,50 +40,51 @@
         .item-review
           .ladies-new
             .content
-              レディース新着アイテム
+              レディーズの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+              - @ladies_products.each do |product|
+                = render partial: "shared/productimage", locals: { product: product }
+
       .items
         .item-review
           .ladies-new
             .content
-              メンズ新着アイテム
+              メンズの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+              - @mens_products.each do |product|
+                = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
             .content
-              家電・スマホ・カメラ新着アイテム
+              家電・スマホ・カメラの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+              - @devise_products.each do |product|
+                = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
             .content
-              おもちゃ・ホビー・グッズ新着アイテム
+              おもちゃ・ホビー・グッズの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+              - @toy_products.each do |product|
+                = render partial: "shared/productimage", locals: { product: product }
     .main
       .main-header
         .famous-categories
@@ -112,7 +113,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
@@ -124,7 +125,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
@@ -136,7 +137,7 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
@@ -148,6 +149,6 @@
           .item-images
             .item-images__review
               - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product } 
+                = render partial: "shared/productimage", locals: { product: product }
   =render partial:"shared/footer-imag"
   =render partial:"shared/mainfooter"
