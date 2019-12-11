@@ -6,7 +6,7 @@
     .main_form
       = form_for [@address] do |f|
         .form_head
-          %p.form_head__message 
+          %p.form_head__message
             お客様の本人情報をご登録ください。<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
           %p.form_head__upload
             =link_to "#", class: "form_head__link" do
@@ -15,23 +15,25 @@
 
         .form_box
           = f.label "お名前"
-          %p 
-            新見 一起
+          %p
+            = @user.kanji_surname
+            = @user.kanji_given_name
 
         .form_box
           = f.label "お名前カナ"
-          %p 
-            シンミ カズキ
-
-        .form_box
-          = f.label "お名前" 
-          %p 
-            新見 一起
+          %p
+            = @user.kana_surname
+            = @user.kana_given_name
 
         .form_box
           = f.label :birthday, "生年月日"
-          %p 
-            1997/01/01
+          %p
+            = @user.birth_year
+            年
+            = @user.birth_month
+            月
+            = @user.birth_day
+            日
 
         .form_box
           = f.label "郵便番号"
@@ -54,14 +56,14 @@
           = f.label "番地"
           %span 任意
           = f.text_field :address, class: 'form_box__input', placeholder: '例) 青山1-1-1'
-          
+
         .form_box
           = f.label "建物名"
           %span 任意
           = f.text_field :building, class: 'form_box__input', placeholder: '例)柳ビル103'
 
         = f.submit "登録する", class: "form_submit"
-          
+
         .form_box
           .form_bottom
             %p.form_bottom__upload
