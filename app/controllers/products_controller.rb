@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   def index
     @product = Product.new
     @products = Product.limit(10).order('created_at DESC')
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def new
@@ -18,6 +19,8 @@ class ProductsController < ApplicationController
     @product.images.build
     @product.build_brand
     @parents = Category.where(ancestry: nil).order("id ASC")
+
+
   end
 
   def show
