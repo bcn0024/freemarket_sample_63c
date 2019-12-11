@@ -1,79 +1,95 @@
 =render "shared/header"
 .body
-  .purchase-main
-    .main-box
-      .card-info-set
-        .purchase-contents
-          .purchase-contents__main
-            .main-head
-              .main-head__confirmation
-                購入内容の確認
-              .buy-content 
-                .buy-content-inner
-                  =image_tag(@images.first.image.url,class:"owl-lazy",size: "148x148")
-                  .item-name
-                    = @product.name
-                  .form
-                    .price
-                      .price-bold
-                        ¥
-                        = @product.price
-                      .price-font
-                        送料込み
-                    .point
-                      ポイントはありません
-                    .price-total
-                      .price-total__siharai
-                        支払い金額
-                      .price-total__bold
-                        ¥
-                        = @product.price
-              .buy-user-info2
-                .buy-content-inner
-                  .purchase-inner
-                  .purchase-howto
-                    支払い方法
-                  - if @card.blank?
-                    .registration-card
-                      =link_to cardnew_product_path(), class: "registration-card" do
-                        ➕登録してください
-                  - else 
-                    .number
-                      .secret-number
-                        = "**** **** **** " + @default_card_information.last4
-                      .year-month
-                        - exp_month = @default_card_information.exp_month.to_s
-                        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-                        = exp_month + " / " + exp_year
-                      .figure
+  -if @product.buyer_id.nil?
+    
+    .purchase-main
+      .main-box
+        .card-info-set
+          .purchase-contents
+            .purchase-contents__main
+              .main-head
+                .main-head__confirmation
+                  購入内容の確認
+                .buy-content 
+                  .buy-content-inner
+                    =image_tag(@images.first.image.url,class:"owl-lazy",size: "148x148")
+                    .item-name
+                      = @product.name
+                    .form
+                      .price
+                        .price-bold
+                          ¥
+                          = @product.price
+                        .price-font
+                          送料込み
+                      .point
+                        ポイントはありません
+                      .price-total
+                        .price-total__siharai
+                          支払い金額
+                        .price-total__bold
+                          ¥
+                          = @product.price
+                .buy-user-info2
+                  .buy-content-inner
+                    .purchase-inner
+                    .purchase-howto
+                      支払い方法
+                    - if @card.blank?
+                      .registration-card
+                        =link_to cardnew_product_path(), class: "registration-card" do
+                          ➕登録してください
+                    - else 
+                      .number
+                        .secret-number
+                          = "**** **** **** " + @default_card_information.last4
+                        .year-month
+                          - exp_month = @default_card_information.exp_month.to_s
+                          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                          = exp_month + " / " + exp_year
+                        .figure
 
-                        = image_tag "/images/credit-cards/#{@card_src}", width: '40', height: '40', alt: @card_brand, id: "card_image"
+                          = image_tag "/images/credit-cards/#{@card_src}", width: '40', height: '40', alt: @card_brand, id: "card_image"
 
+                      .fix
+                      %li
+                        =link_to "", id:"",class: "change" do
+                          変更する >     
+                .buy-user-info1
+                  .buy-content-inner
+                    .inner
+                      配送先
+                    .address
+                      .number
+                        〒552-0002
+                      .address-info
+                        大阪府大阪市港区市岡元町3-3-21-402
+                      .user-name
+                        蔵田 亮人
                     .fix
                     %li
                       =link_to "", id:"",class: "change" do
-                        変更する >     
-              .buy-user-info1
-                .buy-content-inner
-                  .inner
-                    配送先
-                  .address
-                    .number
-                      〒552-0002
-                    .address-info
-                      大阪府大阪市港区市岡元町3-3-21-402
-                    .user-name
-                      蔵田 亮人
-                  .fix
-                  %li
-                    =link_to "", id:"",class: "change" do
-                      変更する >
-              .buy-button-contents
-                - if @card.blank?
-                  .btn-none
-                    購入する
-                - else
-                  = form_tag(action: :payjp, method: :post,class:"btn-red") do
-                    %button.btn-red 購入する
+                        変更する >
+                .buy-button-contents
+                  - if @card.blank?
+                    .btn-none
+                      購入する
+                  - else
+                    = form_tag(action: :payjp, method: :post,class:"btn-red") do
+                      %button.btn-red 購入する
+  - else
+    .contents__main
+      .main
+        .contents__main
+          .main-head
+            .single-head__confirmation
+              商品は既に売り切れています
+            .buy-contents
+              .content
+                .return-top
+                %li
+                  =link_to "", id:"",class: "return" do
+                    商品画面へ戻る
+  
           =render "shared/footer"
 

@@ -11,7 +11,7 @@
             支払い方法
         .add-bottom
           .add-bottom__name
-            = form_tag( "/products/#{current_user.id}/pay", method: :post, id: 'charge-form',  name: "inputForm") do
+            = form_tag( "/products/#{@product.id}/pay", method: :post, id: 'charge-form',  name: "inputForm") do
               %label
                 カード番号
               %span

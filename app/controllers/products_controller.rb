@@ -163,6 +163,8 @@ end
   def payjp
     Payjp.api_key = 'sk_test_bd4e50db2758c85468065f4c'
     Payjp::Charge.create(currency: 'jpy',customer: @card.customer_id ,amount: @product.price, card: params['payjp-token'])
+    @product.buyer_id = current_user.id
+    @product.save
     redirect_to root_path, notice: "支払いが完了しました"
   end
 
