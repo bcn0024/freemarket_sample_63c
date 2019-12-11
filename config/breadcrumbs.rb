@@ -36,6 +36,13 @@ crumb :soldout do
   link "出品した商品-売却済み",soldout_user_path
   parent :user
 end
+
+crumb :card do
+  link "支払い方法",user_card_index_path
+  parent :products
+end
+
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
