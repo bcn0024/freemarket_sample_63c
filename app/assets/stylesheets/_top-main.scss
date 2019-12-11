@@ -120,17 +120,13 @@
             width: 110%;
             flex-wrap: wrap;
             .back-image{
-              padding: 21px 21px 0 0;
+              padding: 10px;
               background-image: rgb(239, 239, 239) ;
-              .image-block:hover {
-                border: solid 1px #0E97EE;
-                margin: -1px;
-              }
               .image-block{
                 background-color: #ffffff;
                 width:188px;
                 cursor: pointer;
-                display: block;
+                display: inline-block;
                 .image{
                   width: 100%;
                   position: relative;

@@ -1,7 +1,6 @@
 .l-content
   %section.mypage-tab
-    %h2.mypage-tab-head
-      出品した商品
+    %h2.mypage-tab-head 出品した商品
     %ul.listing-tabs
       %li.active
         %h3
@@ -22,6 +21,8 @@
             =link_to myproduct_product_path(selling.id), class:"mypage-item" do
               -if selling.images.length == 0
                 =image_tag "",class:"item-image",size: "175x175"
+                %figure
+                  %image
                 .mypage-item-body
                   .mypage-item-text
                     = selling.name
@@ -34,6 +35,8 @@
                       出品中
               -else
                 =image_tag selling.images.first.image.url,class:"item-image",size: "175x175"
+                %figure
+                  %image
                 .mypage-item-body
                   .mypage-item-text
                     = selling.name

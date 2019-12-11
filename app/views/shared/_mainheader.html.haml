@@ -1,16 +1,9 @@
 .header
   .header-top
     .header-top__image
-      = link_to root_path do
-        = image_tag("/images/fmarket_logo_red.svg", alt: "Mercari", size: "134x36")
+      =image_tag("/images/fmarket_logo_red.svg", alt: "Mercari", size: "134x36")
     .header_form
-      %input.header_form__input{type: 'text', placeholder: '何かお探しですか'}
-      .header_form__icon
-        = icon("fas", "search")
-
-
-
-
+ 
   .header-bottom
     %ul.bottom-header1
       %li.bottom-header1__category
@@ -30,7 +23,7 @@
       %li.bottom-header2__category
         = icon("fas", "bell")
         = link_to "お知らせ"
-      %li.bottom-header2__category
+      %li.bottom-header2__category 
         = icon("fas", "check")
         = link_to "やることリスト"
       %li.bottom-header2__category
@@ -40,3 +33,4 @@
         - else
           = icon("fas", "smile")
           = link_to "ログイン", new_user_session_path
+          

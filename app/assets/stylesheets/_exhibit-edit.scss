@@ -283,27 +283,18 @@
  margin-top: 40px;
  display: contents;
  & label{
-    font-weight: 600;
-    display: inline-block;
-    text-align: unset;
-    & span{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        vertical-align: top
-    }
-    & span#brand{
-        background: #CCCCCC;
-        margin: 0 0 0 8px;
-        padding: 2px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        vertical-align: top
-    }
+     font-weight: 600;
+     display: inline-block;
+     text-align: unset;
+         & span{
+         background: #ea352d;
+         margin: 0 0 0 8px;
+         padding: 2px;
+         border-radius: 2px;
+         color: #fff;
+         font-size: 12px;
+         vertical-align: top
+         }
   }
   .delibery {
       display: none;
