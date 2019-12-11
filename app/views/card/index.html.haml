@@ -1,5 +1,11 @@
 .body
   =render "shared/mainheader"
+  %nav.header_nav
+    %ul.nav_box
+      %li.nav_list
+        =link_to "#", class: "nav_list__anchor" do
+          - breadcrumb :card
+          = breadcrumbs separator: "<i class='fas fa-angle-right'></i>"
   .main
     .main-box
       .card-main
@@ -50,4 +56,3 @@
                       = icon('fas', 'chevron-right')
   =render "shared/footer-imag"
   =render "shared/mainfooter"
-

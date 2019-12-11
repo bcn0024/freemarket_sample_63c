@@ -13,13 +13,23 @@
             .owl-stage-outer
               .owl-stage{style: "left: 0px; width: 1800px;"}
                 .owl-item.active{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-height
-                    -if @images.length != 0
-                      = image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
-                    - else
-                      = image_tag "",class:"owl-lazy",size: "188x188"
-
-
+                  - if @product.buyer_id.nil?
+                    .owl-item-inner.is-higher-height
+                      -if @images.length != 0 
+                        = image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
+                      - else
+                        = image_tag "",class:"owl-lazy",size: "188x188"
+                  - else
+                    .owl-item-inner.is-higher-height
+                      .sold-d
+                        .soldout-DX
+                        .soldout-tag
+                          SOLD
+                      -if @images.length != 0
+                        
+                        = image_tag @images.first.image.url,class:"owl-lazy",size: "188x188"
+                      - else
+                        = image_tag "",class:"owl-lazy",size: "188x188"
                 - @product.images.each_with_index do |i, index|
                   - if index != 0
                     .owl-item{style: "width: 300px;"}
@@ -127,8 +137,12 @@
               =link_to product_path, id:"", method: :delete,class: "delete" do
                 この商品を削除する
       - else
-        =link_to purchase_product_path, class:"item-buy-btn" do
-          購入画面に進む
+        - if @product.buyer_id.nil?
+          =link_to purchase_product_path, class:"item-buy-btn" do
+            購入画面に進む
+        - else 
+          .soldout-btn
+            売り切れました
         %p.shipping-not-allowed-message.has-error-text.text-center
           この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
         =link_to "#", id:"",class:"item-action-text" do

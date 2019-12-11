@@ -1,0 +1,15 @@
+
+=render "shared/header"
+.contents__main
+      .main
+        .contents__main
+          .main-head
+            .single-head__confirmation
+              購入完了しました
+            .buy-contents
+              .content
+                .return-top
+                %li
+                  =link_to root_path, id:"",class: "return" do
+                    商品画面へ戻る
+                    =render "shared/footer"

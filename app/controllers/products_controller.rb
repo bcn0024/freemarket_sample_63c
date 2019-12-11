@@ -10,11 +10,11 @@ class ProductsController < ApplicationController
 
   def index
     @product = Product.new
-    @products = Product.limit(10).order('created_at DESC')
-    @ladies_products = Product.where("category_id >= 2 and category_id < 197")
-    @mens_products = Product.where("category_id >= 198 and category_id < 342")
-    @devise_products = Product.where("category_id >= 890 and category_id < 974")
-    @toy_products = Product.where("category_id >= 677 and category_id < 789")
+    @products = Product.limit(20).order('created_at DESC')
+    @ladies_products = Product.where("category_id >= 2 and category_id < 197").order('created_at DESC')
+    @mens_products = Product.where("category_id >= 198 and category_id < 342").order('created_at DESC')
+    @devise_products = Product.where("category_id >= 890 and category_id < 974").order('created_at DESC')
+    @toy_products = Product.where("category_id >= 677 and category_id < 789").order('created_at DESC')
   end
 
   def new
