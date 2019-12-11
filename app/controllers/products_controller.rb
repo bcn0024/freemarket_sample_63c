@@ -85,6 +85,8 @@ class ProductsController < ApplicationController
   def purchase
     if @card.blank?
       @images = @product.images
+      @address = current_user.address
+      @user = current_user
     else
     @address = current_user.address
     @images = @product.images
