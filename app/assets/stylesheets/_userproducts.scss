@@ -515,16 +515,27 @@ body{
     margin: 16px 0 16px 0;
     background: #ea352d;
     border: 1px solid #ea352d;
-    color: #fff;
     height: 50px;
+    line-height: 50px;
     cursor:pointer;
+    a:link {color:white; text-decoration:none }
+    a:visited { color:white; text-decoration:none }
+    a:hover { color:white; text-decoration:none }
+    a:active { color:white; text-decoration:none }
+    
   }
   .btn-gray{
     margin: 16px 0 16px 0;
     background-color:#aaa;
     color: #fff;
     height: 50px;
+    line-height: 50px;
+    list-style: none;
     cursor:pointer;
+    a:link {color:white; text-decoration:none }
+    a:visited { color:white; text-decoration:none }
+    a:hover { color:white; text-decoration:none }
+    a:active { color:white; text-decoration:none }
   }
   
 }
