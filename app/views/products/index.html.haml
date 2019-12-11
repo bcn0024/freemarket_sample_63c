@@ -40,53 +40,50 @@
         .item-review
           .ladies-new
             .content
-              = @parents.first.name
-              の新着アイテム
+              レディーズの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
+              - @ladies_products.each do |product|
+                = render partial: "shared/productimage", locals: { product: product }
+
+      .items
+        .item-review
+          .ladies-new
+            .content
+              メンズの新着アイテム
+              %li
+                =link_to "", id:"",class: "more" do
+                  もっと見る >
+          .item-images
+            .item-images__review
+              - @mens_products.each do |product|
                 = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
             .content
-              = @parents.second.name
-              の新着アイテム
+              家電・スマホ・カメラの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
+              - @devise_products.each do |product|
                 = render partial: "shared/productimage", locals: { product: product }
       .items
         .item-review
           .ladies-new
             .content
-              = @parents.where(id: 889).first.name
-              の新着アイテム
+              おもちゃ・ホビー・グッズの新着アイテム
               %li
                 =link_to "", id:"",class: "more" do
                   もっと見る >
           .item-images
             .item-images__review
-              - @products.each do |product|
-                = render partial: "shared/productimage", locals: { product: product }
-      .items
-        .item-review
-          .ladies-new
-            .content
-              = @parents.where(id: 676).first.name
-              の新着アイテム
-              %li
-                =link_to "", id:"",class: "more" do
-                  もっと見る >
-          .item-images
-            .item-images__review
-              - @products.each do |product|
+              - @toy_products.each do |product|
                 = render partial: "shared/productimage", locals: { product: product }
     .main
       .main-header

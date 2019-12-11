@@ -11,7 +11,10 @@ class ProductsController < ApplicationController
   def index
     @product = Product.new
     @products = Product.limit(10).order('created_at DESC')
-    @parents = Category.where(ancestry: nil).order("id ASC")
+    @ladies_products = Product.where("category_id >= 2 and category_id < 197")
+    @mens_products = Product.where("category_id >= 198 and category_id < 342")
+    @devise_products = Product.where("category_id >= 890 and category_id < 974")
+    @toy_products = Product.where("category_id >= 677 and category_id < 789")
   end
 
   def new
@@ -19,8 +22,6 @@ class ProductsController < ApplicationController
     @product.images.build
     @product.build_brand
     @parents = Category.where(ancestry: nil).order("id ASC")
-
-
   end
 
   def show
@@ -29,7 +30,6 @@ class ProductsController < ApplicationController
     @brand = @product.brand
     @category = @product.category
     @products = @product.user.products.limit(6)
-
   end
 
   def myproduct
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
     @brand = @product.brand
     @category = @product.category
     @products = @product.user.products.limit(6)
-
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def create
