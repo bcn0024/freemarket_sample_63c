@@ -1,12 +1,33 @@
 .top-main{
   .slide {
     position: relative;
+    font-size: 0;
+    .container {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s linear;
+      }
+      .current {
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+      }
+    }
     img {
       max-width: 100%;
     }
     .prev {
       background: url("/images/arrow-left1.png") 50% 50% no-repeat;
-      left: 0;
+      left: 2%;
       position: absolute;
       display: block;
       top: 45%;
@@ -17,7 +38,7 @@
     }
     .next {
       background: url("/images/arrow-right1.png") 50% 50% no-repeat;
-      right: 0;
+      right: 2%;
       position: absolute;
       display: block;
       top: 45%;
