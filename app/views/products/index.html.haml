@@ -1,7 +1,14 @@
 .wrapper
   =render partial: "shared/mainheader"
   .top-main
-    =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"header-image",alt: "")
+    .button.prev
+      = icon("fas", "chevron-left")
+    .slideshow
+      =image_tag("/images/welcome-sign-2284312_1920.jpg",height: "390",width: "100%", alt: "")
+      =image_tag("/images/sale-1067126_1920.jpg",height: "390",width: "100%", alt: "")
+      =image_tag("/images/2011091603.jpg",height: "390",width: "100%", alt: "")
+    .button.next
+      = icon("fas", "chevron-right")
     -if user_signed_in?
       =link_to new_product_path, class: "exhibit-button" do
         .exhibit-button__wide
