@@ -2,7 +2,7 @@
   .contents
     %header.single-header
       %h1
-        %a{:href => "https://www.mercari.com/jp/"}
+        = link_to root_path do
           %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3249637286"}/
       %nav.progress-bar.signup-bar
         %ol.clearfix
@@ -34,6 +34,6 @@
               会員登録が完了いたしました。
         .add-last-btn
           = link_to products_path, class:".login-submit.btn-default.btn-red" do
-            メルカリを始める    
+            メルカリを始める
     = render partial: "shared/footer"
     .login-submit.btn-default.btn-red
