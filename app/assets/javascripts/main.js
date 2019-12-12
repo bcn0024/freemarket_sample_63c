@@ -1,8 +1,17 @@
 $(function(){
   $(window).load(function() {
+    function toggleChangeBtn() {
+      var slideImg = $(".slide").index($(".active"));
+      $(".button").show();
+      if(slideImg == 0){
+        $('.prev').hide();
+      } else if(slideImg == $('.slide').length - 1){
+        $('.next').hide();
+      }
+    }
 
 
-    // toggleChangeBtn();
+    toggleChangeBtn();
 
     $(".next").click(function() {
       var $Current = $(".active")

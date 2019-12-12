@@ -1,4 +1,26 @@
 .top-main{
+  position: relative;
+  .prev {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+    i {
+      font-size: 40px;
+      color: #ffffff;
+    }
+
+  }
+  .next {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    i {
+      font-size: 40px;
+      color: #ffffff;
+    }
+  }
   .slide {
     display:none;
   }
