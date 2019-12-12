@@ -1,4 +1,25 @@
 $(function(){
+  $(window).load(function() {
+
+
+    // toggleChangeBtn();
+
+    $(".next").click(function() {
+      var $Current = $(".active")
+      $Current.removeClass("active");
+      $Current.next().addClass("active");
+      toggleChangeBtn();
+    });
+    $(".prev").click(function() {
+      var $Current = $(".active")
+      $Current.removeClass("active");
+      $Current.prev().addClass("active");
+      toggleChangeBtn();
+    });
+  });
+
+
+
   $("label").on("change", 'input[type="file"]', function(e) {
     var file =  e.target.files[0],
         render =  new FileReader();
