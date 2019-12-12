@@ -1,4 +1,10 @@
 .top-main{
+  .slide {
+    display:none;
+  }
+  .active {
+    display: block;
+  }
   .exhibit-button{
     bottom: 32px;
     font-size: 22px;
