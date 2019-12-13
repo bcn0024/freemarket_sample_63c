@@ -2,7 +2,7 @@
   .contents
     .contents__header
       %h1
-        =link_to "https://www.mercari.com/jp/", class: "mercari-icon", id:"" do
+        =link_to root_path, class: "mercari-icon", id:"" do
           = image_tag("/images/fmarket_logo_red.svg",alt: "mercari")
       %nav.progress
         %ol.clearfix
@@ -87,14 +87,12 @@
                   必須
                 .name-first
                   = text_field_tag "cvc", "", class:'input-default', placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-              .card-content-question  
+              .card-content-question
                 =link_to "https://www.mercari.com/jp/privacy/", class:"question-card" do
                   ?
                 =link_to "https://www.mercari.com/jp/privacy/", class:"question-message" do
-                  カードの背面の番号とは？ 
+                  カードの背面の番号とは？
               .next-button
                 #card_token
                 = submit_tag "登録する", id: "token_submit",class: 'login-submit.btn-default.btn-red'
     = render partial: "shared/footer"
-
-          

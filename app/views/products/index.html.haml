@@ -1,7 +1,19 @@
 .wrapper
   =render partial: "shared/mainheader"
   .top-main
-    =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"header-image",alt: "")
+    .slide
+      %ul.container
+        %li.current
+          =image_tag("/images/welcome-sign-2284312_1920.jpg",height: "390",width: "100%", alt: "")
+        %li
+          =image_tag("/images/sale-1067126_1920.jpg",height: "390",width: "100%", alt: "")
+        %li
+          = link_to "#" do
+            =image_tag("/images/2011091603.jpg",height: "390",width: "100%", alt: "")
+      = link_to "#", class: "prev" do
+        前の画像
+      = link_to "#", class: "next" do
+        次の画像
     -if user_signed_in?
       =link_to new_product_path, class: "exhibit-button" do
         .exhibit-button__wide
@@ -48,7 +60,6 @@
             .item-images__review
               - @ladies_products.each do |product|
                 = render partial: "shared/productimage", locals: { product: product }
-
       .items
         .item-review
           .ladies-new

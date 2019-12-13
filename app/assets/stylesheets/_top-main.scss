@@ -1,4 +1,70 @@
 .top-main{
+  .slide {
+    position: relative;
+    font-size: 0;
+    .container {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s linear;
+      }
+      .current {
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+    .prev {
+      background: url("/images/arrow-left3.png") 50% 50% no-repeat;
+      left: 0;
+      position: absolute;
+      display: block;
+      top: 45%;
+      width: 40px;
+      height: 40px;
+      text-indent: -5000px;
+      z-index: 10;
+    }
+    .next {
+      background: url("/images/arrow-right3.png") 50% 50% no-repeat;
+      right: 0;
+      position: absolute;
+      display: block;
+      top: 45%;
+      width: 40px;
+      height: 40px;
+      text-indent: -5000px;
+      z-index: 10;
+    }
+  }
+
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: 1s;
+    }
+    .show {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
   .exhibit-button{
     bottom: 32px;
     font-size: 22px;
@@ -115,18 +181,21 @@
           max-width:1020px;
           height: 100%;
           &__review{
-
             display: flex;
             width: 110%;
             flex-wrap: wrap;
             .back-image{
-              padding: 10px;
+              padding: 20px 20px 0 0;
               background-image: rgb(239, 239, 239) ;
+              .image-block:hover {
+                border: solid 1px #0E97EE;
+                margin: -1px;
+              }
               .image-block{
                 background-color: #ffffff;
                 width:188px;
                 cursor: pointer;
-                display: inline-block;
+                display: block;
                 .image{
                   width: 100%;
                   position: relative;
@@ -180,4 +249,60 @@
       }
     }
   }
+}
+
+.sold-d{
+  cursor: pointer;
+}
+.sold-box{
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 100%;
+  cursor: pointer;
+}
+
+.soldout-DX{
+  display: inline-block;
+  font: 66.66667% sans-serif;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  color: #333;
+  box-sizing: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-style: solid;
+  border-width: 0;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  border-color: #ea352d transparent transparent transparent;
+  border-width: 120px 120px 0 0;
+  /* z-index: 1; */
+  position: absolute;
+  z-index: 1;
+
+
+}
+
+.soldout-tag{
+  font: 66.66667% sans-serif;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  box-sizing: inherit;
+  line-height: inherit;
+  border-style: solid;
+  border-width: 0;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  color: #fff;
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: 600;
+  top: 24px;
+  font-size: 28px;
 }

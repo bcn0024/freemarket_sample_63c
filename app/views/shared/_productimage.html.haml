@@ -1,17 +1,39 @@
 .back-image
-  .image-block
-    .image
-      -if product.images.length != 0
-        = link_to product_path(product.id) do
-          = image_tag product.images.first.image.url, class:"item-image",size: "188x188"
-      - else
-        = link_to product_path(product.id) do
-          = image_tag "", class:"item-image",size: "188x188"
-      %h1
-        ¥
-        = product.price
-      .price
-        .price-content
-    .image-content
-      .item-name
-        = product.name
+  - if product.buyer_id.nil?
+    .image-block
+      .image
+        -if product.images.length != 0
+          = link_to product_path(product.id) do
+            = image_tag product.images.first.image.url, class:"item-image",size: "188x188"
+        - else
+          = link_to product_path(product.id) do
+            = image_tag "", class:"item-image",size: "188x188"
+        %h1
+          ¥
+          = product.price
+        .price
+          .price-content
+      .image-content
+        .item-name
+          = product.name
+  - else
+    = link_to product_path(product.id) do
+      .sold-box
+        .sold-d
+          .soldout-DX
+          .soldout-tag
+            SOLD
+          .image-block
+            .image
+              -if product.images.length != 0
+                = image_tag product.images.first.image.url, class:"item-image",size: "188x188"
+              - else
+                = image_tag "", class:"item-image",size: "188x188"
+              %h1
+                ¥
+                = product.price
+              .price
+                .price-content
+            .image-content
+              .item-name
+                = product.name

@@ -1,6 +1,6 @@
 .header{
   background-color: white;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   .header-top{
     width: 1020px;
     margin: 0 auto;
@@ -28,12 +28,12 @@
     }
     &__icon{
       position: absolute;
-      top: 20%;
+      top: 35%;
       right: 1.5%;
     }
   }
   .header-bottom{
-    margin: 8px auto 0;
+    margin: 20px auto 0;
     display: flex;
     justify-content: space-between;
     width: 1020px;
@@ -80,7 +80,7 @@
           font-weight: 500;
         }
       }
-      
+
       &__category:last-child{
         padding-right: 0;
       }

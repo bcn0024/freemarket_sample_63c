@@ -208,10 +208,10 @@
     .navigation
       .navigation__left
         .left-side
-          < left producys
+          < 前の商品
       .navigation__right
         .right-side
-          right products >
+          次の商品 >
     .social-media
       .social-media__icon
         =image_tag("/images/facebook-icon.jpg",class:"facebook")
@@ -313,11 +313,11 @@
                 ¥5,000
   .top-nav
     .top-nav__content
-      .merukari
+      = link_to root_path, class: "merukari" do
         メルカリ
       .yazirusi
         >
       .product-name
-        COACH
+        = @product.name
 =render partial: "shared/footer-imag"
 =render partial: "shared/mainfooter"
