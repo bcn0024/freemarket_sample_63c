@@ -1,7 +1,14 @@
 .wrapper
   =render partial: "shared/mainheader"
-  .top-main
-    =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"header-image",alt: "")
+  %ul.top-main
+    %li  
+      =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"sliders",alt: "")
+    %li
+      =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"sliders",alt: "")
+    %li
+      =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"sliders",alt: "")
+    %li
+      =image_tag("/images/2011091603.jpg",height: "390",width: "100%",class:"sliders",alt: "")
     -if user_signed_in?
       =link_to new_product_path, class: "exhibit-button" do
         .exhibit-button__wide
