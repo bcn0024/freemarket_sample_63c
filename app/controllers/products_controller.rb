@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show, :myproduct, :edit, :destroy, :update, :purchase, :payjp, :pay, :move_to_index_purchase, :move_to_index_edit,:cardnew, :cardshow]
+  before_action :set_product, only: [:show, :myproduct, :edit, :destroy, :update, :purchase, :payjp, :pay, :move_to_index_purchase, :move_to_index_edit,:cardnew, :cardshow, :editaddress,:updateaddress]
   before_action :move_to_login, except: [:index, :show]
   before_action :move_to_index_purchase, only: [:purchase ,:payjp]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
@@ -171,6 +171,20 @@ end
     redirect_to root_path, notice: "支払いが完了しました"
   end
 
+  def editaddress
+    @user = current_user
+    @address = current_user.address
+  end
+
+  def updateaddress
+    @user = current_user
+    @user.update(user_params)
+    @address = @user.address
+    @address.update(address_params)
+    redirect_to "/products/#{@product.id}/purchase"
+
+  end
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
@@ -191,6 +205,14 @@ end
       brand_attributes: [:id, :name],
       images_attributes:[:id, :image]
     ).merge(user_id: current_user.id)
+  end
+
+  def address_params
+    params.require(:address).permit(:postal_code, :prefectures, :municipalities, :address, :building).merge(user_id: current_user_id)
+  end
+
+  def user_params
+    params.require(:user).permit(:kanji_surname, :kanji_given_name, :kana_surname, :kana_given_name, :phone_number)
   end
 
   def set_product

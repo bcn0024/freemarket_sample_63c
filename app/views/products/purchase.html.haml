@@ -73,7 +73,7 @@
                         = @user.kanji_given_name
                     .fix
                     %li
-                      =link_to "", id:"",class: "change" do
+                      =link_to  editaddress_product_path(), id:"",class: "change" do
                         変更する >
                 .buy-button-contents
                   - if @card.blank?

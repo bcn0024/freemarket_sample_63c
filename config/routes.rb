@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       get 'myproduct'
       get 'cardnew'
       get 'cardshow'
+      get 'editaddress'
+      post 'updateaddress'
       post 'pay', to: 'products#pay'
     end
 
